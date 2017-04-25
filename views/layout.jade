@@ -4,9 +4,9 @@ html(ng-app="novemlab")
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js")
-    script(src="javascripts/app.js")
+    script(src="app.js")
     script(src="javascripts/controllers/QuizController.js")
-    script(src="javascripts/scripts/angular-ui-router.min.js")
+    script(src="javascripts/libs/angular-ui-router.min.js")
 
 body
     div(ng-view)
@@ -19,12 +19,12 @@ body
   block scripts
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
       script(src='/javascripts/services/novem.js')
-      script(src='/javascripts/scripts/mo.js')
-      script(src='/javascripts/app/jqueryRotate.js')
-      script(src='/javascripts/app/accueil.js')
-      script(src='/javascripts/app/niveau1.js')
-      script(src='/javascripts/app/niveau2.js')
-      script(src='/javascripts/app/niveau3.js')
-      script(src='/javascripts/app/niveau4.js')
+      script(src='/javascripts/libs/mo.js')
+      script(src='/javascripts/scripts/jqueryRotate.js')
+      script(src='/javascripts/controllers/accueil.js')
+      script(src='/javascripts/controllers/niveau1.js')
+      script(src='/javascripts/controllers/niveau2.js')
+      script(src='/javascripts/controllers/niveau3.js')
+      script(src='/javascripts/controllers/niveau4.js')
 
 
