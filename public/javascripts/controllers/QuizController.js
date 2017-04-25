@@ -1,7 +1,3 @@
-/**
- * Created by Romain on 14.03.2017.
- */
-
 angular.module('novemlab').controller('QuizController', function(apiUrl, $scope, $state, $http) {
 
     /**
