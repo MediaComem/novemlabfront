@@ -1,14 +1,14 @@
 # novemlabfront
 Front app for transmedia project novemlab https://github.com/ghiringh/transmedia
 
-##Installation
+## Installation
 ```
 git clone repo
 npm install
 ```
 
-######run with nodemon
+###### run with nodemon
 > npm run dev
 
-######serve the app
+###### serve the app
 > npm start
