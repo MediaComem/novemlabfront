@@ -1,27 +1,21 @@
-<<<<<<< HEAD
-.main#niveau2
-    //div#choix1
-    //div.back
-    //div.next
-    div.ongletMenu
-        #menu
-            ul#onglets
-                li.active#algo1 Algo1.js
-                li#algo2   Algo2.js
-                li#algo3   Algo3.js
-    div.algo
-    block novem
-        include novem.jade
-    block toolBox
-        include toolBox.jade
-
-=======
 extends layout
 
 append scripts
     script(src='/javascripts/controllers/niveau2.js')
 
 block content
-    .main#niveau2(ng-controller="N2Controller as n2Ctrl")
-        p Niv. 2
->>>>>>> master
+    .main#niveau2
+        //div#choix1
+        //div.back
+        //div.next
+        div.ongletMenu
+            #menu
+                ul#onglets
+                    li.active#algo1 Algo1.js
+                    li#algo2   Algo2.js
+                    li#algo3   Algo3.js
+        div.algo
+        block novem
+            include novem.jade
+        block toolBox
+            include toolBox.jade
