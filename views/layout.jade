@@ -4,27 +4,18 @@ html(ng-app="novemlab")
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js")
-    script(src="javascripts/app.js")
-    script(src="javascripts/controllers/QuizController.js")
-    script(src="javascripts/scripts/angular-ui-router.min.js")
+    script(src="app.js")
+    script(src="javascripts/libs/angular-ui-router.min.js")
 
 body
     div(ng-view)
-      block intro
-      block niveau1
-      block niveau2
-      block niveau3
-      block niveau4
+      block content
 
     block scripts
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
-      script(src='/javascripts/scripts/mo.js')
-      script(src='/javascripts/app/jqueryRotate.js')
-      script(src='/javascripts/app/accueil.js')
-      script(src='/javascripts/app/niveau1.js')
-      script(src='/javascripts/app/niveau2.js')
-      script(src='/javascripts/app/niveau3.js')
-      script(src='/javascripts/app/niveau4.js')
+      script(src='/javascripts/libs/mo.js')
+      script(src='/javascripts/scripts/jqueryRotate.js')
+      script(src="javascripts/controllers/QuizController.js")
 
 
     

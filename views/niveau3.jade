@@ -1,2 +1,8 @@
-.main#niveau3
-    p wesh magueule
+extends layout
+
+append scripts
+    script(src='/javascripts/controllers/niveau3.js')
+
+block content
+    .main#niveau3(ng-controller="N3Controller as n3Ctrl")
+        p Niv. 3
