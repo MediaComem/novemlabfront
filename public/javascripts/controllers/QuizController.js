@@ -1,17 +1,56 @@
-/**
- * Created by Romain on 14.03.2017.
- */
+angular.module('novemlab').controller('QuizController', function(apiUrl, $scope, $state, $http) {
 
-angular.module('novemlab').controller('QuizController', function(apiUrl, $scope, $state) {
+    /**
+     * Définition des variables
+     */
+
     var quizCtrl = this;
 
-    quizCtrl.joueur = {};
+    /**
+     * Variables de manipulation du DOM
+     * @type {Element}
+     */
+    var intro = document.getElementById("intro");
+    var niveau1 = document.getElementById("niveau1");
+    var niveau2 = document.getElementById("niveau2");
+    var niveau3 = document.getElementById("niveau3");
+    var niveau4 = document.getElementById("niveau4");
 
-    console.log("coucou");
-    console.log(apiUrl);
 
-    quizCtrl.lol = function(){
-        console.log(quizCtrl.joueur);
+    /**
+     * Initialisation du jeu
+     */
+    var init = function(){
+        angular.element(intro).css('visibility','visible');
     }
+
+    init();
+
+    quizCtrl.start = function(){
+        console.log(quizCtrl.joueur);
+        $http({
+            method: 'POST',
+            url: apiUrl + 'joueurs',
+            data:quizCtrl.joueur
+        }).then(function successCallback(response) {
+            console.log("success");
+            quizCtrl.changeLevel("niveau1");
+        }, function errorCallback(response) {
+            console.log("failure");
+            quizCtrl.changeLevel(niveau1);
+
+        });
+    }
+
+
+
+    quizCtrl.changeLevel = function(nextLvl){
+
+        $(".main:visible").hide();
+        nextLvl.style.visibility = "visible";
+
+
+    }
+
 
 });

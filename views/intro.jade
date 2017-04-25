@@ -1,13 +1,19 @@
-.main#intro(ng-controller="QuizController as quizCtrl")
-  .left
-  .right
-  .button
-    .loader-ring
-      .loader-ring-light
-      .loader-ring-track
-  .intro
-    img(src="/images/novemlab_final_transparent.png" ,class="header")
-    .glitch(data-text = "Bienvenue au NovemLab !") Bienvenue
-      p
-        input(type='text', placeholder='Prénom', ng-model='quizCtrl.joueur.name')
-      button.bouton.startButton(ng-click='quizCtrl.lol()') Commencer les épreuves
+extends layout
+
+append scripts
+  script(src='/javascripts/controllers/accueil.js')
+
+block content
+  .main#intro(ng-controller="IntroControler as iCtrl")
+    .left
+    .right
+    .button
+      .loader-ring
+        .loader-ring-light
+        .loader-ring-track
+    .intro
+      img(src="/images/novemlab_final_transparent.png" ,class="header")
+      .glitch(data-text = "Bienvenue au NovemLab !") Bienvenue
+        p
+          input(type='text', placeholder='Prénom', ng-model='iCtrl.joueur.pseudo')
+        button.bouton.startButton(ng-click='iCtrl.test()') Commencer les épreuves

@@ -1,53 +1,53 @@
-/**
- * Created by Romain on 13.04.2017.
- * Update by xavier on 13.04.2017
- */
+angular.module('novemlab').controller('N2Controller', function(apiUrl, $scope, $state, $http) {
+    var n2Ctrl = this;
 
-novemText2 =  "cool faten trop bien";
+    n2Ctrl.test = "coucou";
 
-novemCall(novemText2);
+    console.log(n2Ctrl.test);
 
+    novemText2 =  "cool faten trop bien";
 
-$(function(){
-   /* 
-    var choix = 1;
-    $(".next").on("click",function(){
-        choix++;
-        var choixOld = choix-1;
-        $(".back").fadeIn();
+    novemCall(novemText2);
 
-        if(choix <= 3){
-            $("#choix"+choixOld).attr("id","choix"+choix);
-        }
-        if (choix >= 3){
-            $(".next").hide();
-        }   
-    })
+    /*
+        var choix = 1;
+        $(".next").on("click",function(){
+            choix++;
+            var choixOld = choix-1;
+            $(".back").fadeIn();
 
-    $(".back").on("click",function(){
-        choix--;
-        var choixOld = choix+1;
-        if(choix <= 3){
-            $("#choix"+choixOld).attr("id","choix"+choix);
-        }
-        if (choix <= 1){
-            $(".back").hide();
-        }
-        $(".next").fadeIn();
-        
-    })
-    */
+            if(choix <= 3){
+                $("#choix"+choixOld).attr("id","choix"+choix);
+            }
+            if (choix >= 3){
+                $(".next").hide();
+            }
+        })
 
-var algo1 = "if(tamere < 3){<p style='padding-left:2em;'>console.log('je vais t'enculé')</p><p>};";
-var algo2 = "if(tasoeur < 3){<p style='padding-left:2em;'>console.log('je baise ta soeur')</p><p>};";
-var algo3 = "if(tagrandmere < 3){<p style='padding-left:2em;'>console.log('vas te faire enculé saloppe')</p><p>};";
+        $(".back").on("click",function(){
+            choix--;
+            var choixOld = choix+1;
+            if(choix <= 3){
+                $("#choix"+choixOld).attr("id","choix"+choix);
+            }
+            if (choix <= 1){
+                $(".back").hide();
+            }
+            $(".next").fadeIn();
 
-$(".algo").hide();
-$(".algo").html(algo1);
+        })
+        */
 
-setTimeout(function(){
-    $(".algo").fadeIn();
-    },8000);
+    var algo1 = "if(tamere < 3){<p style='padding-left:2em;'>console.log('je vais t'enculé')</p><p>};";
+    var algo2 = "if(tasoeur < 3){<p style='padding-left:2em;'>console.log('je baise ta soeur')</p><p>};";
+    var algo3 = "if(tagrandmere < 3){<p style='padding-left:2em;'>console.log('vas te faire enculé saloppe')</p><p>};";
+
+    $(".algo").hide();
+    $(".algo").html(algo1);
+
+    setTimeout(function(){
+        $(".algo").fadeIn();
+        },8000);
 
 
 
@@ -69,4 +69,5 @@ setTimeout(function(){
 
 
 
-})
+});
+

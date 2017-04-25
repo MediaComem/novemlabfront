@@ -1,2 +1,8 @@
-.main#niveau1
-    p wesh magueule
+extends layout
+
+append scripts
+    script(src='/javascripts/controllers/niveau1.js')
+
+block content
+    .main#niveau1(ng-controller="N1Controller as n1Ctrl")
+        p Niv. 1

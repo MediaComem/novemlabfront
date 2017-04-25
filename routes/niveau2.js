@@ -4,6 +4,6 @@ var path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('intro');
+    res.render('niveau2');
 });
 module.exports = router;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .main#niveau2
     //div#choix1
     //div.back
@@ -14,3 +15,13 @@
     block toolBox
         include toolBox.jade
 
+=======
+extends layout
+
+append scripts
+    script(src='/javascripts/controllers/niveau2.js')
+
+block content
+    .main#niveau2(ng-controller="N2Controller as n2Ctrl")
+        p Niv. 2
+>>>>>>> master

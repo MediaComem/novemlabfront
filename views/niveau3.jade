@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 .main#niveau3
     block novem
         include novem.jade
     block toolBox
         include toolBox.jade
+=======
+extends layout
+
+append scripts
+    script(src='/javascripts/controllers/niveau3.js')
+
+block content
+    .main#niveau3(ng-controller="N3Controller as n3Ctrl")
+        p Niv. 3
+>>>>>>> master
