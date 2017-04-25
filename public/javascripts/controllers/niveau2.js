@@ -1,13 +1,13 @@
-angular.module('novemlab').controller('N2Controller', function(apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N2Controller', function( NovemService, apiUrl, $scope, $state, $http) {
     var n2Ctrl = this;
 
     n2Ctrl.test = "coucou";
 
     console.log(n2Ctrl.test);
 
-    novemText2 =  "cool faten trop bien";
+    n2Ctrl.novemText2 =  "cool faten trop bien";
 
-    novemCall(novemText2);
+    NovemService.novemCall(n2Ctrl.novemText2);
 
     /*
         var choix = 1;
