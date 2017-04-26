@@ -5,10 +5,7 @@ angular.module('novemlab').controller('N2Controller', function( NovemService, ap
 
     console.log(n2Ctrl.test);
 
-    n2Ctrl.novemText2 =  "cool faten trop bien";
-
-    NovemService.novemCall(n2Ctrl.novemText2);
-
+    showMessage();
     /*
         var choix = 1;
         $(".next").on("click",function(){

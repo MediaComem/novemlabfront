@@ -1,5 +1,5 @@
 function novemCall (message, nodeDom) {
-        nodeDome.empty();		
+        nodeDom.empty();
         indChar = 0;
         function changeMessage(){
             nodeDom.append(message.substr(indChar, 1));
@@ -11,9 +11,9 @@ function novemCall (message, nodeDom) {
         },800);
 	}
 
-$(function(){ 
+function showMessage(){
     var message = $("#novemText").html();
     /*$("#novemText").empty();*/	
     novemCall(message, $('#novemText'));
-})
+}
 
