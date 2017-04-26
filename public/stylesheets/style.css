@@ -375,56 +375,62 @@ body .loader_cogs__top div.top_hole
 #niveau2,#niveau3
 {
     z-index: 98;
-    background: white;
+    background: #a8a8a8;
 }
 
 .novemVoice{
-    color:darkcyan;
+    color:#002039;
     width:50%;
-    height:7em;
+    min-height:150px;
     position:absolute;
     left:25%;
     bottom:-5px;
     margin:auto;
+    padding:2em 2em 2em 2em;
     border-radius:10px 10px 0px 0px;
-    border: 2px ridge darkcyan;
     z-index: 2;
-    font: bold 17px "Courier New",Courier,monospace;
+    font: bold 1.7em "Courier New",Courier,monospace;
     background: white;
 }
 
 .toolBox
 {
-    color: darkcyan;
+    color: black;
     width: 15%;
-    height: 20%;
     position: absolute;
     right: -10px;
     bottom: 30px;
     margin: auto;
     border-radius: 40px 0 0 40px;
     cursor: pointer;
-    padding-left: 1em;
     z-index: 3;
-    font: bold 17px "Courier New",Courier,monospace;
-    background: darkcyan;
+    /*font: bold 17px "Courier New",Courier,monospace;*/
+    font-size: 18px;
+    background: white;
 }
 
+.toolBox .title{
+    background-color:#1f6582;
+    height: 50px;
+    margin: -10px 0 0 0;
+    padding:8px 0 0 8px;
+    color:white;
+}
 .grille
 {
     width: 95%;
-    margin-top: -.5em;
+    margin: 0 0 .5em 1em;
 }
 
 .outil
 {
-    width: 20%;
-    height: 70%;
+    width: 80px;
+    height: 80px;
     margin-top: .5em;
-    margin-left: .7em;
+    margin-left: .9em;
     position: relative;
     display: inline-block;
-    background: blue;
+    background: #1f6582;
 }
 
 .outil:hover
@@ -442,55 +448,108 @@ body .loader_cogs__top div.top_hole
     z-index: 5;
 }
 
-#onglets
+#ongletMenu .onglets
 {
     list-style-type: none;
     border-bottom: 1px solid #9EA0A1;
     margin-left: 0;
-    margin-top: 0;
-    height: 33.5px;
+    height:100px;
     position: fixed;
     width: 100%;
-    background: dimgrey;
+    background: #002039;
+    font-size:32px;
 }
 
-#onglets li
+#ongletMenu .onglets li
 {
     float: left;
-    height: 21px;
-    margin: 2px 2px 0!important;
+    height: 95px;
+    margin: 5px 5px 0!important;
     color: white;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
     opacity: .7;
-    padding: 5px 10em 5px 5px;
-    background: darkgrey;
+    text-align:center;
+    min-width:190px;
+    background: rgba(0, 9, 29, 0.71);
 }
 
-#onglets li:hover
+#ongletMenu .onglets li:before {
+    content:"◌";
+    left: 0;
+    color:lightgrey;
+    font-size:42px;
+    margin-right:5px;
+}
+
+#ongletMenu .onglets li.active:before {
+    content:"○";
+    left: 0;
+    color:limegreen;
+    font-size:42px;
+}
+
+
+#ongletMenu .onglets li:hover
 {
     opacity: 1;
 }
 
-#onglets li.active
+#ongletMenu .onglets li.active
 {
     opacity: 1;
-    background: darkslategrey;
+    background: #006784;
 }
 
-.ongletMenu
+#ongletMenu
 {
     position: relative;
-    height: 33.5px;
+    height: 70px;
 }
 
-.algo
-{
-    color: darkred;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 3em;
-    font: bold 33px "Courier New",Courier,monospace;
+/* CSS Simple Pre Code */
+pre {
+    background: #333;
+    white-space: pre;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+pre.code {
+    background: #333;
+    top:25px;
+    height:100%;
+    width:100%;
+    margin:auto;
+    border-radius: 4px;
+    border: 1px solid #292929;
+    position: relative;
+}
+
+pre.code label {
+    font-family: sans-serif;
+    font-size: 26px;
+    color: #858585;
+    position: absolute;
+    left: 4px;
+    top: 15px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+pre.code code {
+    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+    display: block;
+    margin: 0 0 0 120px;
+    padding: 25px 16px 25px 25px;
+    border-left: 1px solid #555;
+    /*overflow-x: auto;*/
+    font-size: 32px;
+    line-height: 36px;
+    color: #ddd;
 }
 
 @media screen and (max-width: 800px) {
@@ -499,7 +558,6 @@ body .loader_cogs__top div.top_hole
         width: 80%;
         height: 9em;
         position: absolute;
-        font-size: 13px;
         left: 10%;
     }
 
@@ -523,17 +581,6 @@ body .loader_cogs__top div.top_hole
     .grille
     {
         width: 80%;
-        margin-top: -.5em;
-    }
-
-    #onglets
-    {
-        height: 27.5px;
-    }
-
-    #onglets li
-    {
-        padding: 2px 1em 2px 2px;
     }
 
     .algo

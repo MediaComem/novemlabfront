@@ -4,11 +4,11 @@ function novemCall (message, nodeDom) {
         function changeMessage(){
             nodeDom.append(message.substr(indChar, 1));
             indChar++;
-            if (indChar < message.length) setTimeout(changeMessage, 70);
+            if (indChar < message.length) setTimeout(changeMessage, 20);
         }
         setTimeout(function(){
-            setTimeout(changeMessage, 70);
-        },800);
+            setTimeout(changeMessage, 10);
+        },400);
 	}
 
 function showMessage(){
