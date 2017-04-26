@@ -33,10 +33,12 @@ angular.module('novemlab').controller('JoueurController', function(apiUrl, $scop
     joueurCtrl.create = function(){
     	$http({
     		method: 'POST',
-    		url: apiUrl + '/joueurs/' + $stateParams.joueurId,
+    		url: apiUrl + '/joueurs/',
             data: joueurCtrl.joueur
     	}).then(function(res){
-    		console.log("Register done !")
+    		console.log("Register done !");
+            $stateParams.joueurId = joueurCtrl.joueur._id;
+
     	}).catch(function(){
     		joueurCtrl.error = 'Could not create user';
     	});

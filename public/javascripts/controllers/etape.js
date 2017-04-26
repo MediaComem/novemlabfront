@@ -18,36 +18,36 @@ angular.module('novemlab').controller('EtapeController', function(apiUrl, $scope
     }
 
     // rend une étape par son id 
-    joueurCtrl.show = function(){
+    etapeCtrl.show = function(){
         $http({
             method: 'GET',
             url: apiUrl + '/etapes/'+ $stateParams.etapeId,
         }).then(function(res){
             etapeCtrl.etape = res.data;
         }).catch(function(){
-            joueurCtrl.error = 'Could not find etape';
+            etapeCtrl.error = 'Could not find etape';
         });
     }
 
-    joueurCtrl.create = function(){
+    etapeCtrl.create = function(){
     	$http({
     		method: 'POST',
-    		url: apiUrl + '/joueurs/' + $stateParams.joueurId,
-            data: joueurCtrl.joueur
+    		url: apiUrl + '/etapes/',
+            data: etapeCtrl.etape
     	}).then(function(res){
     		console.log("Register done !")
     	}).catch(function(){
-    		joueurCtrl.error = 'Could not create user';
+    		etapeCtrl.error = 'Could not create etape';
     	});
     }
-    joueurCtrl.delete = function(){
+    etapeCtrl.delete = function(){
         $http({
             method: 'DELETE',
-            url: apiUrl + '/joueurs/'+ $stateParams.joueurId,
+            url: apiUrl + '/etapes/'+ $stateParams.etapeId,
         }).then(function(res){
             console.log("Delete done !")
         }).catch(function(){
-            joueurCtrl.error = 'Could not delete user';
+            etapeCtrl.error = 'Could not delete etape';
         });
     }
 
