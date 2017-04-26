@@ -318,16 +318,37 @@ body .loader_cogs__top div.top_hole
     }
 }
 
-.novemVoice
-{
-    color: darkcyan;
-    width: 50%;
-    height: 7em;
-    position: absolute;
-    left: 25%;
-    bottom: -5px;
-    margin: auto;
-    border-radius: 10px 10px 0 0;
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#intro{
+    z-index:100;
+}
+
+#niveau1{
+    z-index:99;
+}
+
+#niveau2, #niveau3{
+    z-index:98;
+    background-color:white;
+
+}
+
+.novemVoice{
+    color:darkcyan;
+    width:50%;
+    height:7em;
+    position:absolute;
+    left:25%;
+    bottom:-5px;
+    margin:auto;
+    border-radius:10px 10px 0px 0px;
     border: 2px ridge darkcyan;
     z-index: 2;
     font: bold 17px "Courier New",Courier,monospace;
