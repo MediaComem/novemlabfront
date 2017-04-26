@@ -3,6 +3,7 @@
  */
 angular.module('novemlab').controller('EtapeController', function(apiUrl, $scope, $state, $http, $stateParams) {
     var etapeCtrl = this;
+    console.log("coucou");
 
 
     // rend la liste des etapes
@@ -12,6 +13,7 @@ angular.module('novemlab').controller('EtapeController', function(apiUrl, $scope
     		url: apiUrl + '/etapes',
     	}).then(function(res){
     		etapeCtrl.etape = res.data;
+            console.log("coucou");
     	}).catch(function(){
     		etapeCtrl.error = 'Could not find etape';
     	});

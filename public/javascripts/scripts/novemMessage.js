@@ -13,8 +13,7 @@ function novemCall (message, nodeDom) {
 
 $(function(){ 
     var message = $("#novemText").html();
-    $("#novemText").empty();	
+    /*$("#novemText").empty();*/	
     novemCall(message, $('#novemText'));
-
 })
 
