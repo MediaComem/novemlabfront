@@ -6,7 +6,6 @@ body
 a
 {
     color: #00B7FF;
-    color: #00B7FF;
 }
 
 .main
@@ -58,6 +57,7 @@ div
     right: 0;
     border-right:0;
 }
+
 
 .left
 {
@@ -318,10 +318,6 @@ body .loader_cogs__top div.top_hole
     }
 }
 
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
 a {
   color: #00B7FF;
 }
@@ -497,7 +493,6 @@ a {
     {
         padding: 2px 1em 2px 2px;
     }
-
     .algo
     {
         font-size: 15px;
