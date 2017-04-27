@@ -664,3 +664,17 @@ margin-top: 50px;
 #niveau4 .list-group .active{
 background-color: #5ca5ff;
 }
+/* customisation du graph */
+g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
+}
+rect.highcharts-background{
+	background-color: black;
+	fill:black;
+}
+g.highcharts-axis-labels.highcharts-xaxis-labels text{
+	fill:#ecf0f1 !important;
+	font-size: 18px !important;
+}
+text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.highcharts-legend-item{
+	display: none !important;
+}
