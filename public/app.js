@@ -5,7 +5,7 @@ angular.module('novemlab', [
 
 
 angular.module('novemlab')
-    .constant('apiUrl', '/api-proxy/')
+    .constant('apiUrl', '/api-proxy')
 ;
 
 

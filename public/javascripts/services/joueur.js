@@ -1,3 +1,4 @@
+
 /**
  * Created by Romain on 14.03.2017.
  */
@@ -42,18 +43,6 @@ angular.module('novemlab').controller('JoueurController', function(apiUrl, $scop
     	}).catch(function(){
     		joueurCtrl.error = 'Could not create user';
     	});
-
-        //Create score when user is created
-        $http({
-            method: 'POST',
-            url: apiUrl + '/scores/',
-            data: joueurCtrl.score
-        }).then(function(res){
-            joueurCtrl.score.joueur_id = $stateParams.joueurId;
-            console.log("Score created !");
-        }).catch(function(){
-            joueurCtrl.error = 'Could not create score';
-        });
     }
     joueurCtrl.delete = function(){
         $http({
@@ -75,10 +64,6 @@ angular.module('novemlab').controller('JoueurController', function(apiUrl, $scop
         }).catch(function() {
           joueurCtrl.error = 'Could not edit user';
         });
-    }
-
-    joueurCtrl.updateScore = function(){
-
     }
 
 });

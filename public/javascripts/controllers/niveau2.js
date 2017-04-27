@@ -1,4 +1,4 @@
-angular.module('novemlab').controller('N2Controller', function('EtapeService', NovemService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N2Controller', function(EtapeService, NovemService, apiUrl, $scope, $state, $http) {
     var n2Ctrl = this;
 
     n2Ctrl.algoName1 = "Algo1.js";
@@ -7,7 +7,7 @@ angular.module('novemlab').controller('N2Controller', function('EtapeService', N
 
     var divCode = $(".code");
     var divInnerCode = $("code");
-    var labelCode = $(".code label")
+    var labelCode = $(".code label");
     showMessage();
 
     var algo1 = "if(tamere < 3){<p style='padding-left:2em;'>console.log('je vais t'enculé')</p><p>};";
@@ -44,7 +44,7 @@ angular.module('novemlab').controller('N2Controller', function('EtapeService', N
         labelCode.html(n2Ctrl.algoName3);
         $(".active").attr("class","");
         $("#algo3").attr("class","active");
-    })
+    });
 
 
 

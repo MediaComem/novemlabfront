@@ -9,6 +9,8 @@ var niveau1 = require('./routes/niveau1');
 var niveau2 = require('./routes/niveau2');
 var niveau3 = require('./routes/niveau3');
 var niveau4 = require('./routes/niveau4');
+var proxy = require('express-http-proxy');
+var app = require('express')();
 var niveauF = require('./routes/niveauF');
 
 
@@ -26,6 +28,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api-proxy', proxy('https://cryptic-hamlet-61352.herokuapp.com'));
 
 
 app.use('/', index);
@@ -53,6 +56,5 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
 
 module.exports = app;
