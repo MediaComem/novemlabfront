@@ -1,9 +1,10 @@
 
-angular.module('novemlab').controller('N1Controller', function(apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N1Controller', function('EtapeService', apiUrl, $scope, $state, $http) {
     var n1Ctrl = this;
 
-    n1Ctrl.test = "coucou";
-
-    console.log(n1Ctrl.test);
-
+    EtapeService.show();
+    EtapeService.showAll();
+    EtapeService.create();
+    EtapeService.delete();
+    
 });
