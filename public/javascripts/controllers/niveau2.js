@@ -6,6 +6,19 @@ angular.module('novemlab').controller('N2Controller', function( NovemService, ap
     console.log(n2Ctrl.test);
 
     showMessage();
+
+    n2Ctrl.showAll = function(){
+        console.log("coucou xavier");
+        $http({
+    		method: 'GET',
+    		url: 'https://cryptic-hamlet-61352.herokuapp.com/etapes',
+    	}).then(function(res){
+    		n2Ctrl.etape = res.data;
+    	}).catch(function(){
+    		n2Ctrl.error = 'Could not find etape';
+    	});
+    }
+
     /*
         var choix = 1;
         $(".next").on("click",function(){

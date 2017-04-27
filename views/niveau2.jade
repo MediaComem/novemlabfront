@@ -14,8 +14,13 @@ block content
                     li.active#algo1 Algo1.js
                     li#algo2   Algo2.js
                     li#algo3   Algo3.js
-        div.algo
+        //div.algo
+        div.test(ng-click="n2Ctrl.showAll()")
+            .step(ng-repeat="etape in etapes")
+                p {{etape.question}}
         block toolBox
             include toolBox.jade
         div.novemVoice.animated.slideInUp
             p#novemText cool
+
+

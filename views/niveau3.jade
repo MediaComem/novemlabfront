@@ -5,9 +5,26 @@ append scripts
 
 block content
     .main#niveau3(ng-controller='N3Controller as n3Ctrl')
+        .bandTop
+        .videoDiv
+            img(src='images/shadia.gif', width='100%', height='82%', style='border:none;overflow:hidden')
+        //.bandBottom
+        .reps.container
+            .row
+                .col-xs-4
+                    .choix#1
+                        img(src='/images/pizza.svg').icon
+                        h1 Plan italien
+                .col-xs-4
+                    .choix#2
+                        img(src='/images/taille.svg').icon
+                        h1 Plan taille
+                .col-xs-4
+                    .choix#3
+                        img(src='/images/burger.svg').icon
+                        h1 Plan américain
+                button.valider Valider
         block toolBox
             include toolBox.jade
         div.novemVoice.animated.slideInUp
-            p#novemText quel type de plan est le premier plan de cette vidéo?
-        video#bgvid(autoplay='', loop='', poster='polina.jpg')
-            source(src='/videos/video1.mp4', type='video/mp4')
+            p#novemText okok ? 
