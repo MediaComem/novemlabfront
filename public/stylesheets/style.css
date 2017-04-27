@@ -67,145 +67,6 @@ button.versNiveau
     background: #2ecc71;
 }
 
-/*etapes 3*/
-
-.reps
-{
-    text-align: center;
-}
-
-.reps .col-xs-4 img
-{
-    max-width: 80px;
-}
-.reps .col-xs-4 
-{
-padding-left:0;
-height:30%;
-}
-
-
-.reps .col-xs-4 h1
-{
-    color: black;
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
-.choix{
-    border-radius: 15px;
-    -webkit-transition: border .4s ease-in;
-    transition: border .4s ease-in;
-    background: #5ca5ff;
-    height:100%;
-    margin-top:25%;
-    width:80%;
-    margin-left:10%;
-    text-align: center;
-}
-
-.valider{
-    display:none;
-    border-radius: 10px;
-    border: 0;
-    margin-top:8em;
-    padding: 10px;
-    background: #5ca5ff;
-    cursor: pointer;
-    z-index:500;
-}
-
-.valider:hover{
-    color:white;
-    border: white 2px solid;
-    background-color: darkblue;
-}
-
-
-.choix:hover{
-    border: 4px solid darkblue ;
-    opacity:1;
-}
-
-.choix.selected{
-    border: 4px solid black;
-}
-
-.reps .col-xs-4.active h1{
-    color: #000;
-}
-
-.videoDiv {
-margin-left: 10%;
-width:80%;
-z-index:-10;
-}
-
-.bandBottom{
-    width:100%;
-    height:25%;
-    background-color: black;
-    bottom:0;
-    margin-bottom: 0;
-    z-index:-5;
-    position:fixed;
-}
-
-.bandTop{
-    width:100%;
-    height:15%;
-    background-color: black;
-    top:0;
-    margin-top: 0;
-    z-index:-5;
-    position:fixed;
-}
-
-.reps{
-    width:100%!important;
-    height:100%;
-    background-color: white;
-    opacity:0.7;
-    position:absolute;
-}
-
-.rep{
-    margin-top: 4%;
-    height:50%;
-    background-color: darkred;
-}
-
-.icon{
-    margin-top:5%;
-    width:30%;
-    background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 800px) {
-  .reps .col-xs-4 h1
-{
-    color: black;
-    font-size: 8px;
-    text-transform: uppercase;
-}
-    .bandTop{
-height:10%;
-    }
-    .videoDiv {
-margin-left: 0;
-width:100%;
-z-index:-10;
-}
-}
-.main#niveau3{
-    background-color: black;
-}
-
-
-/*end etapes3*/
-
-
-
 .main
 {
     width: 100%;
@@ -663,4 +524,127 @@ pre.code {
     border-radius: 4px;
     border: 1px solid #292929;
     position: relative;
+}
+
+pre.code label {
+    font-family: sans-serif;
+    font-size: 26px;
+    color: #858585;
+    position: absolute;
+    left: 4px;
+    top: 15px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+pre.code code {
+    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+    display: block;
+    margin: 0 0 0 120px;
+    padding: 25px 16px 25px 25px;
+    border-left: 1px solid #555;
+    /*overflow-x: auto;*/
+    font-size: 32px;
+    line-height: 36px;
+    color: #ddd;
+}
+
+@media screen and (max-width: 800px) {
+    .novemVoice
+    {
+        width: 80%;
+        height: 9em;
+        position: absolute;
+        left: 10%;
+    }
+
+    .toolBox
+    {
+        right: -50px;
+        bottom: 11em;
+        font-size: 13px;
+        width: 30%;
+        transition: 1.4s;
+    }
+
+    .toolBox:hover
+    {
+        right: -2px;
+        bottom: 11em;
+        font-size: 13px;
+        width: 30%;
+    }
+
+    .grille
+    {
+        width: 80%;
+    }
+
+    .algo
+    {
+        font-size: 15px;
+        margin-left: 10%;
+        width: 80%;
+    }
+}
+
+#novemText
+{
+    padding: 5px;
+}
+
+#novemText p
+{
+    color: darkred;
+}
+
+.contentFullWidth{
+    width:100%;
+    height:100%;
+}
+#sortable, #sortable1, #sortable2, #sortable1b, #sortable2b  { color:#fff; list-style-type: none; margin: 0 auto; padding: 0; width: 60%; cursor: move;}
+#sortable li {background: #5ca5ff;
+    margin: 0 5px 5px 5px;
+    padding: .5em 2em 2em 2em;
+    padding-left: 1.5em;
+    font-size: 1.2em;
+    height: 18px;
+    border-radius: 15px;
+}
+#sortable li span { position: absolute; margin-left: -1.3em; }
+
+h1#mainTitle{
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.projet1, .projet2, .projet3{
+    text-align: center;
+}
+
+#sortable1{
+    margin-top: 20px;
+}
+.green {
+    background: #5ca5ff;
+    margin: 0 5px 5px 5px;
+    padding: .5em 2em 2em 2em;
+    padding-left: 1.5em;
+    font-size: 1.2em;
+    height: 18px;
+    border-radius: 15px;
+}
+.red {
+    background: #29282A;
+    color: #bdc3c7;
+    margin: 0 5px 5px 5px;
+    padding: .5em 2em 2em 2em;
+    padding-left: 1.5em;
+    font-size: 1.2em;
+    height: 18px;
+    border-radius: 15px;
+    text-decoration: line-through;
 }
