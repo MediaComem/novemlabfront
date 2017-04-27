@@ -4,6 +4,10 @@ append scripts
     script(src='/javascripts/controllers/save.js')
 
 block content
-
     .main#save(ng-controller="SaveController as sCtrl")
-        .content
+        .end
+            img(src="/images/novemlab_final_transparent.png" ,class="header")
+            h1 Bravo tu as été admis au NovemLab
+            h2 connecte toi et rejoins-nous !
+            input(type='text', placeholder='e-mail', ng-model='iCtrl.joueur.pseudo')
+            button.endButton(ng-click='iCtrl.test()') Rejoindre le NovemLab
