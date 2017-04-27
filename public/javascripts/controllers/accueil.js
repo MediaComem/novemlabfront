@@ -73,7 +73,7 @@ angular.module('novemlab').controller('IntroControler', function(apiUrl, $scope,
         console.log(iCtrl.joueur);
         $http({
             method: 'POST',
-            url: apiUrl + 'joueurs',
+            url: apiUrl + '/joueurs',
             data:iCtrl.joueur
         }).then(function successCallback(response) {
             console.log("success");
