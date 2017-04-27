@@ -1,4 +1,4 @@
-angular.module('novemlab').controller('N2Controller', function( NovemService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N2Controller', function('EtapeService', NovemService, apiUrl, $scope, $state, $http) {
     var n2Ctrl = this;
 
     n2Ctrl.algoName1 = "Algo1.js";
