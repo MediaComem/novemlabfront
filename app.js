@@ -36,6 +36,7 @@ app.use('/welcome', niveau1);
 app.use('/n2', niveau2);
 app.use('/n3', niveau3);
 app.use('/n4', niveau4);
+app.use('/nF', niveauF);
 app.use('/api-proxy', proxy('https://cryptic-hamlet-61352.herokuapp.com'));
 
 
