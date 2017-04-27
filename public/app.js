@@ -8,17 +8,16 @@ angular.module('novemlab')
     .constant('apiUrl', '/api-proxy/')
 ;
 
-/*angular.module('novemlab').config(['$stateProvider',function($stateProvider) {
->>>>>>> master:public/app.js
+
+angular.module('novemlab').config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
     // This is the abstract state for the tabs directive.
-        .state('index', {
-            url: '/',
-            views: {
-                'index': {
-                    // This defines the template that will be inserted into the directive.
-                    templateUrl: 'index'
-                }}
-        })*/
+    .state('niveau2', {
+        url: '/n2',
+        controller: 'EtapeController',
+        controllerAs: 'etapeCtrl',
+        templateUrl: 'views/niveau2.jade'
+    })
 
+});
