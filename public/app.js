@@ -5,7 +5,7 @@ angular.module('novemlab', [
 
 
 angular.module('novemlab')
-    .constant('apiUrl', 'https://cryptic-hamlet-61352.herokuapp.com/')
+    .constant('apiUrl', '/api-proxy/')
 ;
 
 /*angular.module('novemlab').config(['$stateProvider',function($stateProvider) {

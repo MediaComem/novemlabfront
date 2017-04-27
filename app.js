@@ -12,6 +12,7 @@ var niveau4 = require('./routes/niveau4');
 
 
 var app = express();
+var proxy = require('express-http-proxy');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +32,7 @@ app.use('/welcome', niveau1);
 app.use('/n2', niveau2);
 app.use('/n3', niveau3);
 app.use('/n4', niveau4);
+app.use('/api-proxy', proxy('https://cryptic-hamlet-61352.herokuapp.com'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

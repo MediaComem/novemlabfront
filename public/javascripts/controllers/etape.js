@@ -1,6 +1,3 @@
-/**
- * Created by Romain on 14.03.2017.
- */
 angular.module('novemlab').service('EtapeService', function(apiUrl, $scope, $state, $http, $stateParams) {
     var etapeServ = {
 
@@ -50,5 +47,5 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $scope, $sta
             });
         }
     }
-
+    return etapeServ;
 });

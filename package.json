@@ -13,6 +13,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
     "express": "~4.14.1",
+    "express-http-proxy": "^1.0.1",
     "jade": "~1.11.0",
     "mo-js": "^0.288.1",
     "morgan": "~1.7.0",
