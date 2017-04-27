@@ -8,14 +8,15 @@ block content
         //div#choix1
         //div.back
         //div.next
-        div.ongletMenu
-            #menu
-                ul#onglets
-                    li.active#algo1 Algo1.js
-                    li#algo2   Algo2.js
-                    li#algo3   Algo3.js
-        div.algo
-        block novem
-            include novem.jade
+        div#ongletMenu
+                ul.onglets
+                    li.active#algo1 {{n2Ctrl.algoName1}}
+                    li#algo2   {{n2Ctrl.algoName2}}
+                    li#algo3   {{n2Ctrl.algoName3}}
+        pre.code
+            label
+            code
         block toolBox
             include toolBox.jade
+        div.novemVoice.animated.slideInUp
+            p#novemText Devant toi se trouve trois fichiers de merde qui permettent de faire des trucs vraiment à chier, lequel de ces fichier afficherait la réponse "Tu suce des bites" ?

@@ -15,7 +15,6 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $scope, $sta
         		etapeServ.error = 'Could not find etape';
         	});
         }
-
         // rend une étape par son id 
         show : function(){
             $http({
@@ -27,7 +26,6 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $scope, $sta
                 etapeServ.error = 'Could not find etape';
             });
         }
-
         create : function(){
         	$http({
         		method: 'POST',

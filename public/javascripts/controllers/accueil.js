@@ -60,9 +60,11 @@ angular.module('novemlab').controller('IntroControler', function(apiUrl, $scope,
                     $(".button").fadeOut("fast")
                 },1000);
             },2000);
+
             setTimeout(function(){
-                $(".intro").fadeIn("slow");
-            },4000);
+                $(".intro").fadeIn('slow');
+            },3500);
+
         });
 
     };
