@@ -648,3 +648,144 @@ h1#mainTitle{
     border-radius: 15px;
     text-decoration: line-through;
 }
+
+/*etapes 3*/
+
+.reps
+{
+    text-align: center;
+}
+
+.reps .col-xs-4 img
+{
+    max-width: 80px;
+}
+.reps .col-xs-4
+{
+    padding-left:0;
+    height:30%;
+}
+
+
+.reps .col-xs-4 h1
+{
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.choix{
+    border-radius: 15px;
+    -webkit-transition: border .4s ease-in;
+    transition: border .4s ease-in;
+    background: #5ca5ff;
+    height:100%;
+    margin-top:25%;
+    width:80%;
+    margin-left:10%;
+    text-align: center;
+}
+
+.valider{
+    display:none;
+    border-radius: 10px;
+    border: 0;
+    margin-top:8em;
+    padding: 10px;
+    background: #5ca5ff;
+    cursor: pointer;
+    z-index:500;
+}
+
+.valider:hover{
+    color:white;
+    border: white 2px solid;
+    background-color: darkblue;
+}
+
+
+.choix:hover
+{
+    border: 4px solid darkblue ;
+    opacity:1;
+}
+
+.choix.selected
+{
+    border: 4px solid black;
+}
+
+.reps .col-xs-4.active h1
+{
+    color: #000;
+}
+
+.videoDiv {
+    margin-left: 10%;
+    width:80%;
+    z-index:-10;
+}
+
+.bandBottom{
+    width:100%;
+    height:25%;
+    background-color: black;
+    bottom:0;
+    margin-bottom: 0;
+    z-index:-5;
+    position:fixed;
+}
+
+.bandTop{
+    width:100%;
+    height:15%;
+    background-color: black;
+    top:0;
+    margin-top: 0;
+    z-index:-5;
+    position:fixed;
+}
+
+.reps{
+    width:100%!important;
+    height:100%;
+    background-color: white;
+    opacity:0.7;
+    position:absolute;
+}
+
+.rep{
+    margin-top: 4%;
+    height:50%;
+    background-color: darkred;
+}
+
+.icon{
+    margin-top:5%;
+    width:30%;
+    background-repeat: no-repeat;
+}
+.main#niveau3{
+    background-color: black;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .bandTop{
+        height:10%;
+    }
+    .videoDiv {
+        margin-left: 0;
+        width:100%;
+        z-index:-10;
+    }
+
+    .reps .col-xs-4 h1
+    {
+        color: black;
+        font-size: 8px;
+        text-transform: uppercase;
+    }
+}
+
