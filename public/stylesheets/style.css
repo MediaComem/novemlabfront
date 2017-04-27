@@ -648,6 +648,22 @@ h1#mainTitle{
     border-radius: 15px;
     text-decoration: line-through;
 }
+canvas#myCanvas{
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+	display: block;
+}
+#niveau4{
+text-align: center;
+}
+#niveau4 .list-group{
+display: block;
+margin-top: 50px;
+}
+#niveau4 .list-group .active{
+background-color: #5ca5ff;
+}
 
 /*etapes 3*/
 
