@@ -1,0 +1,9 @@
+extends layout
+
+append scripts
+    script(src='/javascripts/controllers/save.js')
+
+block content
+
+    .main#save(ng-controller="SaveController as sCtrl")
+        .content
