@@ -5,4 +5,11 @@ append scripts
 
 block content
     .main#niveau4(ng-controller="N4Controller as n4Ctrl")
-            p Niv. 4
+            .container
+                    h1#mainTitle A quoi correspond cette fonction ?
+                    canvas#myCanvas(width='578', height='300')
+                    .list-group
+                            a.list-group-item.active(href='#') Logarithmique
+                            a.list-group-item(href='#') Exponentielle
+                            a.list-group-item(href='#') Second degré
+                    button#send4 Suite
