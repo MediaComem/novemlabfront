@@ -605,3 +605,46 @@ pre.code code {
     width:100%;
     height:100%;
 }
+#sortable, #sortable1, #sortable2, #sortable1b, #sortable2b  { color:#fff; list-style-type: none; margin: 0 auto; padding: 0; width: 60%; cursor: move;}
+#sortable li {background: #5ca5ff;
+margin: 0 5px 5px 5px;
+padding: .5em 2em 2em 2em;
+padding-left: 1.5em;
+font-size: 1.2em;
+height: 18px;
+border-radius: 15px;
+}
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  
+h1#mainTitle{
+color: #fff;
+font-size: 18px;
+margin-bottom: 20px;
+}
+.projet1, .projet2, .projet3{
+text-align: center;
+}
+
+#sortable1{
+	margin-top: 20px;
+}
+ .green {
+background: #5ca5ff;
+margin: 0 5px 5px 5px;
+padding: .5em 2em 2em 2em;
+padding-left: 1.5em;
+font-size: 1.2em;
+height: 18px;
+border-radius: 15px;
+ }
+ .red {
+background: #29282A;
+color: #bdc3c7;
+margin: 0 5px 5px 5px;
+padding: .5em 2em 2em 2em;
+padding-left: 1.5em;
+font-size: 1.2em;
+height: 18px;
+border-radius: 15px;
+text-decoration: line-through;
+ }

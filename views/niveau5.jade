@@ -6,6 +6,27 @@ append scripts
 block content
 
     .main#niveau5(ng-controller="NFController as nfCtrl")
-
         .contentFullWidth
             .content
+                .container.projet1
+                    h1#mainTitle Ordre d'importance (plus haut = plus important)
+                    ul#sortable
+                        li.ui-state-default
+                            span.ui-icon.ui-icon-arrowthick-2-n-s
+                            | Gestion de projet
+                        li.ui-state-default
+                            span.ui-icon.ui-icon-arrowthick-2-n-s
+                            | Design et maquetting
+                        li.ui-state-default
+                            span.ui-icon.ui-icon-arrowthick-2-n-s
+                            | Etude de marché
+                        li.ui-state-default
+                            span.ui-icon.ui-icon-arrowthick-2-n-s
+                            | Développement
+                        li.ui-state-default
+                            span.ui-icon.ui-icon-arrowthick-2-n-s
+                            | Phase de tests
+                        li.ui-state-default
+                            span.ui-icon.ui-icon-arrowthick-2-n-s
+                            | Promotion
+                    button#send5 Envoyer
