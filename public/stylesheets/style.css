@@ -1,11 +1,70 @@
 body
 {
     font: 14px "Lucida Grande",Helvetica,Arial,sans-serif;
+    padding: 50px;
 }
 
 a
 {
     color: #00B7FF;
+}
+
+.tools
+{
+    text-align: center;
+    margin-top:10%;
+}
+
+.tools .col-xs-4 img
+{
+    max-width: 80px;
+}
+
+.tools .col-xs-4 h1
+{
+    color: #bdc3c7;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.tools .col-xs-4
+{
+    padding: 20px;
+    border: 8px solid #000;
+    border-radius: 15px;
+    -webkit-transition: border .4s ease-in;
+    transition: border .4s ease-in;
+    background: #29282A;
+}
+
+.tools .col-xs-4:hover
+{
+    border: 8px solid #ffff;
+}
+
+.tools .col-xs-4.active
+{
+    border: 8px solid #000000;
+    background: #ecf0f1;
+}
+
+.tools .col-xs-4.active:hover
+{
+    border: 8px solid #29282A;
+}
+
+.tools .col-xs-4.active h1
+{
+    color: #000;
+}
+
+button.versNiveau
+{
+    height: 75px;
+    border-radius: 10px;
+    border: 0;
+    padding: 25px;
+    background: #2ecc71;
 }
 
 /*etapes 3*/
@@ -63,19 +122,16 @@ height:30%;
 }
 
 
-.choix:hover
-{
+.choix:hover{
     border: 4px solid darkblue ;
     opacity:1;
 }
 
-.choix.selected
-{
+.choix.selected{
     border: 4px solid black;
 }
 
-.reps .col-xs-4.active h1
-{
+.reps .col-xs-4.active h1{
     color: #000;
 }
 
@@ -125,12 +181,13 @@ z-index:-10;
     background-repeat: no-repeat;
 }
 
-
-
-/*end etapes*/
-
 @media screen and (max-width: 800px) {
-
+  .reps .col-xs-4 h1
+{
+    color: black;
+    font-size: 8px;
+    text-transform: uppercase;
+}
     .bandTop{
 height:10%;
     }
@@ -140,11 +197,13 @@ width:100%;
 z-index:-10;
 }
 }
-
-
 .main#niveau3{
     background-color: black;
 }
+
+
+/*end etapes3*/
+
 
 
 .main
@@ -165,13 +224,6 @@ html,body
     height: 100%;
     margin: 0;
     min-height: 400px;
-}
-
-div
-{
-    width: 100%;
-    height: 100%;
-    position: absolute;
 }
 
 .left,.right
@@ -200,6 +252,7 @@ div
 
 .left
 {
+    padding:10% 0 0 0;
     left: 0;
     border-left:0;
 }
@@ -220,7 +273,12 @@ div
     margin: 0 20px 0 0;
 }
 
-
+#intro
+{
+    z-index: 100;
+    background: url(../images/bgaccueil.png) center;
+    background-size:auto;
+}
 
 .button
 {
@@ -238,6 +296,7 @@ div
     font-family: "Brasilia-Short II","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: white;
     position: absolute;
+    width:100%;
     display: none;
     text-align: center;
     top: 10%;
@@ -245,15 +304,8 @@ div
 
 img.header
 {
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
-}
-
-#intro
-{
-    z-index: 100;
-    background: url(../images/bgaccueil.png) center;
-    background-size:auto;
 }
 
 .intro input
@@ -279,14 +331,12 @@ img.header
 {
     color: lightgrey;
     opacity: 1;
-
 }
 
 ::-moz-placeholder
 {
     color: lightgrey;
     opacity: 1;
-
 }
 
 :-ms-input-placeholder
@@ -323,7 +373,6 @@ body .loader_cogs__top
     height: 230px;
     -webkit-transform-origin: 50px 50px;
     transform-origin: 50px 50px;
-
 }
 
 body .loader_cogs__top div:nth-of-type(1)
@@ -456,77 +505,71 @@ body .loader_cogs__top div.top_hole
         transform: rotate(360deg);
     }
 }
-.test{
-    background-color: blue;
-    width:20px;
-    height:20px;
-    cursor: pointer;
-}
-a {
-  color: #00B7FF;
+
+#niveau1
+{
+    z-index: 99;
 }
 
-#intro{
-    z-index:100;
-}
-
-#niveau1{
-    z-index:99;
-}
-
-#niveau2, #niveau3{
-    z-index:98;
-    background-color:white;
-
+#niveau2,#niveau3
+{
+    z-index: 98;
+    background: #a8a8a8;
 }
 
 .novemVoice{
-    color:darkcyan;
+    color:#002039;
     width:50%;
-    height:7em;
+    min-height:150px;
     position:absolute;
     left:25%;
     bottom:-5px;
     margin:auto;
+    padding:2em 2em 2em 2em;
     border-radius:10px 10px 0px 0px;
-    border: 2px ridge darkcyan;
     z-index: 2;
-    font: bold 17px "Courier New",Courier,monospace;
+    font: bold 1.7em "Courier New",Courier,monospace;
     background: white;
 }
 
 .toolBox
 {
-    color: darkcyan;
+    color: black;
     width: 15%;
-    height: 20%;
     position: absolute;
     right: -10px;
     bottom: 30px;
     margin: auto;
     border-radius: 40px 0 0 40px;
     cursor: pointer;
-    padding-left: 1em;
     z-index: 3;
-    font: bold 17px "Courier New",Courier,monospace;
-    background: darkcyan;
+    /*font: bold 17px "Courier New",Courier,monospace;*/
+    font-size: 18px;
+    background: white;
 }
 
+.toolBox .title{
+    background-color:#1f6582;
+    height: 50px;
+    margin: -10px 0 0 0;
+    padding:8px 0 0 8px;
+    color:white;
+}
 .grille
 {
     width: 95%;
-    margin-top: -.5em;
+    margin: 0 0 .5em 1em;
 }
 
 .outil
 {
-    width: 20%;
-    height: 70%;
+    width: 80px;
+    height: 80px;
     margin-top: .5em;
-    margin-left: .7em;
+    margin-left: .9em;
     position: relative;
     display: inline-block;
-    background: blue;
+    background: #1f6582;
 }
 
 .outil:hover
@@ -544,122 +587,80 @@ a {
     z-index: 5;
 }
 
-#onglets
+#ongletMenu .onglets
 {
     list-style-type: none;
     border-bottom: 1px solid #9EA0A1;
     margin-left: 0;
-    margin-top: 0;
-    height: 33.5px;
+    height:100px;
     position: fixed;
     width: 100%;
-    background: dimgrey;
+    background: #002039;
+    font-size:32px;
 }
 
-#onglets li
+#ongletMenu .onglets li
 {
     float: left;
-    height: 21px;
-    margin: 2px 2px 0!important;
+    height: 95px;
+    margin: 5px 5px 0!important;
     color: white;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
     opacity: .7;
-    padding: 5px 10em 5px 5px;
-    background: darkgrey;
+    text-align:center;
+    min-width:190px;
+    background: rgba(0, 9, 29, 0.71);
 }
 
-#onglets li:hover
+#ongletMenu .onglets li:before {
+    content:"?";
+    left: 0;
+    color:lightgrey;
+    font-size:42px;
+    margin-right:5px;
+}
+
+#ongletMenu .onglets li.active:before {
+    content:"?";
+    left: 0;
+    color:limegreen;
+    font-size:42px;
+}
+
+
+#ongletMenu .onglets li:hover
 {
     opacity: 1;
 }
 
-#onglets li.active
+#ongletMenu .onglets li.active
 {
     opacity: 1;
-    background: darkslategrey;
+    background: #006784;
 }
 
-.ongletMenu
+#ongletMenu
 {
     position: relative;
-    height: 33.5px;
+    height: 70px;
 }
 
-.algo
-{
-    color: darkred;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 3em;
-    font: bold 33px "Courier New",Courier,monospace;
+/* CSS Simple Pre Code */
+pre {
+    background: #333;
+    white-space: pre;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
-@media screen and (max-width: 800px) {
-
-    .reps .col-xs-4 h1
-{
-    color: black;
-    font-size: 8px;
-    text-transform: uppercase;
-}
-
-
-    .novemVoice
-    {
-        width: 80%;
-        height: 9em;
-        position: absolute;
-        font-size: 13px;
-        left: 10%;
-    }
-
-    .toolBox
-    {
-        right: -50px;
-        bottom: 11em;
-        font-size: 13px;
-        width: 30%;
-        transition: 1.4s;
-    }
-
-    .toolBox:hover
-    {
-        right: -2px;
-        bottom: 11em;
-        font-size: 13px;
-        width: 30%;
-    }
-
-    .grille
-    {
-        width: 80%;
-        margin-top: -.5em;
-    }
-
-    #onglets
-    {
-        height: 27.5px;
-    }
-
-    #onglets li
-    {
-        padding: 2px 1em 2px 2px;
-    }
-    .algo
-    {
-        font-size: 15px;
-        margin-left: 10%;
-        width: 80%;
-    }
-}
-
-#novemText
-{
-    padding: 5px;
-}
-
-#novemText p
-{
-    color: darkred;
+pre.code {
+    background: #333;
+    top:25px;
+    height:100%;
+    width:100%;
+    margin:auto;
+    border-radius: 4px;
+    border: 1px solid #292929;
+    position: relative;
 }

@@ -1,5 +1,5 @@
 
-angular.module('novemlab').controller('N4Controller', function(apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N4Controller', function(EtapeService, $scope, $state, $http) {
     var n4Ctrl = this;
 
     n4Ctrl.test = "coucou";

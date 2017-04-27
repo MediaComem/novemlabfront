@@ -1,5 +1,5 @@
 
-angular.module('novemlab').controller('N3Controller', function(apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N3Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
     var n3Ctrl = this;
     $(".reps").hide();
     $(".choix").hide();
@@ -32,10 +32,6 @@ angular.module('novemlab').controller('N3Controller', function(apiUrl, $scope, $
        $("#2").removeClass("selected") 
         $(".valider").fadeIn("slow");
     });
-
-    n3Ctrl.test = "coucou";
-
-    showMessage();
 
     console.log(n3Ctrl.test);
 
