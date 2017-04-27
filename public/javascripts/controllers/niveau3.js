@@ -1,5 +1,5 @@
 
-angular.module('novemlab').controller('N3Controller', function('EtapeService', apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N3Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
     var n3Ctrl = this;
 
     EtapeService.show();
