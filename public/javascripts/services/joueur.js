@@ -34,11 +34,23 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                 data: joueurServ.joueur
         	}).then(function(res){
         		console.log("Register done !");
-                $stateParams.joueurId = joueurServ.joueur._id;
+                $stateParams.joueurId = res.data._id;
 
         	}).catch(function(){
         		joueurServ.error = 'Could not create user';
         	});
+
+            //Create score when user is created
+            $http({
+                method: 'POST',
+                url: apiUrl + '/scores/',
+                data: joueurServ.score
+            }).then(function(res){
+                $stateParams.scoreId = res.data._id;
+                console.log("Score created !");
+            }).catch(function(){
+                joueurServ.error = 'Could not create score';
+            });
         }
         this.delete = function(){
             $http({
