@@ -1,23 +1,22 @@
 
-angular.module('novemlab').service('JoueurService', function(apiUrl, $scope, $state, $http, $stateParams) {
-    var joueurServ = {
+angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $http, $stateParams) {
 
-        joueurServ.joueur = {};
+        var joueurServ = this;
 
         // rend la liste des joueurs
-        showAll : function(){
+        this.showAll = function(){
         	$http({
         		method: 'GET',
         		url: apiUrl + '/joueurs',
         	}).then(function(res){
-        		joueurServ.joueur = res.data;
+        		joueurServ.joueurs = res.data;
         	}).catch(function(){
         		joueurServ.error = 'Could not find user';
         	});
         }
 
         // rend un joueur par son id 
-        show : function(){
+        this.show = function(){
             $http({
                 method: 'GET',
                 url: apiUrl + '/joueurs/'+ $stateParams.joueurId,
@@ -28,7 +27,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $scope, $st
             });
         }
 
-        create : function(){
+        this.create = function(){
         	$http({
         		method: 'POST',
         		url: apiUrl + '/joueurs/',
@@ -41,7 +40,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $scope, $st
         		joueurServ.error = 'Could not create user';
         	});
         }
-        delete : function(){
+        this.delete = function(){
             $http({
                 method: 'DELETE',
                 url: apiUrl + '/joueurs/'+ $stateParams.joueurId,
@@ -51,7 +50,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $scope, $st
                 joueurServ.error = 'Could not delete user';
             });
         }
-        modify : function() {
+        this.modify = function() {
             $http({
               method: 'PATCH',
               url: apiUrl+'/joueurs/'+ $stateParams.joueurId,
@@ -62,6 +61,5 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $scope, $st
               joueurServ.error = 'Could not edit user';
             });
         }
-    }
-    return joueurServ;
+
 });
