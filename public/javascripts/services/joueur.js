@@ -56,9 +56,33 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
               url: apiUrl+'/joueurs/'+ $stateParams.joueurId,
               data: joueurServ.joueur,
             }).then(function(res) {
-                joueurServ.user = res.data;
+                joueurServ.joueur = res.data;
             }).catch(function() {
               joueurServ.error = 'Could not edit user';
+            });
+        }
+
+        this.updateScorePhase1 = function(){
+            $http({
+              method: 'PATCH',
+              url: apiUrl+'/scores/phase1/'+ $stateParams.scoreId,
+              data: joueurServ.score,
+            }).then(function(res) {
+                joueurServ.score = res.data;
+            }).catch(function() {
+              joueurServ.error = 'Could not edit score';
+            });
+        }
+
+        this.updateScorePhase2 = function(){
+            $http({
+              method: 'PATCH',
+              url: apiUrl+'/scores/phase2/'+ $stateParams.scoreId,
+              data: joueurServ.score,
+            }).then(function(res) {
+                joueurServ.score = res.data;
+            }).catch(function() {
+              joueurServ.error = 'Could not edit score';
             });
         }
 
