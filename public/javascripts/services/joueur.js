@@ -34,11 +34,23 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                 data: joueurServ.joueur
         	}).then(function(res){
         		console.log("Register done !");
-                $stateParams.joueurId = joueurServ.joueur._id;
+                $stateParams.joueurId = res.data._id;
 
         	}).catch(function(){
         		joueurServ.error = 'Could not create user';
         	});
+
+            //Create score when user is created
+            $http({
+                method: 'POST',
+                url: apiUrl + '/scores/',
+                data: joueurServ.score
+            }).then(function(res){
+                $stateParams.scoreId = res.data._id;
+                console.log("Score created !");
+            }).catch(function(){
+                joueurServ.error = 'Could not create score';
+            });
         }
         this.delete = function(){
             $http({
@@ -56,9 +68,33 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
               url: apiUrl+'/joueurs/'+ $stateParams.joueurId,
               data: joueurServ.joueur,
             }).then(function(res) {
-                joueurServ.user = res.data;
+                joueurServ.joueur = res.data;
             }).catch(function() {
               joueurServ.error = 'Could not edit user';
+            });
+        }
+
+        this.updateScorePhase1 = function(){
+            $http({
+              method: 'PATCH',
+              url: apiUrl+'/scores/phase1/'+ $stateParams.scoreId,
+              data: joueurServ.score,
+            }).then(function(res) {
+                joueurServ.score = res.data;
+            }).catch(function() {
+              joueurServ.error = 'Could not edit score';
+            });
+        }
+
+        this.updateScorePhase2 = function(){
+            $http({
+              method: 'PATCH',
+              url: apiUrl+'/scores/phase2/'+ $stateParams.scoreId,
+              data: joueurServ.score,
+            }).then(function(res) {
+                joueurServ.score = res.data;
+            }).catch(function() {
+              joueurServ.error = 'Could not edit score';
             });
         }
 
