@@ -1,22 +1,33 @@
 
 angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $http, $stateParams) {
 
-        var joueurServ = this;
+    var joueurServ = this;
+
+    var service = {
+
+        getJoueurs : function(){
+            return joueurServ.joueurs;
+        },
+
+        getJoueur : function(){
+            return joueurServ.joueurActuel;
+        },
 
         // rend la liste des joueurs
-        this.showAll = function(){
-        	$http({
-        		method: 'GET',
-        		url: apiUrl + '/joueurs',
-        	}).then(function(res){
-        		joueurServ.joueurs = res.data;
-        	}).catch(function(){
-        		joueurServ.error = 'Could not find user';
-        	});
-        }
+        showAll : function(){
+            return $http({
+                method: 'GET',
+                url: apiUrl + '/joueurs',
+            }).then(function(res){
+                console.log(res.data);
+                joueurServ.joueurs = res.data;
+            }).catch(function(){
+                joueurServ.error = 'Could not find user';
+            });
+        },
 
-        // rend un joueur par son id 
-        this.show = function(){
+        // rend un joueur par son id
+        show : function(){
             $http({
                 method: 'GET',
                 url: apiUrl + '/joueurs/'+ $stateParams.joueurId,
@@ -25,20 +36,19 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
             }).catch(function(){
                 joueurServ.error = 'Could not find user';
             });
-        }
+        },
 
-        this.create = function(){
-        	$http({
-        		method: 'POST',
-        		url: apiUrl + '/joueurs/',
+        create : function(){
+            $http({
+                method: 'POST',
+                url: apiUrl + '/joueurs/',
                 data: joueurServ.joueur
-        	}).then(function(res){
-        		console.log("Register done !");
-                $stateParams.joueurId = res.data._id;
-
-        	}).catch(function(){
-        		joueurServ.error = 'Could not create user';
-        	});
+            }).then(function(res){
+                console.log("Register done !");
+                joueurServ.joueurActuel = res.data;
+            }).catch(function(){
+                joueurServ.error = 'Could not create user';
+            });
 
             //Create score when user is created
             $http({
@@ -51,8 +61,9 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
             }).catch(function(){
                 joueurServ.error = 'Could not create score';
             });
-        }
-        this.delete = function(){
+        },
+
+        delete : function(){
             $http({
                 method: 'DELETE',
                 url: apiUrl + '/joueurs/'+ $stateParams.joueurId,
@@ -61,8 +72,9 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
             }).catch(function(){
                 joueurServ.error = 'Could not delete user';
             });
-        }
-        this.modify = function() {
+        },
+
+        modify : function() {
             $http({
               method: 'PATCH',
               url: apiUrl+'/joueurs/'+ $stateParams.joueurId,
@@ -72,9 +84,9 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
             }).catch(function() {
               joueurServ.error = 'Could not edit user';
             });
-        }
+        },
 
-        this.updateScorePhase1 = function(){
+        updateScorePhase1 : function(){
             $http({
               method: 'PATCH',
               url: apiUrl+'/scores/phase1/'+ $stateParams.scoreId,
@@ -84,18 +96,21 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
             }).catch(function() {
               joueurServ.error = 'Could not edit score';
             });
-        }
+        },
 
-        this.updateScorePhase2 = function(){
+        updateScorePhase2 : function() {
             $http({
-              method: 'PATCH',
-              url: apiUrl+'/scores/phase2/'+ $stateParams.scoreId,
-              data: joueurServ.score,
-            }).then(function(res) {
+                method: 'PATCH',
+                url: apiUrl + '/scores/phase2/' + $stateParams.scoreId,
+                data: joueurServ.score,
+            }).then(function (res) {
                 joueurServ.score = res.data;
-            }).catch(function() {
-              joueurServ.error = 'Could not edit score';
+            }).catch(function () {
+                joueurServ.error = 'Could not edit score';
             });
         }
+    };
+
+    return service;
 
 });

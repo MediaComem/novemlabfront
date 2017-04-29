@@ -5,8 +5,8 @@ angular.module('novemlab').controller('SaveController', function(JoueurService, 
     sCtrl.test = "coucou";
 
     //appel au service//
-    JoueurService.showAll();
-    var joueurs = JoueurService.joueurs;
+    JoueurService.showAll().then(function(){    console.log(JoueurService.getJoueurs());
+    });
 
     /*$(".endButton").on("click",function(){
         console.log("ok le bouton");
