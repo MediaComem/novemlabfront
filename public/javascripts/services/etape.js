@@ -6,6 +6,11 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stat
     var etapeServ = this;
 
     var service = {
+
+        getEtape : function(){
+            return etapeServ.etape;
+        },
+
         // rend la liste des etapes
         showAll : function(){
         	$http({
@@ -18,10 +23,10 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stat
         	});
         },
         // rend une étape par son id 
-        show : function(){
-            $http({
+        show : function(id){
+            return $http({
                 method: 'GET',
-                url: apiUrl + '/etapes/'+ $stateParams.etapeId,
+                url: apiUrl + '/etapes/'+ id,
             }).then(function(res){
                 etapeServ.etape = res.data;
             }).catch(function(){
