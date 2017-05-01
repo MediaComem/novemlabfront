@@ -51,4 +51,5 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, api
     };
 
     init();
+    
 });
