@@ -7,35 +7,10 @@ block content
 	.main#niveau1(ng-controller="N1Controller as n1Ctrl")
 		.container.tools(ng-cloak)
 			.row
-			(ng-repeat="group in menuItems", ng-class="group.groupStyle")"curso in ctrl.arrayCursos | filter: (search | removeAcentos)" />
+				.col-xs-6.col-md-4.tool(ng-repeat="prop in n1Ctrl.etape.propositions")
+					img(src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.png')
+					h1 {{prop.reponse}}
 
-				.col-xs-6.col-md-4.tool(ng-value="{n1Ctrl.etape.propositions[0].reponse.score}")
-					img(src='/images/outils/ordinateur.png')
-					h1 {{n1Ctrl.etape.propositions[0].reponse}}
-				.col-xs-6.col-md-4
-					img(src='/images/outils/008-photo-camera.png')
-					h1 Caméra
-				.col-xs-6.col-md-4
-					img(src='/images/outils/007-docs.png')
-					h1 Plan marketing
-				.col-xs-6.col-md-4
-					img(src='/images/outils/006-calculator.png')
-					h1 Calculatrice
-				.col-xs-6.col-md-4
-					img(src='/images/outils/005-bugs-search.png')
-					h1 Debugger
-				.col-xs-6.col-md-4
-					img(src='/images/outils/004-printer.png')
-					h1 Imprimante
-				.col-xs-6.col-md-4
-					img(src='/images/outils/003-road-ad.png')
-					h1 Ecran pub
-				.col-xs-6.col-md-4
-					img(src='/images/outils/002-manager-avatar.png')
-					h1 Assistant administratif
-				.col-xs-6.col-md-4
-					img(src='/images/outils/001-hand-holding-computer-window.png')
-					h1 ERP
 				button.versNiveau Commencer les épreuves
 				div.novemVoice.animated.slideInUp
 					p#novemText **PRENOM**, te voici dans la salle des équipements. A toi de choisir 3 outils parmi la sélection proposée qui pourront, potentiellement, t’être utiles durant les diverses étapes de cette aventure ?
