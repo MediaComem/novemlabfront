@@ -7,36 +7,34 @@ block content
 	.main#niveau1(ng-controller="N1Controller as n1Ctrl")
 		.container.tools
 			.row
-
-				.col-xs-4.tool(ng-value="{n1Ctrl.etape.propositions[0].reponse.score}")
+				.col-xs-6.col-md-4.tool(ng-value="{n1Ctrl.etape.propositions[0].reponse.score}")
 					img(src='/images/outils/009-laptop.png')
 					h1 {{n1Ctrl.etape.propositions[0].reponse}}
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/008-photo-camera.png')
 					h1 Caméra
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/007-docs.png')
 					h1 Plan marketing
-			.row
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/006-calculator.png')
 					h1 Calculatrice
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/005-bugs-search.png')
 					h1 Debugger
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/004-printer.png')
 					h1 Imprimante
-			.row
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/003-road-ad.png')
 					h1 Ecran pub
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/002-manager-avatar.png')
 					h1 Assistant administratif
-				.col-xs-4
+				.col-xs-6.col-md-4
 					img(src='/images/outils/001-hand-holding-computer-window.png')
 					h1 ERP
 				button.versNiveau Commencer les épreuves
-		//block novem
-			include novem.jade
+				div.novemVoice.animated.slideInUp
+					p#novemText **PRENOM**, te voici dans la salle des équipements. A toi de choisir 3 outils parmi la sélection proposée qui pourront, potentiellement, t’être utiles durant les diverses étapes de cette aventure ?
+					button.closeNovemVoice -

@@ -23,10 +23,10 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, api
         $('button.versNiveau').hide();
         var limit = 3;
 
-        $('.tools .col-xs-4').click(function(e){
+        $('.tools .col-xs-6.col-md-4').click(function(e){
             e.preventDefault();
 
-            if($(".tools .col-xs-4.active").length >= limit) {
+            if($(".tools .col-xs-6.col-md-4.active").length >= limit) {
                 if($(this).hasClass("active"))
                 {
                     $(this).toggleClass("active");
@@ -42,7 +42,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, api
 
                     // Lors de l'envoi récupère les trois outils choisis
                     $('button.versNiveau').click(function(){
-                        $( ".col-xs-4.active" ).each(function( index ) {
+                        $( ".col-xs-6.col-md-4.active" ).each(function( index ) {
                             console.log( index + ": " + $( this ).text() );
                         });
                     });
