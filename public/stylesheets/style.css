@@ -855,12 +855,4 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
         font-size: 24px;
         text-transform: uppercase;
     }
-
 }
-
-/* niveau save */
-
-#joueur{
-    color:darkred;
-}
-

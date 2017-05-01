@@ -25,7 +25,6 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                 joueurServ.error = 'Could not find user';
             });
         },
-
         // rend un joueur par son id
         show : function(){
             $http({
