@@ -13,7 +13,6 @@ angular.module('novemlab').controller('N2Controller', function(EtapeService, Nov
     var algo2;
     var algo3;
 
-    showMessage();
 
     n2Ctrl.etape = {};
     n2Ctrl.niveau = "2";
@@ -24,6 +23,8 @@ angular.module('novemlab').controller('N2Controller', function(EtapeService, Nov
         algo1 = n2Ctrl.etape.propositions[0].reponse;
         algo2 = n2Ctrl.etape.propositions[1].reponse;
         algo3 = n2Ctrl.etape.propositions[2].reponse;
+        $("#novemText").html(n2Ctrl.etape.question);
+        showMessage();
         console.log(n2Ctrl.etape.propositions[2].reponse)
         init();
     });
@@ -38,7 +39,7 @@ angular.module('novemlab').controller('N2Controller', function(EtapeService, Nov
             setTimeout(function(){
                 divCode.fadeIn();
                 divInnerCode.fadeIn();
-            },4000);
+            },2000);
         }
 
 

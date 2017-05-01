@@ -1,6 +1,19 @@
 
 angular.module('novemlab').controller('N3Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
     var n3Ctrl = this;
+
+
+    n3Ctrl.etape = {};
+    n3Ctrl.niveau = "3";
+
+    EtapeService.show(n3Ctrl.niveau).then(function(){
+        n3Ctrl.etape = EtapeService.getEtape();
+    }).then(function(){
+        $("#novemText").html(n3Ctrl.etape.question);
+        showMessage();
+    });
+
+
     $(".reps").hide();
     $(".choix").hide();
 

@@ -1,5 +1,44 @@
-angular.module('novemlab').controller('NFController', function(apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('NFController', function(EtapeService, apiUrl, $scope, $state, $http) {
     var nfCtrl = this;
+
+    nfCtrl.etape = {};
+
+    function init5(){
+      nfCtrl.niveau = "5";
+
+      EtapeService.show(nfCtrl.niveau).then(function(){
+          nfCtrl.etape = EtapeService.getEtape();
+      }).then(function(){
+          $("#novemText").html(nfCtrl.etape.question);
+          showMessage();
+          init();
+      });
+    }
+
+    function init6(){
+      nfCtrl.niveau = "6";
+
+      EtapeService.show(nfCtrl.niveau).then(function(){
+          nfCtrl.etape = EtapeService.getEtape();
+      }).then(function(){
+          $("#novemText").html(nfCtrl.etape.question);
+          showMessage();
+          init();
+      });
+    }
+
+    function init7(){
+      nfCtrl.niveau = "7";
+
+      EtapeService.show(nfCtrl.niveau).then(function(){
+          nfCtrl.etape = EtapeService.getEtape();
+      }).then(function(){
+          $("#novemText").html(nfCtrl.etape.question);
+          showMessage();
+          init();
+      });
+    }
+
 
     nfCtrl.test = "coucou";
 

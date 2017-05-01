@@ -4,6 +4,16 @@ angular.module('novemlab').controller('N4Controller', function(EtapeService, $sc
 
     n4Ctrl.test = "coucou";
 
+    n4Ctrl.etape = {};
+    n4Ctrl.niveau = "4";
+
+    EtapeService.show(n4Ctrl.niveau).then(function(){
+        n4Ctrl.etape = EtapeService.getEtape();
+    }).then(function(){
+        $("#novemText").html(n4Ctrl.etape.question);
+        showMessage();
+    });
+
 $(document).ready(function () {
     $('a.list-group-item').bind('click', function() {
         // remove the active class from all elements with active class
