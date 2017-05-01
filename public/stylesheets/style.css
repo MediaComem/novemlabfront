@@ -1,9 +1,19 @@
-body
-{
-    font: 14px "Lucida Grande",Helvetica,Arial,sans-serif;
-    padding: 50px;
+@font-face {
+  font-family: 'Brasilian';
+  src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
+        url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
 }
 
+body
+{
+    font-family: 'Brasilian', Helvetica, sans-serif !important;
+    padding: 0px !important;
+    background-color: #0a1832 !important;
+}
+img.closeNovemVoice{
+	width: 30px;
+	cursor: pointer;
+}
 a
 {
     color: #00B7FF;
@@ -15,47 +25,48 @@ a
     margin-top:10%;
 }
 
-.tools .col-xs-4 img
+.tools .col-xs-6.col-md-4 img
 {
     max-width: 80px;
 }
 
-.tools .col-xs-4 h1
+.tools .col-xs-6.col-md-4 h1
 {
     color: #bdc3c7;
     font-size: 14px;
     text-transform: uppercase;
+    font-size:1.2em;
 }
 
-.tools .col-xs-4
+.tools .col-xs-6.col-md-4
 {
     padding: 20px;
-    border: 8px solid #000;
+    border: 8px solid #0a1832;
     border-radius: 15px;
     -webkit-transition: border .4s ease-in;
     transition: border .4s ease-in;
-    background: #29282A;
+    background: #102751;
 }
 
-.tools .col-xs-4:hover
+.tools .col-xs-6.col-md-4:hover
 {
-    border: 8px solid #ffff;
+    cursor: pointer;
 }
 
-.tools .col-xs-4.active
+.tools .col-xs-6.col-md-4.active
 {
-    border: 8px solid #000000;
+    border: 8px solid #0a1832;
     background: #ecf0f1;
 }
 
-.tools .col-xs-4.active:hover
+.tools .col-xs-6.col-md-4.active:hover
 {
-    border: 8px solid #29282A;
+    border: 8px solid #0a1832;
 }
 
-.tools .col-xs-4.active h1
+.tools .col-xs-6.col-md-4.active h1
 {
-    color: #000;
+    color: #102751;
 }
 
 button.versNiveau
@@ -71,12 +82,16 @@ button.versNiveau
 {
     width: 100%;
     height: 100%;
-    position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background: black;
+    background: #0a1832;
+}
+.main#intro
+{
+
+    position: fixed;
 }
 
 html,body
@@ -138,7 +153,7 @@ html,body
 {
     z-index: 100;
     background: url(../images/bgaccueil.png) center;
-    background-size:auto;
+    background-size:cover;
 }
 
 .button
@@ -154,7 +169,6 @@ html,body
 
 .intro
 {
-    font-family: "Brasilia-Short II","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: white;
     position: absolute;
     width:100%;
@@ -165,17 +179,20 @@ html,body
 
 img.header
 {
-    max-width: 600px;
+    max-width: 300px;
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .intro input, .end input
 {
-    font-size: 26px;
-    color: cornflowerblue;
-    border: 1px solid #1f6582;
+background-color: rgba(0, 0, 0, 0.61);
+    font-size: 22px;
+    color: #74d0f0;
+	border: 0px;
     border-radius: 10px;
     padding: 10px;
+    text-align: center;
 }
 
 .intro input[type="text"]:focus,input[type="password"]:focus,textarea:focus
@@ -213,23 +230,23 @@ img.header
 .startButton
 {
     color: black;
-    border: 2px solid #1f6582;
+	border:0px;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
     cursor: pointer;
-    margin: 20px auto 0;
+    margin: 60px auto 0;
     background: white;
 }
 
 .startButton:hover
 {
     color: white;
-    background: #1f6582;
+    background: #74d0f0;
 }
 
 .endButton
@@ -415,14 +432,15 @@ body .loader_cogs__top div.top_hole
     color:#002039;
     width:50%;
     min-height:150px;
-    position:absolute;
+    position:fixed;
     left:25%;
     bottom:-5px;
     margin:auto;
     padding:2em 2em 2em 2em;
     border-radius:10px 10px 0px 0px;
     z-index: 2;
-    font: bold 1.7em "Courier New",Courier,monospace;
+    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+	font-size: 1.3em;
     background: white;
 }
 
@@ -589,9 +607,10 @@ pre.code code {
     .novemVoice
     {
         width: 80%;
-        height: 9em;
-        position: absolute;
+        height: auto;
+        position: fixed;
         left: 10%;
+        bottom: 0px;
     }
 
     .toolBox
@@ -626,6 +645,7 @@ pre.code code {
 
 #novemText
 {
+	color: #102751;
     padding: 5px;
 }
 
@@ -856,3 +876,43 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
         text-transform: uppercase;
     }
 }
+
+/*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+	
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+/*body{
+background-color: green !important;
+}*/
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+/*body{
+background-color: yellow !important;
+}*/
+
+.tools .col-xs-6.col-md-4
+{
+min-height: 210px;
+}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+/*body{
+background-color: red !important;
+}*/
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+body{
+background-color: cyan !important;
+}        
+    }
