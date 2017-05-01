@@ -29,8 +29,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/api-proxy', proxy('https://cryptic-hamlet-61352.herokuapp.com'));
-
 
 app.use('/', index);
 app.use('/welcome', niveau1);
@@ -40,7 +38,7 @@ app.use('/n4', niveau4);
 app.use('/nF', niveauF);
 app.use('/save', save);
 app.use('/profile', profile);
-app.use('/api-proxy', proxy('https://cryptic-hamlet-61352.herokuapp.com'));
+app.use('/api-proxy', proxy('https://novemapi.herokuapp.com'));
 
 
 // catch 404 and forward to error handler

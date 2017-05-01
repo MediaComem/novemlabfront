@@ -3,14 +3,18 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, api
     var n1Ctrl = this;
     niveau = 1;
 
-   /* n1Ctrl.etape = {} ;*/
+   n1Ctrl.etape = {};
+   n1Ctrl.etapeId = "590392eb4989550011c3b8fb";
 
     init = function(){
 
         /**
          * GET DATA
          */
-        /*TODO*/
+        EtapeService.show(n1Ctrl.etapeId).then(function(){
+           n1Ctrl.etape = EtapeService.getEtape();
+           console.log(n1Ctrl.etape);
+        })
 
 
         /**

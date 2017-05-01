@@ -2,12 +2,11 @@
  * Created by Romain on 14.03.2017.
  */
 
-angular.module('novemlab').controller('IntroControler', function(apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('IntroControler', function(JoueurService, apiUrl, $scope, $state, $http) {
 
     /**
      * Définition des variables
      */
-
     var iCtrl = this;
 
     /**
@@ -69,18 +68,12 @@ angular.module('novemlab').controller('IntroControler', function(apiUrl, $scope,
 
     };
 
-    iCtrl.test = function(){
-        console.log(iCtrl.joueur);
-        $http({
-            method: 'POST',
-            url: apiUrl + '/joueurs',
-            data:iCtrl.joueur
-        }).then(function successCallback(response) {
-            console.log("success");
-        }, function errorCallback(response) {
-            console.log("failure");
-        });
-    }
+    iCtrl.start = function(){
+        JoueurService.create(iCtrl.joueur).then(function(){
+           // console.log(res.data);
+           // JoueurService.createScore(res);
+            console.log(JoueurService.getJoueur())});
+    };
 
     iCtrl.init();
 

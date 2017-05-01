@@ -8,9 +8,9 @@ block content
 		.container.tools
 			.row
 
-				.col-xs-4
+				.col-xs-4.tool(ng-value="{n1Ctrl.etape.propositions[0].reponse.score}")
 					img(src='/images/outils/009-laptop.png')
-					h1 {{
+					h1 {{n1Ctrl.etape.propositions[0].reponse}}
 				.col-xs-4
 					img(src='/images/outils/008-photo-camera.png')
 					h1 Caméra
