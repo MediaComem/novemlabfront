@@ -6,27 +6,29 @@ append scripts
 block content
 
     .main#niveau5(ng-controller="NFController as nfCtrl")
-        .contentFullWidth
+        .contentFullWidth(ng-init="init5()")
             .content
                 .container.projet1
                     h1#mainTitle Ordre d'importance (plus haut = plus important)
                     ul#sortable
                         li.ui-state-default
                             span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | Gestion de projet
+                            | {{nfCtrl.etape.propositions[0].reponse}}
                         li.ui-state-default
                             span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | Design et maquetting
+                            | {{nfCtrl.etape.propositions[1].reponse}}
                         li.ui-state-default
                             span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | Etude de marché
+                            | {{nfCtrl.etape.propositions[2].reponse}}
                         li.ui-state-default
                             span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | Développement
+                            | {{nfCtrl.etape.propositions[3].reponse}}
                         li.ui-state-default
                             span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | Phase de tests
+                            | {{nfCtrl.etape.propositions[4].reponse}}
                         li.ui-state-default
                             span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | Promotion
+                            | {{nfCtrl.etape.propositions[5].reponse}}
                     button#send5 Envoyer
+                div.novemVoice.animated.slideInUp
+                    p#novemText 

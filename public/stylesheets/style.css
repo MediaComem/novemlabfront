@@ -19,6 +19,8 @@ a
     color: #00B7FF;
 }
 
+
+
 .tools
 {
     text-align: center;
@@ -768,6 +770,7 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
     margin-left:10%;
     text-align: center;
     cursor: pointer;
+    display:none;
 
 
 }
@@ -825,6 +828,7 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
     background-color:rgba(255,255,255,0.5);
     position:absolute;
     top:0;
+    display:none;
 }
 
 #niveau3 .reps .valider{
