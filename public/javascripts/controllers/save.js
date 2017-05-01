@@ -4,13 +4,9 @@ angular.module('novemlab').controller('SaveController', function(JoueurService, 
 
     sCtrl.test = "coucou";
 
-    //appel au service//
-    JoueurService.showAll();
-    var joueurs = JoueurService.joueurs;
-
-    /*$(".endButton").on("click",function(){
-        console.log("ok le bouton");
-    });*/
-
     console.log(sCtrl.test)
+
+    JoueurService.modify();
+
+
 });

@@ -9,6 +9,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
         		method: 'GET',
         		url: apiUrl + '/joueurs',
         	}).then(function(res){
+                console.log("ici c'est le service");
         		joueurServ.joueurs = res.data;
         	}).catch(function(){
         		joueurServ.error = 'Could not find user';
