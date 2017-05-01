@@ -5,10 +5,10 @@ append scripts
 
 block content
 	.main#niveau1(ng-controller="N1Controller as n1Ctrl")
-		.container.tools
+		.container.tools(ng-cloak)
 			.row
 
-				.col-xs-4.tool(ng-value="{n1Ctrl.etape.propositions[0].reponse.score}")
+				.col-xs-4.tool(ng-model="n1Ctrl.etape.propositions[0].score")
 					img(src='/images/outils/009-laptop.png')
 					h1 {{n1Ctrl.etape.propositions[0].reponse}}
 				.col-xs-4
