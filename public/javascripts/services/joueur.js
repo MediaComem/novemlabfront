@@ -98,12 +98,15 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
         },
 
         updateScorePhase1 : function(data){
+            var idScore = $window.sessionStorage.getItem("score")._id;
+
             $http({
               method: 'PATCH',
-              url: apiUrl+'/scores/phase1/'+ $stateParams.scoreId,
+              url: apiUrl+'/scores/phase1/'+ idScore,
               data: data,
             }).then(function(res) {
-                joueurServ.score = res.data;
+                $window.sessionStorage.setItem("score", JSON.stringify(res.data));
+                console.log("Score created !");
             }).catch(function() {
               joueurServ.error = 'Could not edit score';
             });

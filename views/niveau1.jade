@@ -7,11 +7,11 @@ block content
 	.main#niveau1(ng-controller="N1Controller as n1Ctrl")
 		.container.tools(ng-cloak)
 			.row
-				.col-xs-6.col-md-4.tool(ng-repeat="prop in n1Ctrl.etape.propositions")
-					img(src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.png')
+				div.col-xs-6.col-md-4(ng-repeat="prop in n1Ctrl.etape.propositions" ng-click="select($event)")
+					img(ng-src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.png')
 					h1 {{prop.reponse}}
 
-				button.versNiveau Commencer les épreuves
-				div.novemVoice.animated.slideInUp
-					p#novemText **PRENOM**, te voici dans la salle des équipements. A toi de choisir 3 outils parmi la sélection proposée qui pourront, potentiellement, t’être utiles durant les diverses étapes de cette aventure ?
-					button.closeNovemVoice -
+			button.versNiveau Commencer les épreuves
+			div.novemVoice.animated.slideInUp
+				p#novemText **PRENOM**, te voici dans la salle des équipements. A toi de choisir 3 outils parmi la sélection proposée qui pourront, potentiellement, t’être utiles durant les diverses étapes de cette aventure ?
+			button.closeNovemVoice -
