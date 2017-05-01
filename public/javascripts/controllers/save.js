@@ -8,9 +8,5 @@ angular.module('novemlab').controller('SaveController', function(JoueurService, 
     JoueurService.showAll().then(function(){    console.log(JoueurService.getJoueurs());
     });
 
-    /*$(".endButton").on("click",function(){
-        console.log("ok le bouton");
-    });*/
 
-    console.log(sCtrl.test)
 });
