@@ -856,3 +856,9 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
         text-transform: uppercase;
     }
 }
+
+/* niveau save */
+
+#joueur{
+    color:darkred;
+}
