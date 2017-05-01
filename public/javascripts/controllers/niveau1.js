@@ -1,21 +1,19 @@
 
-angular.module('novemlab').controller('N1Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N1Controller', function(EtapeService, JoueurService, $scope, $state, $http, $window) {
     var n1Ctrl = this;
     niveau = 1;
 
    n1Ctrl.etape = {};
-   n1Ctrl.etapeId = "590392eb4989550011c3b8fb";
+   n1Ctrl.niveau = "1";
 
     init = function(){
 
         /**
          * GET DATA
          */
-        EtapeService.show(n1Ctrl.etapeId).then(function(){
-           n1Ctrl.etape = EtapeService.getEtape();
-           console.log(n1Ctrl.etape);
+        EtapeService.show(n1Ctrl.niveau).then(function(){
+            n1Ctrl.etape = EtapeService.getEtape();
         })
-
 
         /**
          * GENERATE FRONT
@@ -50,5 +48,15 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, api
             }})
     };
 
+    function save(){
+        JoueurService.updateScorePhase1
+    }
+
     init();
+
+    console.log($window.sessionStorage.getItem("joueur"));
+    console.log($window.sessionStorage.getItem("joueurId"));
+    console.log($window.sessionStorage.getItem("score"));
+
+
 });

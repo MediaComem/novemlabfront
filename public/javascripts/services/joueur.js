@@ -1,5 +1,5 @@
 
-angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $http, $stateParams) {
+angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $http, $window) {
 
     var joueurServ = this;
 
@@ -45,8 +45,9 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                 data: data
             }).then(function(res){
                 console.log("Register done !");
-                joueurServ.joueurActuel = res.data;
-                //return res.data;
+                $window.sessionStorage.setItem("joueur",JSON.stringify(res.data.pseudo));
+                $window.sessionStorage.setItem("joueurId",JSON.stringify(res.data._id));
+                return res.data;
             }).catch(function(){
                 joueurServ.error = 'Could not create user';
             });
@@ -67,7 +68,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                     "business":0
                 }
             }).then(function(res){
-                joueurServ.joueurActuel.scoreId = res.data._id;
+                $window.sessionStorage.setItem("score", JSON.stringify(res.data));
                 console.log("Score created !");
             }).catch(function(){
                 joueurServ.error = 'Could not create score';
@@ -97,11 +98,11 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
             });
         },
 
-        updateScorePhase1 : function(){
+        updateScorePhase1 : function(data){
             $http({
               method: 'PATCH',
               url: apiUrl+'/scores/phase1/'+ $stateParams.scoreId,
-              data: joueurServ.score,
+              data: data,
             }).then(function(res) {
                 joueurServ.score = res.data;
             }).catch(function() {
