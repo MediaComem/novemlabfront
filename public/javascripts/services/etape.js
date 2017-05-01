@@ -2,8 +2,10 @@
  * Created by Romain on 14.03.2017.
  */
 angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stateParams) {
-    var etapeServ = {
 
+    var etapeServ = this;
+
+    var service = {
         // rend la liste des etapes
         showAll : function(){
         	$http({
@@ -47,6 +49,30 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stat
                 etapeServ.error = 'Could not delete etape';
             });
         }
-    }
 
+       /* joueurCtrl.updateScorePhase1 = function(){
+            $http({
+              method: 'PATCH',
+              url: apiUrl+'/scores/phase1/'+ $stateParams.joueurId,
+              data: joueurCtrl.score,
+            }).then(function(res) {
+                joueurCtrl.score = res.data;
+            }).catch(function() {
+              joueurCtrl.error = 'Could not edit score';
+            });
+        },
+        joueurCtrl.updateScorePhase2 = function(){
+            $http({
+              method: 'PATCH',
+              url: apiUrl+'/scores/phase2/'+ $stateParams.joueurId,
+              data: joueurCtrl.score,
+            }).then(function(res) {
+                joueurCtrl.score = res.data;
+            }).catch(function() {
+              joueurCtrl.error = 'Could not edit score';
+            });
+        }*/
+    };
+
+    return service;
 });
