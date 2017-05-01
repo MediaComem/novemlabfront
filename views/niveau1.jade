@@ -7,8 +7,10 @@ block content
 	.main#niveau1(ng-controller="N1Controller as n1Ctrl")
 		.container.tools(ng-cloak)
 			.row
+			(ng-repeat="group in menuItems", ng-class="group.groupStyle")"curso in ctrl.arrayCursos | filter: (search | removeAcentos)" />
+
 				.col-xs-6.col-md-4.tool(ng-value="{n1Ctrl.etape.propositions[0].reponse.score}")
-					img(src='/images/outils/009-laptop.png')
+					img(src='/images/outils/ordinateur.png')
 					h1 {{n1Ctrl.etape.propositions[0].reponse}}
 				.col-xs-6.col-md-4
 					img(src='/images/outils/008-photo-camera.png')

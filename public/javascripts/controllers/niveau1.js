@@ -54,6 +54,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
 
     init();
 
+
     console.log($window.sessionStorage.getItem("joueur"));
     console.log($window.sessionStorage.getItem("joueurId"));
     console.log($window.sessionStorage.getItem("score"));
