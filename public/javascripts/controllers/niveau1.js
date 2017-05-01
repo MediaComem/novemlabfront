@@ -24,6 +24,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
         $('.tools .col-xs-4').click(function(e){
             e.preventDefault();
 
+
             if($(".tools .col-xs-4.active").length >= limit) {
                 if($(this).hasClass("active"))
                 {
@@ -53,6 +54,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
     }
 
     init();
+
 
     console.log($window.sessionStorage.getItem("joueur"));
     console.log($window.sessionStorage.getItem("joueurId"));

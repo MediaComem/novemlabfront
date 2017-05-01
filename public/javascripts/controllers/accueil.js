@@ -72,10 +72,10 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
         JoueurService.create(iCtrl.joueur).then(function(res) {
             JoueurService.createScore(res._id);
         }).then(function(){
-                //$window.location.href = "/welcome";
-                console.log($window.sessionStorage.getItem("joueur"));
+                $window.location.href = "/welcome";
+               /* console.log($window.sessionStorage.getItem("joueur"));
                 console.log($window.sessionStorage.getItem("joueurId"));
-                console.log($window.sessionStorage.getItem("score"));
+                console.log($window.sessionStorage.getItem("score"));*/
             })
         };
 
