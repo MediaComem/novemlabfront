@@ -1,7 +1,7 @@
 /**
  * Created by Romain on 14.03.2017.
  */
-angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stateParams) {
+angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stateParams, $window) {
 
     var etapeServ = this;
 
@@ -26,7 +26,7 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stat
         show : function(id){
             return $http({
                 method: 'GET',
-                url: apiUrl + '/etapes/'+ id,
+                url: apiUrl + '/etapes/niveau/'+ id,
             }).then(function(res){
                 etapeServ.etape = res.data;
             }).catch(function(){

@@ -8,22 +8,39 @@ angular.module('novemlab').controller('N2Controller', function(EtapeService, Nov
     var divCode = $(".code");
     var divInnerCode = $("code");
     var labelCode = $(".code label");
+
+    var algo1;
+    var algo2;
+    var algo3;
+
     showMessage();
 
-    var algo1 = "if(tamere < 3){<p style='padding-left:2em;'>console.log('je vais t'enculé')</p><p>};";
-    var algo2 = "if(tasoeur < 3){<p style='padding-left:2em;'>console.log('je baise ta soeur')</p><p>};";
-    var algo3 = "if(tagrandmere < 3){<p style='padding-left:2em;'>console.log('vas te faire enculé saloppe')</p><p>};";
+    n2Ctrl.etape = {};
+    n2Ctrl.niveau = "2";
 
-    divCode.hide();
-    divInnerCode.hide();
-    divInnerCode.html(algo1);
-    labelCode.html(n2Ctrl.algoName1);
+    EtapeService.show(n2Ctrl.niveau).then(function(){
+        n2Ctrl.etape = EtapeService.getEtape();
+    }).then(function(){
+        algo1 = n2Ctrl.etape.propositions[0].reponse;
+        algo2 = n2Ctrl.etape.propositions[1].reponse;
+        algo3 = n2Ctrl.etape.propositions[2].reponse;
+        console.log(n2Ctrl.etape.propositions[2].reponse)
+        init();
+    });
+
+    init = function(){
+            divCode.hide();
+            divInnerCode.hide();
+            labelCode.html(n2Ctrl.algoName1);
+            divInnerCode.html(algo1);
 
 
-    setTimeout(function(){
-        divCode.fadeIn();
-        divInnerCode.fadeIn();
-        },4000);
+            setTimeout(function(){
+                divCode.fadeIn();
+                divInnerCode.fadeIn();
+            },4000);
+        }
+
 
 
 
