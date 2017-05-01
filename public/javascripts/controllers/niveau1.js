@@ -25,6 +25,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
             e.preventDefault();
 
             if($(".tools .col-xs-6.col-md-4.active").length >= limit) {
+
                 if($(this).hasClass("active"))
                 {
                     $(this).toggleClass("active");
