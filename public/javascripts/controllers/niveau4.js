@@ -1,5 +1,5 @@
 
-angular.module('novemlab').controller('N4Controller', function(EtapeService, $scope, $state, $http) {
+angular.module('novemlab').controller('N4Controller', function(EtapeService, $scope, $state, $http, $window) {
     var n4Ctrl = this;
 
     n4Ctrl.test = "coucou";
@@ -190,4 +190,8 @@ $(document).ready(function () {
     	var selected = $("a.list-group-item.active").text();
     	console.log(selected);
     })
+
+    $(".versNiveau").on("click",function(){
+        $window.location.href = "/nf/5";
+    });
 });

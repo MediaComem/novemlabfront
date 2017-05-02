@@ -1,5 +1,5 @@
 
-angular.module('novemlab').controller('N1Controller', function(EtapeService, JoueurService, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('N1Controller', function(EtapeService, $window, JoueurService, $scope, $state, $http, $window) {
     var n1Ctrl = this;
     niveau = 1;
 
@@ -100,4 +100,8 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
 
             return source;
         };
+    });
+
+$(".versNiveau").on("click",function(){
+        $window.location.href = "/n2";
     });
