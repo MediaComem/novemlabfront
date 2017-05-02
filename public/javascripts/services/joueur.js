@@ -106,7 +106,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
               data: data,
             }).then(function(res) {
                 $window.sessionStorage.setItem("score", JSON.stringify(res.data));
-                console.log("Score created !");
+                console.log("Score updated !");
             }).catch(function() {
               joueurServ.error = 'Could not edit score';
             });

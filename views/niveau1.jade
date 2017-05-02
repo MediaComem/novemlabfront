@@ -7,7 +7,7 @@ block content
 	.main#niveau1(ng-controller="N1Controller as n1Ctrl")
 		.container.tools(ng-cloak)
 			.row
-				div.col-xs-6.col-md-4(ng-repeat="prop in n1Ctrl.etape.propositions" ng-click="select($event)")
+				div.col-xs-6.col-md-4(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
 					img(ng-src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.png')
 					h1 {{prop.reponse}}
 				button.versNiveau Commencer les épreuves

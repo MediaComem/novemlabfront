@@ -5,6 +5,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
 
     n1Ctrl.etape = {};
     n1Ctrl.niveau = "1";
+    n1Ctrl.scores = [];
 
     /**
      * GET DATA
@@ -40,18 +41,39 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
                 $('button.versNiveau').click(function(){
                     $( ".col-xs-6.col-md-4.active" ).each(function( index ) {
                         console.log( index + ": " + $( this ).text() );
+                        //Récupère le score de l'élément sélectionné
+                        elementScore = $(this).attr('value');
+
+                        n1Ctrl.scores.push(elementScore);
+
+                        console.log(n1Ctrl.scores);
                     });
+
+                    var result = n1Ctrl.scores.reduce(function(r, e, i) {
+                        if (i == 0) r = r.concat(e)
+                        else  {
+                            e.forEach(function(a, j) {
+                                Object.keys(a).forEach(function(key) {
+                                    if (!r[j][key]) r[j][key] = a[key]
+                                    else {
+                                        Object.keys(a[key]).forEach(function(k) {
+                                            r[j][key][k] += a[key][k]
+                                        })
+                                    }
+                                })
+                            })
+                        }
+                        return r;
+                    }, [])
+
+                    console.log(result);
                 });
             }
         }})
 
 
-    var save =function(){
-
-        /**
-         * TODO - RéCUPéRER LE SCORE
-         */
-        JoueurService.updateScorePhase1().then(function(){
+    var save =function(score){
+        JoueurService.updateScorePhase1(score).then(function(){
 
             $window.location.href = "/n2";
         })
