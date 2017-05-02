@@ -55,8 +55,6 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, Jou
 
     init();
 
-
-
 }).filter('removeAccent', function(){
         return function (source) {
             var accent = [
