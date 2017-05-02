@@ -1,4 +1,4 @@
-angular.module('novemlab').controller('N2Controller', function(EtapeService, NovemService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N2Controller', function(EtapeService, NovemService, apiUrl, $scope, $state, $http, $window) {
     var n2Ctrl = this;
 
     n2Ctrl.algoName1 = "Algo1.js";
@@ -64,6 +64,10 @@ angular.module('novemlab').controller('N2Controller', function(EtapeService, Nov
         $("#algo3").attr("class","active");
     });
 
+
+    $(".versNiveau").on("click",function(){
+        $window.location.href = "/n3";
+    });
 
 
 });

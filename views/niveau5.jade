@@ -1,11 +1,11 @@
 extends layout
 
 append scripts
-    script(src='/javascripts/controllers/niveauF.js')
+    script(src='/javascripts/controllers/niveau5.js')
 
 block content
 
-    .main#niveau5(ng-controller="NFController as nfCtrl")
+    .main#niveau5(ng-controller="N5Controller as n5Ctrl")
         .contentFullWidth
             .content
                 .container.projet1
@@ -30,3 +30,8 @@ block content
                             span.ui-icon.ui-icon-arrowthick-2-n-s
                             | Promotion
                     button.versNiveau Suite
+                div.novemVoice.animated.slideInUp
+                    p#novemText
+                    button.closeNovemVoice -
+                    section.stage
+                        figure.ball

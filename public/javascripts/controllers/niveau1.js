@@ -72,13 +72,19 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
         }})
 
 
-    var save =function(score){
+    /*var save =function(score){
         JoueurService.updateScorePhase1(score).then(function(){
 
             $window.location.href = "/n2";
         })
 
-    }
+    }*/
+
+
+    $(".versNiveau").on("click",function(){
+        $window.location.href = "/n2";
+    });
+
 
 
 }).filter('removeAccent', function(){
@@ -100,8 +106,4 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
 
             return source;
         };
-    });
-
-$(".versNiveau").on("click",function(){
-        $window.location.href = "/n2";
     });
