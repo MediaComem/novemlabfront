@@ -1,4 +1,4 @@
-angular.module('novemlab').controller('N7Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N7Controller', function(EtapeService, $window, apiUrl, $scope, $state, $http) {
 
     var n7Ctrl = this;
 
@@ -99,6 +99,10 @@ $("#sortable1b, #sortable2b").sortable({
   console.log(val);
   })
   
+
+  $(".versNiveau").on("click",function(){
+        $window.location.href = "/save";
+    });
 /* Dessine le graph de fin */
 Highcharts.chart('profil', {
 
