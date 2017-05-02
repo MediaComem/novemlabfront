@@ -11,15 +11,15 @@ block content
         .reps
             .row
                 .col-xs-12.col-md-4
-                    .choix#1
+                    .choix#1(value='{{n3Ctrl.etape.propositions[0].score}}')
                         img(src='/images/burger.svg').icon
                         h1 {{n3Ctrl.etape.propositions[0].reponse}}
                 .col-xs-12.col-md-4
-                    .choix#2
+                    .choix#2(value='{{n3Ctrl.etape.propositions[1].score}}')
                         img(src='/images/taille.svg').icon
                         h1 {{n3Ctrl.etape.propositions[1].reponse}}
                 .col-xs-12.col-md-4
-                    .choix#3
+                    .choix#3(value='{{n3Ctrl.etape.propositions[2].score}}')
                         img(src='/images/pizza.svg').icon
                         h1 {{n3Ctrl.etape.propositions[2].reponse}}
             div.valider Valider

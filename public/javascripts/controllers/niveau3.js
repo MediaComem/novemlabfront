@@ -1,10 +1,11 @@
 
-angular.module('novemlab').controller('N3Controller', function(EtapeService, apiUrl, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('N3Controller', function(JoueurService, EtapeService, apiUrl, $scope, $state, $http, $window) {
     var n3Ctrl = this;
 
 
     n3Ctrl.etape = {};
     n3Ctrl.niveau = "3";
+    n3Ctrl.score = {};
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
         n3Ctrl.etape = EtapeService.getEtape();
@@ -50,8 +51,17 @@ angular.module('novemlab').controller('N3Controller', function(EtapeService, api
     showMessage();
 
     $(".valider").on("click",function(){
-        $window.location.href = "/n4";
+        choix = $(".choix.selected");
+        score = choix.attr('value');
+        save(score);
     });
+
+    var save =function(score){
+        JoueurService.updateScorePhase1(score).then(function(){
+           $window.location.href = "/n4";
+        })
+
+    }
 
 });
 

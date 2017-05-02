@@ -10,9 +10,9 @@ block content
         //div.next
         div#ongletMenu
                 ul.onglets
-                    li.active#algo1 {{n2Ctrl.algoName1}}
-                    li#algo2   {{n2Ctrl.algoName2}}
-                    li#algo3   {{n2Ctrl.algoName3}}
+                    li.active#algo1(value='{{n2Ctrl.etape.propositions[0].score}}') {{n2Ctrl.algoName1}}
+                    li#algo2(value='{{n2Ctrl.etape.propositions[1].score}}')    {{n2Ctrl.algoName2}}
+                    li#algo3(value='{{n2Ctrl.etape.propositions[2].score}}')    {{n2Ctrl.algoName3}}
 
         pre.code
             label

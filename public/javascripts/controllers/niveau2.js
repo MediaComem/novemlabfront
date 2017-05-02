@@ -1,9 +1,10 @@
-angular.module('novemlab').controller('N2Controller', function(EtapeService, NovemService, apiUrl, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('N2Controller', function(JoueurService, EtapeService, NovemService, apiUrl, $scope, $state, $http, $window) {
     var n2Ctrl = this;
 
     n2Ctrl.algoName1 = "Algo1.js";
     n2Ctrl.algoName2 = "Algo2.js";
     n2Ctrl.algoName3 = "Algo3.js";
+    n2Ctrl.score ={};
 
     var divCode = $(".code");
     var divInnerCode = $("code");
@@ -25,7 +26,6 @@ angular.module('novemlab').controller('N2Controller', function(EtapeService, Nov
         algo3 = n2Ctrl.etape.propositions[2].reponse;
         $("#novemText").html(n2Ctrl.etape.question);
         showMessage();
-        console.log(n2Ctrl.etape.propositions[2].reponse)
         init();
     });
 
@@ -64,10 +64,17 @@ angular.module('novemlab').controller('N2Controller', function(EtapeService, Nov
         $("#algo3").attr("class","active");
     });
 
-
     $(".versNiveau").on("click",function(){
-        $window.location.href = "/n3";
+        n2Ctrl.score = $(".onglets li.active").attr('value');
+        save(n2Ctrl.score)
     });
+
+    var save =function(score){
+            JoueurService.updateScorePhase1(score).then(function(){
+            $window.location.href = "/n3";
+        })
+
+    }
 
 
 });
