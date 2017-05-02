@@ -4,7 +4,7 @@ append scripts
     script(src='/javascripts/controllers/niveau2.js')
 
 block content
-    .main#niveau2(ng-controller='N2Controller as n2Ctrl')
+    .main#niveau2(ng-controller='N2Controller as n2Ctrl')(ng-cloak)
         //div#choix1
         //div.back
         //div.next
@@ -13,10 +13,11 @@ block content
                     li.active#algo1 {{n2Ctrl.algoName1}}
                     li#algo2   {{n2Ctrl.algoName2}}
                     li#algo3   {{n2Ctrl.algoName3}}
+
         pre.code
             label
             code
-        block toolBox
+        //block toolBox
             include toolBox.jade
         div.novemVoice.animated.slideInUp
-            p#novemText Devant toi se trouve trois fichiers de merde qui permettent de faire des trucs vraiment à chier, lequel de ces fichier afficherait la réponse "Tu suce des bites" ?
+            p#novemText 

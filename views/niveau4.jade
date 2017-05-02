@@ -9,7 +9,7 @@ block content
                     h1#mainTitle A quoi correspond cette fonction ?
                     canvas#myCanvas(width='578', height='300')
                     .list-group
-                            a.list-group-item.active(href='#') Logarithmique
-                            a.list-group-item(href='#') Exponentielle
-                            a.list-group-item(href='#') Second degré
-                    button.versNiveau Suite
+                            a.list-group-item.active(href='#') {{n4Ctrl.etape.propositions[0].reponse}}
+                            a.list-group-item(href='#') {{n4Ctrl.etape.propositions[1].reponse}}
+                            a.list-group-item(href='#') {{n4Ctrl.etape.propositions[2].reponse}}
+                    button#send4 Suite

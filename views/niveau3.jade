@@ -12,19 +12,19 @@ block content
             .row
                 .col-xs-12.col-md-4
                     .choix#1
-                        img(src='/images/pizza.svg').icon
-                        h1 Plan italien
+                        img(src='/images/burger.svg').icon
+                        h1 {{n3Ctrl.etape.propositions[0].reponse}}
                 .col-xs-12.col-md-4
                     .choix#2
                         img(src='/images/taille.svg').icon
-                        h1 Plan taille
+                        h1 {{n3Ctrl.etape.propositions[1].reponse}}
                 .col-xs-12.col-md-4
                     .choix#3
-                        img(src='/images/burger.svg').icon
-                        h1 Plan américain
+                        img(src='/images/pizza.svg').icon
+                        h1 {{n3Ctrl.etape.propositions[2].reponse}}
             div.valider Valider
 
         block toolBox
             include toolBox.jade
         div.novemVoice.animated.slideInUp
-            p#novemText okok ?
+            p#novemText 
