@@ -1,34 +1,35 @@
 extends layout
 
 append scripts
-    script(src='/javascripts/controllers/niveauF.js')
+    script(src='/javascripts/controllers/niveau5.js')
 
 block content
 
-    .main#niveau5(ng-controller="NFController as nfCtrl")
-        .contentFullWidth(ng-init="init5()")
+    .main#niveau5(ng-controller="N5Controller as n5Ctrl")
+        .contentFullWidth
             .content
                 .container.projet1
                     h1#mainTitle Ordre d'importance (plus haut = plus important)
                     ul#sortable
                         li.ui-state-default
-                            span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | {{nfCtrl.etape.propositions[0].reponse}}
+                            span.ui-icon.ui-icon-arrowthick-2-n-s#prop1
+                            | 
                         li.ui-state-default
-                            span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | {{nfCtrl.etape.propositions[1].reponse}}
+                            span.ui-icon.ui-icon-arrowthick-2-n-s#prop2
+                            | 
                         li.ui-state-default
-                            span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | {{nfCtrl.etape.propositions[2].reponse}}
+                            span.ui-icon.ui-icon-arrowthick-2-n-s#prop3
+                            | 
                         li.ui-state-default
-                            span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | {{nfCtrl.etape.propositions[3].reponse}}
+                            span.ui-icon.ui-icon-arrowthick-2-n-s#prop4
+                            | 
                         li.ui-state-default
-                            span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | {{nfCtrl.etape.propositions[4].reponse}}
+                            span.ui-icon.ui-icon-arrowthick-2-n-s#prop5
+                            | 
                         li.ui-state-default
-                            span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | {{nfCtrl.etape.propositions[5].reponse}}
+
+                            span.ui-icon.ui-icon-arrowthick-2-n-s#prop6
+                            | 
                     button.versNiveau Envoyer
                 div.novemVoice.animated.slideInUp
                     p#novemText 

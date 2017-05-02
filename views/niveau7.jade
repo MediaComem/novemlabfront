@@ -1,23 +1,23 @@
 extends layout
 
 append scripts
-    script(src='/javascripts/controllers/niveauF.js')
+    script(src='/javascripts/controllers/niveau7.js')
 
 block content
 
-    .main#niveau7(ng-controller="NFController as nfCtrl")
+    .main#niveau7(ng-controller="N7Controller as n7Ctrl")
         .contentFullWidth
             .content
                 .container.projet3
                     h1#mainTitle Ordre d'importance (plus haut = plus important)
                         ul#sortable1b.connectedSortable
-                            li.ui-state-default R&D
-                            li.ui-state-default Update
-                            li.ui-state-default Stratégie UX
+                            li.ui-state-default#prop1
+                            li.ui-state-default#prop2
+                            li.ui-state-default#prop3
                         ul#sortable2b.connectedSortable
-                            li.ui-state-highlight Agrandir les ressources
-                            li.ui-state-highlight Investir dans d’autres produits
-                            li.ui-state-highlight Promotion en continu
+                            li.ui-state-highlight#prop4
+                            li.ui-state-highlight#prop5
+                            li.ui-state-highlight#prop6
                     button.versNiveau Envoyer
                 div.novemVoice.animated.slideInUp
-                    p#novemText 
+                    p#novemText
