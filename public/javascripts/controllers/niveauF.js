@@ -131,7 +131,6 @@ Highcharts.chart('profil', {
         type: 'line',
         height: 600
     },
-
     title: {
         text: 'Voici votre profil de superhéros',
         x: -80

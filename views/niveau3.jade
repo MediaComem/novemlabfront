@@ -5,26 +5,25 @@ append scripts
 
 block content
     .main#niveau3(ng-controller='N3Controller as n3Ctrl')
-        .bandTop
-        .videoDiv
-            img(src='/images/shadia.gif', width='100%', height='82%', style='border:none;overflow:hidden')
-        .reps
+        .container
             .row
-                .col-xs-12.col-md-4
-                    .choix#1
-                        img(src='/images/burger.svg').icon
-                        h1 {{n3Ctrl.etape.propositions[0].reponse}}
-                .col-xs-12.col-md-4
-                    .choix#2
-                        img(src='/images/taille.svg').icon
-                        h1 {{n3Ctrl.etape.propositions[1].reponse}}
-                .col-xs-12.col-md-4
-                    .choix#3
-                        img(src='/images/pizza.svg').icon
-                        h1 {{n3Ctrl.etape.propositions[2].reponse}}
-            div.valider Valider
-
-        block toolBox
-            include toolBox.jade
+                .videoDiv
+                    img(src='/images/shadia.gif', width='100%', height='82%', style='border:none;overflow:hidden')
+        
+            .row.putDown
+                        .col-xs-4.col-md-4
+                            .choix#1
+                                img(src='/images/burger.svg').icon
+                                h1 {{n3Ctrl.etape.propositions[0].reponse}}
+                        .col-xs-4.col-md-4
+                            .choix#2
+                                img(src='/images/taille.svg').icon
+                                h1 {{n3Ctrl.etape.propositions[1].reponse}}
+                        .col-xs-4.col-md-4
+                            .choix#3
+                                img(src='/images/pizza.svg').icon
+                                h1 {{n3Ctrl.etape.propositions[2].reponse}}
         div.novemVoice.animated.slideInUp
             p#novemText 
+            
+        button.versNiveau Suite
