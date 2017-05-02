@@ -3,14 +3,42 @@
   src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
         url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
 }
+svg.highcharts-root{
+	width: 100%;
+}
+#niveau9{
+	padding-top: 75px;
+}
+#niveau9 span{
+	font-size: 1.5em;
+	color: rgba(255,255,255,.8);
+}
+#niveau9 h1{
+	color: #fff;
+	font-size: 3.4em;
+	margin-top: 0;
+}
+#niveau9 small{
+	display: inline-block;
+	color: #74d0f0;
+}
+h1#textFin{
+	font-size: 1.8em;
+	padding: 0em .75em 1em .75em;
+	max-width: 600px;
+	margin: 0 auto;
+}
+img#logoEnd.header{
+	margin-top: 50px;
+}
 ul.ui-sortable:first-child{
 	margin-top: 20px !important;
 }
 li.ui-sortable-handle, li.ui-state-default, li.ui-state-highlight.red.ui-sortable-handle{
 	font-size: 17px !important;
-	padding-top: 10px;
-	height: auto;
-	padding-bottom: 10px;
+	padding-top: 10px !important;
+	height: auto !important;
+	padding-bottom: 10px !important;
 }
 div.reps div.choix{
 padding: 20px;
@@ -251,7 +279,6 @@ button.versNiveau
 }
 .main#intro
 {
-
     position: fixed;
 }
 
@@ -355,7 +382,9 @@ background-color: rgba(0, 0, 0, 0.61);
     padding: 10px;
     text-align: center;
 }
-
+.end{
+	height: auto;
+}
 .intro input[type="text"]:focus,input[type="password"]:focus,textarea:focus
 {
     outline: none;
@@ -413,23 +442,23 @@ background-color: rgba(0, 0, 0, 0.61);
 .endButton
 {
     color: black;
-    border: 2px solid #1f6582;
+	border:0px;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
     cursor: pointer;
-    margin: 20px auto 0;
+    margin: 40px auto 0;
     background: white;
 }
 
 .endButton:hover
 {
     color: white;
-    background: #1f6582;
+    background: #74d0f0;
 }
 
 .end{
@@ -876,8 +905,7 @@ background-color: #5ca5ff;
 g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
 }
 rect.highcharts-background{
-	background-color: black;
-	fill:black;
+	fill:#0a1832;
 }
 g.highcharts-axis-labels.highcharts-xaxis-labels text{
 	fill:#ecf0f1 !important;
@@ -1072,6 +1100,9 @@ min-height: 210px;
 /*body{
 background-color: red !important;
 }*/
+svg.highcharts-root{
+	width: 50%;
+}
     }
 
     /* Custom, iPhone Retina */ 
