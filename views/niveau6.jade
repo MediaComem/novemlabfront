@@ -1,21 +1,21 @@
 extends layout
 
 append scripts
-    script(src='/javascripts/controllers/niveauF.js')
+    script(src='/javascripts/controllers/niveau6.js')
 
 block content
 
-    .main#niveau6(ng-controller="NFController as nfCtrl")
+    .main#niveau6(ng-controller="N6Controller as n6Ctrl")
         .contentFullWidth
             .content
                 .container.projet2
                     h1#mainTitle Ordre d'importance (plus haut = plus important)
                         ul#sortable1.connectedSortable
-                            li.ui-state-default Flyers
-                            li.ui-state-default Site web
+                            li.ui-state-default#prop1
+                            li.ui-state-default#prop2
                         ul#sortable2.connectedSortable
-                            li.ui-state-highlight Street marketing
-                            li.ui-state-highlight Réseaux sociaux
+                            li.ui-state-highlight#prop3
+                            li.ui-state-highlight#prop4
                     button#send6 Envoyer
                 div.novemVoice.animated.slideInUp
                     p#novemText 
