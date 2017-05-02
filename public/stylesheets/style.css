@@ -821,7 +821,7 @@ pre.code code {
     height: 18px;
     border-radius: 15px;
 }
-#sortable li span { position: absolute; margin-left: -1.3em; }
+#sortable li span { text-align: center; }
 
 h1#mainTitle{
     color: #fff;
