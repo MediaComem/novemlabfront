@@ -3,6 +3,35 @@
   src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
         url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
 }
+ul.ui-sortable:first-child{
+	margin-top: 20px !important;
+}
+li.ui-sortable-handle, li.ui-state-default, li.ui-state-highlight.red.ui-sortable-handle{
+	font-size: 17px !important;
+	padding-top: 10px;
+	height: auto;
+	padding-bottom: 10px;
+}
+div.reps div.choix{
+padding: 20px;
+}
+div.reps div.choix.selected{
+	background-color: #fff;
+}
+
+div.reps div.choix.selected h1{
+	color: #102751;
+}
+div.reps img.icon{
+	width: 80px;
+	height: 80px;
+}
+div.reps h1{
+    color: #bdc3c7;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-size:1.2em;
+}
 .transparence{
 background-color: transparent !important;
 }
@@ -128,6 +157,7 @@ body
     background-color: #0a1832 !important;
 }
 button.closeNovemVoice{
+text-align: center;
 border: 0px;
 border-radius: 40px;
 height: 40px;
@@ -146,7 +176,8 @@ a
 .tools
 {
     text-align: center;
-    margin-top:10%;
+    margin-top:50px;
+    margin-bottom: 200px;
 }
 
 .tools .col-xs-6.col-md-4 img
@@ -195,11 +226,15 @@ a
 
 button.versNiveau
 {
-    height: 75px;
+	color: #fff;
+	font-size: 1.2em;
+    height: 60px;
     border-radius: 10px;
     border: 0;
-    padding: 25px;
+    padding: 0px 15px;
     background: #2ecc71;
+    margin: 25px;
+    line-height: 60px;
 }
 
 .main
@@ -585,7 +620,7 @@ body .loader_cogs__top div.top_hole
 }
 
 .toolBox .title{
-    background-color:#1f6582;
+    background-color:#5ca5ff;
     height: 50px;
     margin: -10px 0 0 0;
     padding:8px 0 0 8px;
@@ -605,7 +640,7 @@ body .loader_cogs__top div.top_hole
     margin-left: .9em;
     position: relative;
     display: inline-block;
-    background: #1f6582;
+    background: #5ca5ff;
 }
 
 .outil:hover
@@ -625,14 +660,14 @@ body .loader_cogs__top div.top_hole
 
 #ongletMenu .onglets
 {
-    list-style-type: none;
-    border-bottom: 1px solid #9EA0A1;
-    margin-left: 0;
-    height:100px;
-    position: fixed;
-    width: 100%;
-    background: #002039;
-    font-size:32px;
+list-style-type: none;
+border: 0px;
+margin-left: 0;
+height: 100px;
+position: fixed;
+width: 100%;
+background: #00508e;
+font-size: 32px;
 }
 
 #ongletMenu .onglets li
@@ -646,9 +681,9 @@ body .loader_cogs__top div.top_hole
     opacity: .7;
     text-align:center;
     min-width:190px;
-    background: rgba(0, 9, 29, 0.71);
+	background: rgba(2, 60, 109, 0.71);
 }
-
+/*
 #ongletMenu .onglets li:before {
     content:"?";
     left: 0;
@@ -663,7 +698,7 @@ body .loader_cogs__top div.top_hole
     color:limegreen;
     font-size:42px;
 }
-
+*/
 
 #ongletMenu .onglets li:hover
 {
@@ -673,7 +708,7 @@ body .loader_cogs__top div.top_hole
 #ongletMenu .onglets li.active
 {
     opacity: 1;
-    background: #006784;
+    background: #5ca5ff;
 }
 
 #ongletMenu
@@ -691,20 +726,20 @@ pre {
 }
 
 pre.code {
-    background: #333;
-    top:25px;
-    height:100%;
-    width:100%;
-    margin:auto;
-    border-radius: 4px;
-    border: 1px solid #292929;
-    position: relative;
+background: #102751;
+top: 25px;
+height: 100%;
+width: 100%;
+margin: auto;
+border-radius: 4px;
+border: 0px;
+position: relative;
 }
 
 pre.code label {
     font-family: sans-serif;
     font-size: 26px;
-    color: #858585;
+    color: #ffffff;
     position: absolute;
     left: 4px;
     top: 15px;
@@ -782,7 +817,7 @@ pre.code code {
     margin: 0 5px 5px 5px;
     padding: .5em 2em 2em 2em;
     padding-left: 1.5em;
-    font-size: 1.2em;
+    font-size: 1.1em;
     height: 18px;
     border-radius: 15px;
 }
@@ -790,8 +825,9 @@ pre.code code {
 
 h1#mainTitle{
     color: #fff;
-    font-size: 26px;
-    margin:30px 0px;
+    font-size: 20px;
+    margin-top:30px;
+    margin-bottom: 30px;
 }
 .projet1, .projet2, .projet3{
     text-align: center;
@@ -805,7 +841,6 @@ h1#mainTitle{
     margin: 0 5px 5px 5px;
     padding: .5em 2em 2em 2em;
     padding-left: 1.5em;
-    font-size: 1.2em;
     height: 18px;
     border-radius: 15px;
 }
@@ -815,7 +850,6 @@ h1#mainTitle{
     margin: 0 5px 5px 5px;
     padding: .5em 2em 2em 2em;
     padding-left: 1.5em;
-    font-size: 1.2em;
     height: 18px;
     border-radius: 15px;
     text-decoration: line-through;
@@ -880,7 +914,7 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
     border-radius: 15px;
     -webkit-transition: border .4s ease-in;
     transition: border .4s ease-in;
-    background: rgba(92,165,255,0.8);
+    background: #102751;
     height:100%;
     margin-top:30px;
     width:80%;
@@ -948,17 +982,24 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
 
 #niveau3 .reps .valider{
     display:none;
+	color: #fff;
+	font-size: 1.2em;
+    height: 75px;
     border-radius: 10px;
     border: 0;
-    padding: 10px;
-    background: rgba(92,165,255,0.8);
+    padding: 25px;
+    background: #2ecc71;
+    margin: 25px;
     cursor: pointer;
     z-index:500;
-    font-size:36px;
     width:20%;
     margin:30px auto 0 auto;
     top:20px;
     min-width:200px;
+}
+button.versNiveau
+{
+
 }
 
 .rep{
