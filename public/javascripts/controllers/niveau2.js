@@ -30,11 +30,9 @@ angular.module('novemlab').controller('N2Controller', function(JoueurService, Et
     });
 
     init = function(){
-            divCode.hide();
-            divInnerCode.hide();
+
             labelCode.html(n2Ctrl.algoName1);
             divInnerCode.html(algo1);
-
 
             setTimeout(function(){
                 divCode.fadeIn();

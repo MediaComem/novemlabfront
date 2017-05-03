@@ -10,9 +10,11 @@ block content
 				div.col-xs-6.col-md-4(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
 					img(ng-src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.png')
 					h1 {{prop.reponse}}
+			.row
 				button.versNiveau Commencer les épreuves
 				div.novemVoice.animated.slideInUp
 					p#novemText
-					button.closeNovemVoice -
+					button.closeNovemVoice
+						span.glyphicon.glyphicon-chevron-down(aria-hidden='true')
 					section.stage
 						figure.ball
