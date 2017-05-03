@@ -324,7 +324,7 @@ button.versNiveau
 }
 .main#intro
 {
-    position: fixed;
+    position: absolute;
 }
 
 html,body
@@ -385,7 +385,7 @@ html,body
 #intro, #save
 {
     z-index: 100;
-    background: url(../images/bgaccueil.png) center;
+    background: url(../images/bgaccueil.png);
     background-size:cover;
 }
 
@@ -661,6 +661,10 @@ body .loader_cogs__top div.top_hole
 {
     z-index: 98;
     background: #0a1832;
+}
+
+#niveau3, #niveau4, #niveau5, #niveau6, #niveau7{
+	padding-bottom: 150px;
 }
 
 .novemVoice{
