@@ -50,7 +50,7 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
 
     showMessage();
 
-    $(".valider").on("click",function(){
+    $(".versNiveau").on("click",function(){
         choix = $(".choix.selected");
         score = choix.attr('value');
         save(score);

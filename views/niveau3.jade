@@ -9,7 +9,8 @@ block content
             .row
                 .videoDiv
                     img(src='/images/shadia.gif', width='100%', height='82%', style='border:none;overflow:hidden')
-        
+            button.versNiveau Suite
+
             .row.putDown
                 .col-xs-12.col-md-4.choix#1(value='{{n3Ctrl.etape.propositions[0].score}}')
                   img(src='/images/burger.svg').icon
@@ -20,10 +21,9 @@ block content
                 .col-xs-12.col-md-4.choix#3(value='{{n3Ctrl.etape.propositions[2].score}}')
                   img(src='/images/pizza.svg').icon
                   h1 {{n3Ctrl.etape.propositions[2].reponse}}
-            div.valider Valider
+
         div.novemVoice.animated.slideInUp
             p#novemText 
             button.closeNovemVoice -
             section.stage
               figure.ball
-        button.versNiveau Suite
