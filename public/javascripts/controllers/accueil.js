@@ -68,15 +68,25 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
 
     };
 
-    iCtrl.start = function(){
-        JoueurService.create(iCtrl.joueur).then(function(res) {
-            JoueurService.createScore(res._id).then(function(){
+    iCtrl.start = function() {
+        JoueurService.create(iCtrl.joueur).then(function (res) {
+            console.log("Register done !");
+            $window.sessionStorage.setItem("joueur", JSON.stringify(res.data.pseudo));
+            $window.sessionStorage.setItem("joueurId", JSON.stringify(res.data._id));
+
+            JoueurService.createScore(res.data._id).then(function (res) {
+                $window.sessionStorage.setItem("score", JSON.stringify(res.data));
                 $window.location.href = "/welcome";
-                /* console.log($window.sessionStorage.getItem("joueur"));
-                 console.log($window.sessionStorage.getItem("joueurId"));
-                 console.log($window.sessionStorage.getItem("score"));*/
+
+
+            }).catch(function () {
+                iCtrl.error = 'Could not create score';
             });
-        })};
+        }).catch(function () {
+            iCtrl.error = 'Could not create user';
+        });
+    };
+
 
     iCtrl.init();
 
