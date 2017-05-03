@@ -41,14 +41,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                 method: 'POST',
                 url: apiUrl + '/joueurs/',
                 data: data
-            }).then(function(res){
-                console.log("Register done !");
-                $window.sessionStorage.setItem("joueur",JSON.stringify(res.data.pseudo));
-                $window.sessionStorage.setItem("joueurId",JSON.stringify(res.data._id));
-                return res.data;
-            }).catch(function(){
-                joueurServ.error = 'Could not create user';
-            });
+            })
         },
 
         createScore : function(data){
@@ -65,12 +58,7 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                     "management":0,
                     "business":0
                 }
-            }).then(function(res){
-                $window.sessionStorage.setItem("score", JSON.stringify(res.data));
-                console.log("Score created !");
-            }).catch(function(){
-                joueurServ.error = 'Could not create score';
-            });
+            })
         },
 
         delete : function(){
@@ -100,21 +88,16 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
             return $http({
               method: 'PATCH',
               url: apiUrl+'/scores/phase1/'+ idScore,
-              data: data,
-            }).then(function(res) {
-                $window.sessionStorage.setItem("score", JSON.stringify(res.data));
-                console.log("Score updated !");
-            }).catch(function() {
-              joueurServ.error = 'Could not edit score';
-            });
+              data: data
+            })
         },
 
         updateScorePhase2 : function(data) {
-            var idScore = $window.sessionStorage.getItem("score")._id;
+            var idScore = JSON.parse($window.sessionStorage.getItem("score"))._id;
             return $http({
                 method: 'PATCH',
                 url: apiUrl + '/scores/phase2/' + idScore,
-                data: data,
+                data: data
             }).then(function (res) {
                 $window.sessionStorage.setItem("score", JSON.stringify(res.data));
                 console.log("Score updated !");

@@ -19,7 +19,7 @@ angular.module('novemlab').controller('N4Controller', function(JoueurService, Et
             $('.active').removeClass('active');
             // add active class to clicked element
             $(this).addClass('active');
-            $('.versNiveau').show();
+            $('.versNiveau').fadeIn("slow");
 
         })
     });

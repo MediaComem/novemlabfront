@@ -55,7 +55,7 @@ angular.module('novemlab').controller('N7Controller', function(EtapeService, Jou
     });
 
     var save =function(score){
-        JoueurService.updateScorePhase1(score).then(function(){
+        JoueurService.updateScorePhase2(score).then(function(){
             $window.location.href = "/save";
         })
     }

@@ -6,6 +6,7 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.etape = {};
     n3Ctrl.niveau = "3";
     n3Ctrl.score = {};
+    var nextButton = $('.versNiveau');
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
         n3Ctrl.etape = EtapeService.getEtape();
@@ -26,31 +27,32 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     
 
     $("#1").on('click',function(){
-       $("#1").addClass("selected")
-       $("#2").removeClass("selected")
-       $("#3").removeClass("selected")
-       $(".valider").fadeIn("slow");  
+       $("#1").addClass("selected");
+       $("#2").removeClass("selected");
+       $("#3").removeClass("selected");
+       $(".versNiveau").fadeIn("slow");
     });
 
      $("#2").on('click',function(){
-       $("#2").addClass("selected")
-       $("#1").removeClass("selected")
-       $("#3").removeClass("selected")
-        $(".valider").fadeIn("slow"); 
+       $("#2").addClass("selected");
+       $("#1").removeClass("selected");
+       $("#3").removeClass("selected");
+
+         $(".versNiveau").fadeIn("slow");
     });
 
     $("#3").on('click',function(){
-       $("#3").addClass("selected")
-       $("#1").removeClass("selected")
-       $("#2").removeClass("selected") 
-        $(".valider").fadeIn("slow");
+       $("#3").addClass("selected");
+       $("#1").removeClass("selected");
+       $("#2").removeClass("selected");
+        $(".versNiveau").fadeIn("slow");
     });
 
     console.log(n3Ctrl.test);
 
     showMessage();
 
-    $(".versNiveau").on("click",function(){
+    nextButton.on("click",function(){
         choix = $(".choix.selected");
         score = choix.attr('value');
         save(score);

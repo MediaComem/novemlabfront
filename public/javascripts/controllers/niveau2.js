@@ -63,16 +63,22 @@ angular.module('novemlab').controller('N2Controller', function(JoueurService, Et
     });
 
     $(".versNiveau").on("click",function(){
-        n2Ctrl.score = $(".onglets li.active").attr('value');
+        choix = $("li.active");
+        n2Ctrl.score = choix.attr('value')
         save(n2Ctrl.score)
     });
 
     var save =function(score){
-            JoueurService.updateScorePhase1(score).then(function(){
-            $window.location.href = "/n3";
-        })
-
+            JoueurService.updateScorePhase1(score).then(function(res) {
+                $window.sessionStorage.setItem("score", JSON.stringify(res.data));
+                console.log("Score updated !");
+                $window.location.href = "/n3";
+            }).catch(function() {
+                n2Ctrl.error = 'Could not edit score';
+            })
     }
+
+
 
 
 });
