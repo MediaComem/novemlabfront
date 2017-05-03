@@ -10,5 +10,7 @@ block content
             span
                h1#textFin Bravo {{sCtrl.joueur}} tu as réussi les épreuves, il ne te reste plus qu'à entrer ton mail pour rejoindre le NovemLab
 
-            input(type='text', placeholder='e-mail', ng-model='sCtrl.joueur.email')
-            button.endButton(ng-click='sCtrl.modify()') Rejoindre le NovemLab
+            input(type='text', placeholder='e-mail', ng-model='sCtrl.email')
+            button.endButton(ng-click='sCtrl.save()') Rejoindre le NovemLab
+            h3 {{sCtrl.error}}
+

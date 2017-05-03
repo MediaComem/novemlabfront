@@ -86,18 +86,13 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
         },
 
         modify : function(data) {
-            return;
-            var idJoueur = JSON.parse($window.sessionStorage.getItem("joueurId"))._id;
+            var idJoueur = JSON.parse($window.sessionStorage.getItem("joueurId"));
 
-            $http({
+            return $http({
               method: 'PATCH',
               url: apiUrl+'/joueurs/'+ idJoueur,
-              data: joueurServ.joueur,
-            }).then(function(res) {
-                joueurServ.joueur = res.data;
-            }).catch(function() {
-              joueurServ.error = 'Could not edit user';
-            });
+              data: data,
+            })
         },
 
         updateScorePhase1 : function(data){
