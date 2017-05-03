@@ -1,5 +1,5 @@
 
-angular.module('novemlab').controller('N4Controller', function(EtapeService, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('N4Controller', function(JoueurService, EtapeService, $scope, $state, $http, $window) {
     var n4Ctrl = this;
 
     n4Ctrl.test = "coucou";
@@ -14,14 +14,15 @@ angular.module('novemlab').controller('N4Controller', function(EtapeService, $sc
         showMessage();
     });
 
-$(document).ready(function () {
-    $('a.list-group-item').bind('click', function() {
-        // remove the active class from all elements with active class
-        $('.active').removeClass('active')
-        // add active class to clicked element
-        $(this).addClass('active');
+    $(document).ready(function () {
+        $(document).on("click", 'a.list-group-item', function(e){
+            $('.active').removeClass('active');
+            // add active class to clicked element
+            $(this).addClass('active');
+            $('.versNiveau').show();
+
+        })
     });
-});
       function Graph(config) {
         // user defined properties
         this.canvas = document.getElementById(config.canvasId);
@@ -185,13 +186,19 @@ $(document).ready(function () {
       myGraph.drawEquation(function(x) {
         return x * x -5;
       }, '#5ca5ff', 3);
-      
-    $('button#send4').click(function(){
-    	var selected = $("a.list-group-item.active").text();
-    	console.log(selected);
-    })
+
 
     $(".versNiveau").on("click",function(){
-        $window.location.href = "/nf/5";
+        choix = $("a.list-group-item.active");
+        score = choix.attr('value');
+        save(score);
     });
+
+    var save =function(score){
+        JoueurService.updateScorePhase1(score).then(function(){
+            $window.location.href = "/nF/5";
+        })
+
+    }
+
 });

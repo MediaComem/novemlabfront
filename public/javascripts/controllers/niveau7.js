@@ -4,70 +4,22 @@ angular.module('novemlab').controller('N7Controller', function(EtapeService, $wi
 
     n7Ctrl.etape = {};
 
-      n7Ctrl.niveau = "7";
+    n7Ctrl.niveau = "7";
 
-      EtapeService.show(n7Ctrl.niveau).then(function(){
-          n7Ctrl.etape = EtapeService.getEtape();
-      }).then(function(){
-          $("#novemText").html(n7Ctrl.etape.question);
-          showMessage();
-          console.log(n7Ctrl.etape.propositions[2].reponse)
-          for (i=0;i<=5;i++){
-            var cmpt = i+1;
-            var prop = n7Ctrl.etape.propositions[i].reponse;
-            $("#prop"+cmpt).append(prop);
-          }
-          //init();
-      });
+    EtapeService.show(n7Ctrl.niveau).then(function(){
+      n7Ctrl.etape = EtapeService.getEtape();
+    }).then(function(){
+      $("#novemText").html(n7Ctrl.etape.question);
+      showMessage();
+      console.log(n7Ctrl.etape.propositions[2].reponse)
+      for (i=0;i<=5;i++){
+        var cmpt = i+1;
+        var prop = n7Ctrl.etape.propositions[i].reponse;
+        $("#prop"+cmpt).append(prop);
+      }
+      //init();
+    });
 
-
-    /* Sortable niveau 5 */
- $( function() {
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
-  } );
-
-  /* Récupère les valeurs de la liste dans l'ordre (niveau 5) */
-  $('button#send5').click(function(){
-
-  var val = [];
-
-  $('.projet1 ul#sortable li').each(function(i){
-   var text = $(this).text(); // This is your rel value
-   val.push(text);
-  });
-  console.log(val);
-  })
-
-  /* Sortable niveau 6 */
-$("#sortable1 li").addClass('green');
-$("#sortable2 li").addClass('red');
-$("#sortable1, #sortable2").sortable({
-    connectWith: ".connectedSortable",
-    stop: function () {
-        var lis = $('#sortable1 li').add('#sortable2 li');
-        $(lis).each(function () {
-            if ($(this).index('li') <= 1) {
-                $(this).removeClass('red ui-state-highlight').addClass('green ui-state-default');
-            } else {
-                $(this).removeClass('green ui-state-default').addClass('red ui-state-highlight');
-            }
-        });
-    }
-}).disableSelection();
-
-  /* Récupère les valeurs de la liste dans l'ordre (niveau 6) */
-  $('button#send6').click(function(){
-  
-  var val = [];
-  
-  $('.projet2 ul li').each(function(i){
-   var text = $(this).text(); // This is your rel value
-   val.push(text);
-  });
-  val.splice(2, 3);
-  console.log(val);
-  })
   
   /* Sortable niveau 7 */
 $("#sortable1b li").addClass('green');
@@ -86,7 +38,7 @@ $("#sortable1b, #sortable2b").sortable({
     }
 }).disableSelection();
 
-  /* Récupère les valeurs de la liste dans l'ordre (niveau 6) */
+  /* Récupère les valeurs de la liste dans l'ordre (niveau 7) */
   $('button#send7').click(function(){
   
   var val = [];

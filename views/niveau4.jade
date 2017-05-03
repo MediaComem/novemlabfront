@@ -9,10 +9,11 @@ block content
                     h1#mainTitle A quoi correspond cette fonction ?
                     canvas#myCanvas(width='578', height='300')
                     .list-group
-                            a.list-group-item.active(href='#') {{n4Ctrl.etape.propositions[0].reponse}}
-                            a.list-group-item(href='#') {{n4Ctrl.etape.propositions[1].reponse}}
-                            a.list-group-item(href='#') {{n4Ctrl.etape.propositions[2].reponse}}
-                    button.versNiveau Suite
+
+                        a.list-group-item(href='#')(ng-repeat="prop in n4Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
+                       // a.list-group-item(href='#') {{n4Ctrl.etape.propositions[1].reponse}}
+                        a.list-group-item(href='#') {{n4Ctrl.etape.propositions[2].reponse}}
+                    button.versNiveau(style='display:none') Suite
     div.novemVoice.animated.slideInUp
         p#novemText
         button.closeNovemVoice -
