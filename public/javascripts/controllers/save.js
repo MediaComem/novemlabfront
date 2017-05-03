@@ -12,9 +12,23 @@ angular.module('novemlab').controller('SaveController', function(JoueurService, 
     });
 
 
-    $(".endButton").on("click",function(){
+    /*$(".endButton").on("click",function(){
         $window.location.href = "/profile";
-    });
+    });*/
+
+
+    sCtrl.email;
+
+
+    sCtrl.update = {};
+
+    sCtrl.update.email = sCtrl.joueur.email;
+
+    var setEmail = function(){
+        JoueurService.modify(sCtrl.update.email).then(function(){
+            console.log
+        })
+    }
 
 
 });
