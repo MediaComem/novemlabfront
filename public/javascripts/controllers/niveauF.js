@@ -1,5 +1,10 @@
-angular.module('novemlab').controller('NFController', function(EtapeService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('NFController', function(EtapeService, apiUrl, $scope, $state, $http, $window) {
     var nfCtrl = this;
+
+    nfCtrl.test = "coucou";
+    nfCtrl.joueur = JSON.parse($window.sessionStorage.getItem("joueur"));
+    nfCtrl.score = JSON.parse($window.sessionStorage.getItem("score"));
+    console.log(nfCtrl.score);
 
     nfCtrl.etape = {};
 
@@ -174,5 +179,5 @@ Highcharts.chart('profil', {
     }]
 
 });
-  
+
 });
