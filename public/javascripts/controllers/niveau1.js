@@ -5,13 +5,17 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
 
     n1Ctrl.etape = {};
     n1Ctrl.niveau = "1";
-    n1Ctrl.scores = [];
+    n1Ctrl.choices = [];
+    n1Ctrl.score = {};
 
     /**
      * GET DATA
      */
     EtapeService.show(n1Ctrl.niveau).then(function(){
         n1Ctrl.etape = EtapeService.getEtape();
+    }).then(function(){
+        $("#novemText").html(n1Ctrl.etape.question);
+        showMessage();
     })
 
     /**
@@ -43,30 +47,29 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
                         console.log( index + ": " + $( this ).text() );
                         //Récupère le score de l'élément sélectionné
                         elementScore = $(this).attr('value');
-
-                        n1Ctrl.scores.push(elementScore);
-
-                        console.log(n1Ctrl.scores);
+                        n1Ctrl.choices.push(elementScore);
+                        console.log(n1Ctrl.choices);
                     });
 
-                    var result = n1Ctrl.scores.reduce(function(r, e, i) {
-                        if (i == 0) r = r.concat(e)
-                        else  {
-                            e.forEach(function(a, j) {
-                                Object.keys(a).forEach(function(key) {
-                                    if (!r[j][key]) r[j][key] = a[key]
-                                    else {
-                                        Object.keys(a[key]).forEach(function(k) {
-                                            r[j][key][k] += a[key][k]
-                                        })
-                                    }
-                                })
-                            })
-                        }
-                        return r;
-                    }, [])
+                    for (i = 0; i < JSON.parse(n1Ctrl.choices.length); i++) {  //loop through the array
+                        console.log(i);
+                        $.each(JSON.parse(n1Ctrl.choices[i]), function(k,v)
+                            {
+                                if(!n1Ctrl.score.hasOwnProperty(k)){
+                                    n1Ctrl.score[k] = v;
+                                }
+                                else{
+                                    swap = parseInt(n1Ctrl.score[k]);
+                                    swap += v;
+                                    console.log(swap);
+                                    n1Ctrl.score[k] = swap;
+                                }
+                            }
+                        )
+                        //total += n1Ctrl.choices[i].communication;  //Do the math!
+                    }
 
-                    console.log(result);
+                    save(n1Ctrl.score);
                 });
             }
         }})
@@ -74,8 +77,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
 
     var save =function(score){
         JoueurService.updateScorePhase1(score).then(function(){
-
-            //$window.location.href = "/n2";
+            $window.location.href = "/n2";
         })
 
     }
