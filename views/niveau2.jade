@@ -9,9 +9,14 @@ block content
         //div.back
         //div.next
         div#ongletMenu
+        .container
+            .row
                 ul.onglets
+                .col-xs-4
                     li.active#algo1 {{n2Ctrl.algoName1}}
+                .col-xs-4
                     li#algo2   {{n2Ctrl.algoName2}}
+                .col-xs-4
                     li#algo3   {{n2Ctrl.algoName3}}
 
         pre.code
@@ -19,5 +24,10 @@ block content
             code
         //block toolBox
             include toolBox.jade
-        div.novemVoice.animated.slideInUp
-            p#novemText 
+
+    button.versNiveau Valider
+    div.novemVoice.animated.slideInUp
+        p#novemText
+        button.closeNovemVoice -
+        section.stage
+            figure.ball

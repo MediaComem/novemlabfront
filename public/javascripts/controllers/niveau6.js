@@ -100,7 +100,7 @@ $("#sortable1b, #sortable2b").sortable({
   
 
   $(".versNiveau").on("click",function(){
-        $window.location.href = "/nf/7";
+        $window.location.href = "/nF/7";
     });
 /* Dessine le graph de fin */
 Highcharts.chart('profil', {

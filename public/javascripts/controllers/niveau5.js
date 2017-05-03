@@ -71,6 +71,7 @@ $("#sortable1b, #sortable2b").sortable({
   })
 
   $(".versNiveau").on("click",function(){
+      console.log("test");
         $window.location.href = "/nf/6";
     });
   

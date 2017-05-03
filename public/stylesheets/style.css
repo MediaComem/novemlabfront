@@ -3,14 +3,77 @@
   src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
         url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
 }
+.putDown{
+	margin-bottom: 30px;
+}
+#niveau3 div.choix h1{
+	color: #bdc3c7;
+text-transform: uppercase;
+font-size: 1.2em;
+}
+#niveau3 div.choix.selected{
+	background-color: #ffffff;
+}
+#niveau3 div.choix.selected h1{
+	background-color: #ffffff;
+	color: #0a1832 !important;
+}
+li#algo1, li#algo2, li#algo3{
+	color: #fff;
+	font-size: 1.3em;
+	list-style-type: none;
+	padding: 20px;
+	background: #102751;
+	cursor: pointer;
+	text-align: center;
+}
+li#algo1.active, li#algo2.active, li#algo3.active{
+	color: #102751;
+	background-color: #fff;
+}
+rect.highcharts-background, rect.highcharts-plot-background{
+	height: auto !important;
+}
+tspan{
+font-family: "Brasilian";
+}
+svg.highcharts-root{
+	width: 100%;
+		padding-left: 60px;
+}
+#niveau9{
+	padding-top: 75px;
+}
+#niveau9 span{
+	font-size: 1.5em;
+	color: rgba(255,255,255,.8);
+}
+#niveau9 h1{
+	color: #fff;
+	font-size: 3.4em;
+	margin-top: 0;
+}
+#niveau9 small{
+	display: inline-block;
+	color: #74d0f0;
+}
+h1#textFin{
+	font-size: 1.8em;
+	padding: 0em .75em 1em .75em;
+	max-width: 600px;
+	margin: 0 auto;
+}
+img#logoEnd.header{
+	margin-top: 50px;
+}
 ul.ui-sortable:first-child{
 	margin-top: 20px !important;
 }
 li.ui-sortable-handle, li.ui-state-default, li.ui-state-highlight.red.ui-sortable-handle{
 	font-size: 17px !important;
-	padding-top: 10px;
-	height: auto;
-	padding-bottom: 10px;
+	padding-top: 10px !important;
+	height: auto !important;
+	padding-bottom: 10px !important;
 }
 div.reps div.choix{
 padding: 20px;
@@ -237,6 +300,8 @@ button.versNiveau
     background: #2ecc71;
     margin: 25px;
     line-height: 60px;
+    display: block;
+    margin: 0 auto;
 }
 
 .main
@@ -251,7 +316,6 @@ button.versNiveau
 }
 .main#intro
 {
-
     position: fixed;
 }
 
@@ -355,7 +419,9 @@ background-color: rgba(0, 0, 0, 0.61);
     padding: 10px;
     text-align: center;
 }
-
+.end{
+	height: auto;
+}
 .intro input[type="text"]:focus,input[type="password"]:focus,textarea:focus
 {
     outline: none;
@@ -413,23 +479,23 @@ background-color: rgba(0, 0, 0, 0.61);
 .endButton
 {
     color: black;
-    border: 2px solid #1f6582;
+	border:0px;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
     cursor: pointer;
-    margin: 20px auto 0;
+    margin: 40px auto 0;
     background: white;
 }
 
 .endButton:hover
 {
     color: white;
-    background: #1f6582;
+    background: #74d0f0;
 }
 
 .end{
@@ -586,7 +652,7 @@ body .loader_cogs__top div.top_hole
 #niveau2,#niveau3
 {
     z-index: 98;
-    background: #a8a8a8;
+    background: #0a1832;
 }
 
 .novemVoice{
@@ -716,7 +782,7 @@ font-size: 32px;
 #ongletMenu
 {
     position: relative;
-    height: 70px;
+    height: 30px;
 }
 
 /* CSS Simple Pre Code */
@@ -736,6 +802,7 @@ margin: auto;
 border-radius: 4px;
 border: 0px;
 position: relative;
+margin-bottom: 40px;
 }
 
 pre.code label {
@@ -759,7 +826,7 @@ pre.code code {
     padding: 25px 16px 25px 25px;
     border-left: 1px solid #555;
     /*overflow-x: auto;*/
-    font-size: 32px;
+    font-size: 18px;
     line-height: 36px;
     color: #ddd;
 }
@@ -876,8 +943,7 @@ background-color: #5ca5ff;
 g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
 }
 rect.highcharts-background{
-	background-color: black;
-	fill:black;
+	fill:#0a1832;
 }
 g.highcharts-axis-labels.highcharts-xaxis-labels text{
 	fill:#ecf0f1 !important;
@@ -894,18 +960,18 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
     text-align: center;
 }
 
-.reps .col-xs-4 img
+.reps .col-xs-4.col-md-4 img
 {
     max-width: 80px;
 }
-.reps .col-xs-4
+.reps .col-xs-4.col-md-4
 {
     padding-left:0;
     height:30%;
 }
 
 
-.reps .col-xs-4 h1
+.reps .col-xs-4.col-md-4 h1
 {
     color: black;
     font-size: 24px;
@@ -953,6 +1019,12 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
     width:80%;
     margin:auto;
     z-index:-10;
+    margin-top: 40px;
+}
+.videoDiv img{
+display: block;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .bandBottom{
@@ -1001,10 +1073,6 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
     top:20px;
     min-width:200px;
 }
-button.versNiveau
-{
-
-}
 
 .rep{
     margin-top: 4%;
@@ -1017,35 +1085,20 @@ button.versNiveau
     width:30%;
     background-repeat: no-repeat;
 }
-.main#niveau3{
-    background-color: black;
-}
-
 
 @media screen and (max-width: 800px) {
 
-    .bandTop{
-        height:10%;
-    }
-    .videoDiv {
-        margin-left: 0;
-        width:100%;
-        z-index:-10;
-    }
-
-    .reps .col-xs-4 h1
-    {
-        color: black;
-        font-size: 24px;
-        text-transform: uppercase;
-    }
+   
 }
 
 /*==========  Non-Mobile First Method  ==========*/
 
     /* Large Devices, Wide Screens */
     @media only screen and (max-width : 1200px) {
-	
+	svg.highcharts-root{
+
+	margin-top: 50px;
+}
     }
 
     /* Medium Devices, Desktops */
@@ -1053,6 +1106,11 @@ button.versNiveau
 /*body{
 background-color: green !important;
 }*/
+
+svg.highcharts-root{
+	padding-top: 0px;
+	margin-top: -100px;
+}
     }
 
     /* Small Devices, Tablets */
@@ -1065,6 +1123,10 @@ background-color: yellow !important;
 {
 min-height: 210px;
 }
+svg.highcharts-root{
+
+	margin-top: -100px;
+}
     }
 
     /* Extra Small Devices, Phones */ 
@@ -1072,6 +1134,12 @@ min-height: 210px;
 /*body{
 background-color: red !important;
 }*/
+svg.highcharts-root{
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	margin-top: -150px;
+}
     }
 
     /* Custom, iPhone Retina */ 
