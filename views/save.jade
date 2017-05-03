@@ -8,7 +8,7 @@ block content
         .end
             img#logoEnd(src="/images/novemlab_final_transparent.png" ,class="header")
             span
-               h1#textFin Bravo {{sCtrl.joueur}}, il ne vous reste plus qu'à entrer votre mail pour rejoindre le NovemLab
+               h1#textFin Bravo {{sCtrl.joueur}} tu as réussi les épreuves, il ne te reste plus qu'à entrer ton mail pour rejoindre le NovemLab
 
-            input(type='text', placeholder='e-mail', ng-model='iCtrl.joueur.pseudo')
+            input(type='text', placeholder='e-mail', ng-model='sCtrl.joueur.email')
             button.endButton(ng-click='sCtrl.modify()') Rejoindre le NovemLab

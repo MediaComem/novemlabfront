@@ -1,5 +1,22 @@
-angular.module('novemlab').controller('NFController', function(EtapeService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('NFController', function(EtapeService, apiUrl, $scope, $state, $http, $window) {
     var nfCtrl = this;
+
+    nfCtrl.test = "coucou";
+    nfCtrl.joueur = JSON.parse($window.sessionStorage.getItem("joueur"));
+    nfCtrl.score = JSON.parse($window.sessionStorage.getItem("score"));
+    console.log(nfCtrl.score);
+
+    console.log(nfCtrl.score.coding);
+
+    var scoreTab = [];
+    scoreTab[0] = nfCtrl.score.business;
+    scoreTab[1] = nfCtrl.score.coding;
+    scoreTab[2] = nfCtrl.score.communication;
+    scoreTab[3] = nfCtrl.score.management;
+    scoreTab[4] = nfCtrl.score.marketing;
+    scoreTab[5] = nfCtrl.score.multimedia;
+
+    console.log(scoreTab);
 
     nfCtrl.etape = {};
 
@@ -47,10 +64,10 @@ Highcharts.chart('profil', {
 
     series: [{
         name: 'Points',
-        data: [26, 4, 18, 2, 8, 11],
+        data: scoreTab,
         pointPlacement: 'on'
     }]
 
 });
-  
+
 });
