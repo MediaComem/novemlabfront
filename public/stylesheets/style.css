@@ -661,9 +661,10 @@ body .loader_cogs__top div.top_hole
 {
     z-index: 98;
     background: #0a1832;
+    padding-bottom: 150px;
 }
 
-#niveau3, #niveau4, #niveau5, #niveau6, #niveau7{
+#niveau4, #niveau5, #niveau6, #niveau7{
 	padding-bottom: 150px;
 }
 
