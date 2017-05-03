@@ -3,6 +3,13 @@
   src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
         url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
 }
+span.glyphicon.glyphicon-chevron-down{
+	display: block;
+	margin: 0 auto;
+}
+.highcharts-tooltip tspan{
+	font-size: 1.44em !important;
+}
 .putDown{
 	margin-bottom: 30px;
 }
@@ -144,6 +151,7 @@ background-color: transparent !important;
     transform: rotateX(90deg) translateZ(-160px);
     z-index: 1; }
 .stage {
+text-align: center;
   -webkit-perspective: 1200px;
   -moz-perspective: 1200px;
   -ms-perspective: 1200px;
@@ -224,6 +232,7 @@ text-align: center;
 border: 0px;
 border-radius: 40px;
 height: 40px;
+padding: 0px;
 width: 40px;
 	background-color: #102751;
 	color: white;
@@ -298,10 +307,9 @@ button.versNiveau
     border: 0;
     padding: 0px 15px;
     background: #2ecc71;
-    margin: 25px;
     line-height: 60px;
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .main
@@ -914,7 +922,7 @@ h1#mainTitle{
     border-radius: 15px;
 }
 .red {
-    background: #29282A;
+    background: #102751;
     color: #bdc3c7;
     margin: 0 5px 5px 5px;
     padding: .5em 2em 2em 2em;
@@ -986,11 +994,10 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
     height:100%;
     margin-top:30px;
     width:80%;
-    margin-left:10%;
     text-align: center;
     cursor: pointer;
     display:none;
-
+	border: 8px solid #0a1832;
 
 }
 
@@ -1127,7 +1134,16 @@ svg.highcharts-root{
 
 	margin-top: -100px;
 }
+#intro .credentials p{
+	line-height: normal;
+}
+#intro .credentials img{
+margin: 0 20px 0 0;
+width: auto;
+height: 80px;
     }
+
+   }
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (max-width : 480px) {
