@@ -1,4 +1,4 @@
-angular.module('novemlab').controller('N6Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N6Controller', function(EtapeService, $window, apiUrl, $scope, $state, $http) {
     var n6Ctrl = this;
 
     n6Ctrl.etape = {};
@@ -98,6 +98,10 @@ $("#sortable1b, #sortable2b").sortable({
   console.log(val);
   })
   
+
+  $(".versNiveau").on("click",function(){
+        $window.location.href = "/nF/7";
+    });
 /* Dessine le graph de fin */
 Highcharts.chart('profil', {
 
@@ -148,5 +152,6 @@ Highcharts.chart('profil', {
     }]
 
 });
+
   
 });

@@ -1,59 +1,86 @@
 
-angular.module('novemlab').controller('N1Controller', function(EtapeService, JoueurService, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('N1Controller', function(EtapeService, $window, JoueurService, $scope, $state, $http, $window) {
     var n1Ctrl = this;
     niveau = 1;
 
-   n1Ctrl.etape = {};
-   n1Ctrl.niveau = "1";
+    n1Ctrl.etape = {};
+    n1Ctrl.niveau = "1";
+    n1Ctrl.scores = [];
 
-    init = function(){
+    /**
+     * GET DATA
+     */
+    EtapeService.show(n1Ctrl.niveau).then(function(){
+        n1Ctrl.etape = EtapeService.getEtape();
+    })
 
-        /**
-         * GET DATA
-         */
-        EtapeService.show(n1Ctrl.niveau).then(function(){
-            n1Ctrl.etape = EtapeService.getEtape();
+    /**
+     * GENERATE FRONT
+     */
+    $('button.versNiveau').hide();
+    var limit = 3;
+
+    $(document).on("click", '.tools .col-xs-6.col-md-4', function(e){
+        e.preventDefault();
+
+        if($(".tools .col-xs-6.col-md-4.active").length >= limit) {
+            if($(this).hasClass("active"))
+            {
+                $(this).toggleClass("active");
+                $('button.versNiveau').hide();
+            }
+
+        }else{
+            $(this).toggleClass("active");
+
+            var occ = $('.active').length;
+            if (occ == 3){
+                $('button.versNiveau').show();
+
+                // Lors de l'envoi récupère les trois outils choisis
+                $('button.versNiveau').click(function(){
+                    $( ".col-xs-6.col-md-4.active" ).each(function( index ) {
+                        console.log( index + ": " + $( this ).text() );
+                        //Récupère le score de l'élément sélectionné
+                        elementScore = $(this).attr('value');
+
+                        n1Ctrl.scores.push(elementScore);
+
+                        console.log(n1Ctrl.scores);
+                    });
+
+                    var result = n1Ctrl.scores.reduce(function(r, e, i) {
+                        if (i == 0) r = r.concat(e)
+                        else  {
+                            e.forEach(function(a, j) {
+                                Object.keys(a).forEach(function(key) {
+                                    if (!r[j][key]) r[j][key] = a[key]
+                                    else {
+                                        Object.keys(a[key]).forEach(function(k) {
+                                            r[j][key][k] += a[key][k]
+                                        })
+                                    }
+                                })
+                            })
+                        }
+                        return r;
+                    }, [])
+
+                    console.log(result);
+                });
+            }
+        }})
+
+
+    var save =function(score){
+        JoueurService.updateScorePhase1(score).then(function(){
+
+            //$window.location.href = "/n2";
         })
 
-        /**
-         * GENERATE FRONT
-         */
-        $('button.versNiveau').hide();
-        var limit = 3;
-
-        $('.tools .col-xs-6.col-md-4').click(function(e){
-            e.preventDefault();
-
-            if($(".tools .col-xs-6.col-md-4.active").length >= limit) {
-
-                if($(this).hasClass("active"))
-                {
-                    $(this).toggleClass("active");
-                    $('button.versNiveau').hide();
-                }
-
-            }else{
-                $(this).toggleClass("active");
-
-                var occ = $('.active').length;
-                if (occ == 3){
-                    $('button.versNiveau').show();
-
-                    // Lors de l'envoi récupère les trois outils choisis
-                    $('button.versNiveau').click(function(){
-                        $( ".col-xs-6.col-md-4.active" ).each(function( index ) {
-                            console.log( index + ": " + $( this ).text() );
-                        });
-                    });
-                }
-            }})
-    };
-
-    function save(){
-        JoueurService.updateScorePhase1
     }
 
-    init();
+
 
 }).filter('removeAccent', function(){
         return function (source) {

@@ -1,4 +1,4 @@
-angular.module('novemlab').controller('N5Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N5Controller', function(EtapeService, apiUrl, $scope, $state, $http, $window) {
     var n5Ctrl = this;
 
     n5Ctrl.etape = {};
@@ -69,6 +69,11 @@ $("#sortable1b, #sortable2b").sortable({
 	val.splice(3, 5);
 	console.log(val);
   })
+
+  $(".versNiveau").on("click",function(){
+      console.log("test");
+        $window.location.href = "/nf/6";
+    });
   
 /* Dessine le graph de fin */
 Highcharts.chart('profil', {
@@ -120,5 +125,7 @@ Highcharts.chart('profil', {
     }]
 
 });
-  
+
+
 });
+

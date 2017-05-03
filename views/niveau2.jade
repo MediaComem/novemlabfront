@@ -18,10 +18,16 @@ block content
                     li#algo2   {{n2Ctrl.algoName2}}
                 .col-xs-4
                     li#algo3   {{n2Ctrl.algoName3}}
-            .row
-                pre.code
-                    label
-                    code
-        button.versNiveau Suite
-        div.novemVoice.animated.slideInUp
-            p#novemText 
+
+        pre.code
+            label
+            code
+        //block toolBox
+            include toolBox.jade
+
+    button.versNiveau Valider
+    div.novemVoice.animated.slideInUp
+        p#novemText
+        button.closeNovemVoice -
+        section.stage
+            figure.ball

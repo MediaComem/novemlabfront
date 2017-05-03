@@ -1,5 +1,5 @@
 
-angular.module('novemlab').controller('N3Controller', function(EtapeService, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N3Controller', function(EtapeService, apiUrl, $scope, $state, $http, $window) {
     var n3Ctrl = this;
 
 
@@ -12,7 +12,6 @@ angular.module('novemlab').controller('N3Controller', function(EtapeService, api
         $("#novemText").html(n3Ctrl.etape.question);
         showMessage();
     });
-
 
     $(".reps").hide();
     $(".choix").hide();
@@ -49,6 +48,10 @@ angular.module('novemlab').controller('N3Controller', function(EtapeService, api
     console.log(n3Ctrl.test);
 
     showMessage();
+
+    $(".valider").on("click",function(){
+        $window.location.href = "/n4";
+    });
 
 });
 

@@ -112,9 +112,9 @@ $("#sortable1b, #sortable2b").sortable({
 
   /* Récupère les valeurs de la liste dans l'ordre (niveau 6) */
   $('button#send7').click(function(){
-  
+
   var val = [];
-  
+
   $('.projet3 ul li').each(function(i){
    var text = $(this).text(); // This is your rel value
    val.push(text);
@@ -122,7 +122,9 @@ $("#sortable1b, #sortable2b").sortable({
 	val.splice(3, 5);
 	console.log(val);
   })
-  
+
+
+
 /* Dessine le graph de fin */
 Highcharts.chart('profil', {
 
