@@ -1,8 +1,9 @@
-angular.module('novemlab').controller('N7Controller', function(EtapeService, $window, apiUrl, $scope, $state, $http) {
+angular.module('novemlab').controller('N7Controller', function(EtapeService, JoueurService, $window, apiUrl, $scope, $state, $http) {
 
     var n7Ctrl = this;
 
     n7Ctrl.etape = {};
+    n7Ctrl.score = {};
 
     n7Ctrl.niveau = "7";
 
@@ -11,99 +12,52 @@ angular.module('novemlab').controller('N7Controller', function(EtapeService, $wi
     }).then(function(){
       $("#novemText").html(n7Ctrl.etape.question);
       showMessage();
-      console.log(n7Ctrl.etape.propositions[2].reponse)
       for (i=0;i<=5;i++){
         var cmpt = i+1;
         var prop = n7Ctrl.etape.propositions[i].reponse;
-        $("#prop"+cmpt).append(prop);
+          var elem=$("#prop"+cmpt);
+          elem.append(prop);
+          elem[0].setAttribute('value',n7Ctrl.etape.propositions[i].competence);
       }
       //init();
     });
 
-  
-  /* Sortable niveau 7 */
-$("#sortable1b li").addClass('green');
-$("#sortable2b li").addClass('red');
-$("#sortable1b, #sortable2b").sortable({
-    connectWith: ".connectedSortable",
-    stop: function () {
-        var lis = $('#sortable1b li').add('#sortable2b li');
-        $(lis).each(function () {
-            if ($(this).index('li') <= 2) {
-                $(this).removeClass('red ui-state-highlight').addClass('green ui-state-default');
-            } else {
-                $(this).removeClass('green ui-state-default').addClass('red ui-state-highlight');
-            }
+
+      /* Sortable niveau 7 */
+    $("#sortable1b li").addClass('green');
+    $("#sortable2b li").addClass('red');
+    $("#sortable1b, #sortable2b").sortable({
+        connectWith: ".connectedSortable",
+        stop: function () {
+            var lis = $('#sortable1b li').add('#sortable2b li');
+            $(lis).each(function () {
+                if ($(this).index('li') <= 2) {
+                    $(this).removeClass('red ui-state-highlight').addClass('green ui-state-default');
+                } else {
+                    $(this).removeClass('green ui-state-default').addClass('red ui-state-highlight');
+                }
+            });
+        }
+    }).disableSelection();
+
+
+    $(".versNiveau").on("click",function(){
+        var reverse_i =  $('#sortable1b li').length;
+
+        $('#sortable1b li').each(function(){
+            var choice = $(this).attr('value'); // This is your rel value
+            n7Ctrl.score[choice] = reverse_i;
+            reverse_i--;
         });
-    }
-}).disableSelection();
 
-  /* Récupère les valeurs de la liste dans l'ordre (niveau 7) */
-  $('button#send7').click(function(){
-  
-  var val = [];
-  
-  $('.projet3 ul li').each(function(i){
-   var text = $(this).text(); // This is your rel value
-   val.push(text);
-  });
-  val.splice(3, 5);
-  console.log(val);
-  })
-  
+        save(n7Ctrl.score);
 
-  $(".versNiveau").on("click",function(){
-        $window.location.href = "/save";
     });
-/* Dessine le graph de fin */
-Highcharts.chart('profil', {
 
-    chart: {
-        polar: true,
-        type: 'line',
-        height: 600
-    },
-
-    title: {
-        text: 'Voici votre profil de superhéros',
-        x: -80
-    },
-
-    pane: {
-        size: '80%'
-    },
-
-    xAxis: {
-        categories: ['Business', 'Coding', 'Communication', 'Management',
-                'Marketing', 'Multimédia'],
-        tickmarkPlacement: 'on',
-        lineWidth: 0
-    },
-
-    yAxis: {
-        gridLineInterpolation: 'polygon',
-        lineWidth: 0,
-        min: 0
-    },
-
-    tooltip: {
-        shared: true,
-        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
-    },
-
-    legend: {
-        align: 'right',
-        verticalAlign: 'top',
-        y: 70,
-        layout: 'vertical'
-    },
-
-    series: [{
-        name: 'Points',
-        data: [26, 4, 18, 2, 8, 11],
-        pointPlacement: 'on'
-    }]
-
-});
+    var save =function(score){
+        JoueurService.updateScorePhase1(score).then(function(){
+            $window.location.href = "/save";
+        })
+    }
   
 });
