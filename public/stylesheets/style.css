@@ -907,7 +907,7 @@ pre.code code {
 
 h1#mainTitle{
     color: #fff;
-    font-size: 20px;
+    font-size: 36px;
     margin-top:30px;
     margin-bottom: 30px;
 }
@@ -934,7 +934,6 @@ h1#mainTitle{
     padding-left: 1.5em;
     height: 18px;
     border-radius: 15px;
-    text-decoration: line-through;
 }
 canvas#myCanvas{
 	width: 100%;
@@ -1028,7 +1027,7 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
 
 .videoDiv {
     margin-bottom:600px;
-    width:80%;
+    width:70%;
     margin:auto;
     z-index:-10;
     margin-top: 40px;

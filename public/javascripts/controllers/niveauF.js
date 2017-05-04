@@ -70,4 +70,8 @@ Highcharts.chart('profil', {
 
 });
 
+    $(".versNiveau").on("click",function(){
+        $window.location.href = "/";
+    });
+
 });
