@@ -24,3 +24,9 @@ block content
       input(type='text', placeholder='Entrez votre prénom', ng-model='iCtrl.joueur.pseudo')
       button.startButton(ng-click='iCtrl.start()') Commencer les épreuves
       span {{iCtrl.error}}
+      div.novemVoice.animated.slideInUp
+        p#novemText
+        button.closeNovemVoice
+          span.glyphicon.glyphicon-chevron-down(aria-hidden='true')
+        section.stage
+          figure.ball

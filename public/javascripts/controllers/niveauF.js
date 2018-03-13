@@ -6,15 +6,12 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
     nfCtrl.score = JSON.parse($window.sessionStorage.getItem("score"));
     console.log(nfCtrl.score);
 
-    console.log(nfCtrl.score.coding);
-
     var scoreTab = [];
-    scoreTab[0] = nfCtrl.score.business;
-    scoreTab[1] = nfCtrl.score.coding;
-    scoreTab[2] = nfCtrl.score.communication;
-    scoreTab[3] = nfCtrl.score.management;
-    scoreTab[4] = nfCtrl.score.marketing;
-    scoreTab[5] = nfCtrl.score.multimedia;
+    scoreTab[0] = {y:nfCtrl.score.business,color:'#148D82',fillColor:'#148D82'};
+    scoreTab[1] = {y:nfCtrl.score.gestion,color:'#148D82',fillColor:'#148D82'};
+    scoreTab[2] = {y:nfCtrl.score.communication,color:'#E79043',fillColor:'#E79043'};
+    scoreTab[3] = {y:nfCtrl.score.marketing,color:'#E79043',fillColor:'#E79043'};
+    scoreTab[4] = {y:nfCtrl.score.technique,color:'#8DC357',fillColor:'#8DC357'};
 
     console.log(scoreTab);
 
@@ -25,23 +22,37 @@ Highcharts.chart('profil', {
 
     chart: {
         polar: true,
-        type: 'line',
-        height: 600
-    },
-    title: {
-        text: 'Voici votre profil de superhéros',
-        x: -80
+        height: 700
     },
 
     pane: {
-        size: '80%'
+        size: '80%',
+
     },
 
     xAxis: {
-        categories: ['Business', 'Coding', 'Communication', 'Management',
-                'Marketing', 'Multimédia'],
+        categories: ['business', 'gestion', 'communication', 'marketing',
+                'technique'],
         tickmarkPlacement: 'on',
-        lineWidth: 0
+        lineWidth: 0,
+        labels:{
+            formatter: function () {
+                switch(this.value) {
+                    case 'business':
+                        return '<span style="color:#148D82">'+this.value+'</span>';
+                    case 'gestion':
+                        return '<span style="color:#148D82">'+this.value+'</span>';
+                    case 'communication':
+                        return '<span style="color:#E79043">'+this.value+'</span>';
+                    case 'marketing':
+                        return '<span style="color:#E79043">'+this.value+'</span>';
+                    case 'technique':
+                        return '<span style="color:#8DC357">'+this.value+'</span>';
+                    default:
+                        return '<span style="color:#fff">'+this.value+'</span>';
+                }
+            }
+        }
     },
 
     yAxis: {
@@ -58,14 +69,15 @@ Highcharts.chart('profil', {
     legend: {
         align: 'right',
         verticalAlign: 'top',
-        y: 70,
-        layout: 'vertical'
+        layout: 'vertical',
     },
 
     series: [{
+        type:'area',
         name: 'Points',
         data: scoreTab,
-        pointPlacement: 'on'
+        pointPlacement: 'on',
+        color:'#fff'
     }]
 
 });

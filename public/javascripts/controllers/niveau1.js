@@ -14,6 +14,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
     EtapeService.show(n1Ctrl.niveau).then(function(){
         n1Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
+        console.log(n1Ctrl.etape.question);
         $("#novemText").html(n1Ctrl.etape.question);
         showMessage();
     })

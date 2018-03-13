@@ -1,7 +1,6 @@
 
 angular.module('novemlab').controller('N4Controller', function(JoueurService, EtapeService, $scope, $state, $http, $window) {
     var n4Ctrl = this;
-
     n4Ctrl.test = "coucou";
 
     n4Ctrl.etape = {};
@@ -195,8 +194,9 @@ angular.module('novemlab').controller('N4Controller', function(JoueurService, Et
     });
 
     var save =function(score){
-        JoueurService.updateScorePhase1(score).then(function(){
-            $window.location.href = "/nF/5";
+        JoueurService.updateScorePhase1(score).then(function(res){
+            //$window.location.href = "/nF/5";
+            console.log(res.data);
         })
 
     }

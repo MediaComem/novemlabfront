@@ -9,7 +9,6 @@ var niveau1 = require('./routes/niveau1');
 var niveau2 = require('./routes/niveau2');
 var niveau3 = require('./routes/niveau3');
 var niveau4 = require('./routes/niveau4');
-var app = require('express')();
 var niveauF = require('./routes/niveauF');
 var save = require('./routes/save');
 var profile = require('./routes/profile');
@@ -38,7 +37,7 @@ app.use('/n4', niveau4);
 app.use('/nF', niveauF);
 app.use('/save', save);
 app.use('/profile', profile);
-app.use('/api-proxy', proxy('https://novemapi.herokuapp.com'));
+app.use('/api-proxy', proxy('localhost:3000'));
 
 
 // catch 404 and forward to error handler

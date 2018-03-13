@@ -66,6 +66,7 @@ angular.module('novemlab').controller('N2Controller', function(JoueurService, Et
         choix = $("li.active");
         n2Ctrl.score = choix.attr('value')
         save(n2Ctrl.score)
+        console.log(n2Ctrl.score);
     });
 
     var save =function(score){

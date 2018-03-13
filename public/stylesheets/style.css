@@ -44,6 +44,9 @@ rect.highcharts-background, rect.highcharts-plot-background{
 tspan{
 font-family: "Brasilian";
 }
+text{
+    font-family: "Brasilian";
+}
 svg.highcharts-root{
 	width: 100%;
 		padding-left: 60px;
@@ -354,6 +357,7 @@ html,body
 
 .right
 {
+    position:absolute;
     right: 0;
     border-right:0;
 }
@@ -385,7 +389,7 @@ html,body
 #intro, #save
 {
     z-index: 100;
-    background: url(../images/bgaccueil.png);
+    /*background: url(../images/bgaccueil.png);*/
     background-size:cover;
 }
 
@@ -952,13 +956,16 @@ margin-top: 50px;
 background-color: #5ca5ff;
 }
 /* customisation du graph */
-g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
-}
+/*g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
+}*/
 rect.highcharts-background{
-	fill:#0a1832;
+	opacity:0;
+}
+.highcharts-point{
+    width:10px;
 }
 g.highcharts-axis-labels.highcharts-xaxis-labels text{
-	fill:#ecf0f1 !important;
+	/*fill:#ecf0f1 !important;*/
 	font-size: 18px !important;
 }
 text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.highcharts-legend-item{
