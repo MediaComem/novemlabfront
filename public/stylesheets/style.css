@@ -3,6 +3,11 @@
   src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
         url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
 }
+
+.n2-prop {
+    width:100% !important;
+    margin: 10px 0 10px 0;
+}
 span.glyphicon.glyphicon-chevron-down{
 	display: block;
 	margin: 0 auto;
@@ -25,16 +30,20 @@ font-size: 1.2em;
 	background-color: #ffffff;
 	color: #0a1832 !important;
 }
-li#algo1, li#algo2, li#algo3{
+li.reponse{
 	color: #fff;
-	font-size: 1.3em;
+	font-size: 1.8em;
 	list-style-type: none;
 	padding: 20px;
 	background: #102751;
 	cursor: pointer;
-	text-align: center;
 }
-li#algo1.active, li#algo2.active, li#algo3.active{
+
+.nivEcoute li{
+    list-style-type: upper-roman;
+}
+
+li.reponse.active{
 	color: #102751;
 	background-color: #fff;
 }
@@ -288,7 +297,7 @@ a
 .tools .col-xs-6.col-md-4.active
 {
     border: 8px solid #0a1832;
-    background: #ecf0f1;
+    background: #ecf0f1; 
 }
 
 .tools .col-xs-6.col-md-4.active:hover
@@ -945,12 +954,25 @@ canvas#myCanvas{
 	margin: 0 auto;
 	display: block;
 }
-#niveau4{
+#niveau4, #niveau5, #niveau6{
 text-align: center;
 }
+
+#niveau6 .list-group{
+    font-size:1.6em;
+    display: block;
+    margin-top: 50px;
+} 
+
+#niveau5 .list-group{
+    font-size:1.6em;
+    display: block;
+    margin-top: 50px;
+} 
 #niveau4 .list-group{
-display: block;
-margin-top: 50px;
+    font-size:1.6em;
+    display: block;
+    margin-top: 50px;
 }
 #niveau4 .list-group .active{
 background-color: #5ca5ff;
@@ -1025,6 +1047,7 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
 
 .choix.selected
 {
+    
 }
 
 .reps .col-xs-4.active h1
@@ -1105,7 +1128,6 @@ display: block;
 }
 
 @media screen and (max-width: 800px) {
-
    
 }
 
@@ -1137,9 +1159,14 @@ svg.highcharts-root{
 background-color: yellow !important;
 }*/
 
+.tools .n3-choice
+{
+min-height: 100px !important;
+}
+
 .tools .col-xs-6.col-md-4
 {
-min-height: 210px;
+min-height: 200px;
 }
 svg.highcharts-root{
 

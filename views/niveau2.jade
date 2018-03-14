@@ -5,27 +5,16 @@ append scripts
 
 block content
     .main#niveau2(ng-controller='N2Controller as n2Ctrl')(ng-cloak)
-        //div#choix1
-        //div.back
-        //div.next
         div#ongletMenu
         .container
             .row
                 ul.onglets
-                .col-xs-4
-                    li.active#algo1(value='{{n2Ctrl.etape.propositions[0].score}}') {{n2Ctrl.algoName1}}
-                .col-xs-4
-                    li#algo2(value='{{n2Ctrl.etape.propositions[1].score}}')    {{n2Ctrl.algoName2}}
-                .col-xs-4
-                    li#algo3(value='{{n2Ctrl.etape.propositions[2].score}}')    {{n2Ctrl.algoName3}}
-
-            pre.code
-                label
-                code
-            //block toolBox
-                include toolBox.jade
-
-            button.versNiveau Prochaine étape
+                    .col-xs-4.n2-prop(ng-repeat="prop in n2Ctrl.etape.propositions")
+                        li.reponse(value='{{prop.score}}')
+                            ul.nivEcoute
+                                li(ng-repeat="val in prop.reponse") {{val}}
+    
+            button.versNiveau(style="display:none") Prochaine étape
             div.novemVoice.animated.slideInUp
                 p#novemText
                 button.closeNovemVoice

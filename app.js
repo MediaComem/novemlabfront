@@ -9,6 +9,9 @@ var niveau1 = require('./routes/niveau1');
 var niveau2 = require('./routes/niveau2');
 var niveau3 = require('./routes/niveau3');
 var niveau4 = require('./routes/niveau4');
+var niveau5 = require('./routes/niveau5');
+var niveau6 = require('./routes/niveau6');
+var niveau7 = require('./routes/niveau7');
 var niveauF = require('./routes/niveauF');
 var save = require('./routes/save');
 var profile = require('./routes/profile');
@@ -34,10 +37,13 @@ app.use('/welcome', niveau1);
 app.use('/n2', niveau2);
 app.use('/n3', niveau3);
 app.use('/n4', niveau4);
+app.use('/n5', niveau5);
+app.use('/n6', niveau6);
+app.use('/n7', niveau7);
 app.use('/nF', niveauF);
 app.use('/save', save);
 app.use('/profile', profile);
-app.use('/api-proxy', proxy('localhost:3000'));
+app.use('/api-proxy', proxy(process.env.PROXY_URL || 'localhost:3000'));
 
 
 // catch 404 and forward to error handler
