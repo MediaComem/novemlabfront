@@ -15,10 +15,10 @@ block content
                                 li(ng-repeat="val in prop.reponse") {{val}}
 
             button.versNiveau(style="display:none") Prochaine étape
-            div.novemVoice.animated.slideInUp
+        section.stage
+            figure.ball
+            div.novemVoice.animated.fadeIn
                 p#novemText
                 button.closeNovemVoice
-                    span.glyphicon.glyphicon-chevron-down(aria-hidden='true')
-                section.stage
-                    figure.ball
+                    span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
 

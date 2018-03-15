@@ -16,9 +16,9 @@ block content
                     // a.list-group-item(href='#') {{n6Ctrl.etape.propositions[1].reponse}}
                     a.list-group-item(href='#') {{n6Ctrl.etape.propositions[2].reponse}}
             button.versNiveau(style='display:none') Prochaine étape
-    div.novemVoice.animated.slideInUp
-        p#novemText
-        button.closeNovemVoice
-            span.glyphicon.glyphicon-chevron-down(aria-hidden='true')
-        section.stage
-            figure.ball
+    section.stage
+        figure.ball
+        div.novemVoice.animated.fadeIn
+            p#novemText
+            button.closeNovemVoice
+                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')

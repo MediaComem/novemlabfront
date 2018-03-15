@@ -16,19 +16,15 @@ function showMessage(){
     /*$("#novemText").empty();*/
     novemCall(message, $('#novemText'));
 }
-$('figure.ball').hide();
+
 
 $('figure.ball').click(function(){
- 	$('p#novemText').fadeToggle( "slow", "linear" );;
- 	$('div.novemVoice.animated.slideInUp').toggleClass("transparence");
- 	$('figure.ball').hide();
- 	$('button.closeNovemVoice').show();
+ 	$('.novemVoice').fadeToggle( "fast", "linear" );;
+    //$('div.novemVoice.animated.fadeIn').toggleClass("transparence");
+ 	//$('.novemVoice').show();
 });
 
-
 $('button.closeNovemVoice').click(function(){
- 	$('p#novemText').hide();
- 	$('div.novemVoice.animated.slideInUp').toggleClass("transparence");
- 	$('button.closeNovemVoice').hide();
- 	$('figure.ball').show();
+    $('.novemVoice').hide(); 	//$('div.novemVoice.animated.slideInUp').toggleClass("transparence");
+ 	//$('button.closeNovemVoice').hide();
 });

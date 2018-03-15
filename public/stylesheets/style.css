@@ -8,9 +8,10 @@
     width:100% !important;
     margin: 10px 0 10px 0;
 }
-span.glyphicon.glyphicon-chevron-down{
+span.glyphicon.glyphicon-remove-sign{
 	display: block;
-	margin: 0 auto;
+    margin: 0 auto;
+    font-size:36px;
 }
 .highcharts-tooltip tspan{
 	font-size: 1.44em !important;
@@ -163,7 +164,6 @@ background-color: transparent !important;
     transform: rotateX(90deg) translateZ(-160px);
     z-index: 1; }
 .stage {
-text-align: center;
   -webkit-perspective: 1200px;
   -moz-perspective: 1200px;
   -ms-perspective: 1200px;
@@ -179,6 +179,10 @@ text-align: center;
     -ms-animation: levitation 3s ease-in-out infinite;
     -o-animation: levitation 3s ease-in-out infinite;
     animation: levitation 3s ease-in-out infinite;
+    position:fixed;
+    bottom:100px;
+    left:100px;
+    width:80%;
 }
 
 /* Levitation of the dude */
@@ -240,18 +244,19 @@ body
     background-color: #0a1832 !important;
 }
 button.closeNovemVoice{
-text-align: center;
-border: 0px;
-border-radius: 40px;
-height: 40px;
-padding: 0px;
-width: 40px;
-	background-color: #102751;
-	color: white;
+    text-align: center;
+    border: 0px;
+    border-radius: 40px;
+    height: 40px;
+    padding: 0px;
+    width: 40px;
+    background:white;
+	color: #102751;
 	cursor: pointer;
 	display: block;
 	margin: 30px auto;
 }
+
 a
 {
     color: #00B7FF;
@@ -698,18 +703,18 @@ body .loader_cogs__top div.top_hole
 
 .novemVoice{
     color:#002039;
-    width:50%;
+    min-width:500px;
     min-height:150px;
     position:fixed;
-    left:25%;
     bottom:-5px;
     margin:auto;
     padding:2em 2em 0em 2em;
-    border-radius:10px 10px 0px 0px;
+    border-radius:10px;
     z-index: 2;
     font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
 	font-size: 1.3em;
     background: white;
+    margin: 0 100px;
 }
 
 .toolBox
@@ -875,11 +880,12 @@ pre.code code {
 @media screen and (max-width: 800px) {
     .novemVoice
     {
-        width: 80%;
         height: auto;
         position: fixed;
-        left: 10%;
+        left: 5%;
         bottom: 0px;
+        width:80%;
+        min-width:100px;
     }
 
     .toolBox

@@ -32,7 +32,6 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
     meteors.el.style.zIndex = 101;
 
     iCtrl.init = function(){
-
         $(".button").on("click", function(e){
             meteors
                 .tune({ x: e.pageX, y: e.pageY })
@@ -70,6 +69,7 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
                 EtapeService.show(iCtrl.niveau).then(function(){
                     iCtrl.etape = EtapeService.getEtape();
                 }).then(function(){
+                    $(".stage").show();
                     $("#novemText").html(iCtrl.etape.question);
                     showMessage();
                 });
