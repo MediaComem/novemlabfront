@@ -180,7 +180,7 @@ background-color: transparent !important;
     -o-animation: levitation 3s ease-in-out infinite;
     animation: levitation 3s ease-in-out infinite;
     position:fixed;
-    bottom:100px;
+    bottom:50px;
     left:100px;
     width:80%;
 }
@@ -254,7 +254,7 @@ button.closeNovemVoice{
 	color: #102751;
 	cursor: pointer;
 	display: block;
-	margin: 30px auto;
+	margin: 10px auto;
 }
 
 a
@@ -706,10 +706,10 @@ body .loader_cogs__top div.top_hole
     min-width:500px;
     min-height:150px;
     position:fixed;
-    bottom:-5px;
+    bottom:40px;
     margin:auto;
     padding:2em 2em 0em 2em;
-    border-radius:10px;
+    border-radius:20px 20px 20px 0;
     z-index: 2;
     font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
 	font-size: 1.3em;
