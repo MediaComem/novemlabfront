@@ -8,6 +8,7 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.score = {};
     n3Ctrl.choices = [];
     var nextButton = $('.versNiveau');
+    $("button.versNiveau").hide();
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
         n3Ctrl.etape = EtapeService.getEtape();
@@ -19,15 +20,15 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     var limit = 2;
     $(document).on("click touchstart", '.tools .n3-choice', function(e){
         e.preventDefault();
-
         if($(".tools .n3-choice.active").length >= limit) {
             if($(this).hasClass("active"))
             {
+                $("button.versNiveau").fadeIn(2000);
                 $(this).toggleClass("active");
-                $('button.versNiveau').hide();
             }
 
         }else{
+            $("button.versNiveau").fadeIn(2000);
             $(this).toggleClass("active");
 
             var occ = $('.active').length;
