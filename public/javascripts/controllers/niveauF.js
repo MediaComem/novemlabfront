@@ -16,7 +16,16 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
     console.log(scoreTab);
 
     nfCtrl.etape = {};
+ 
+    /*insére dans la liste les réponse possible*/
+    nfCtrl.niveau = "9";
 
+    EtapeService.show(nfCtrl.niveau).then(function(){
+        nfCtrl.etape = EtapeService.getEtape();
+    }).then(function(){ 
+        $("#novemText").html(nfCtrl.etape.question);
+        showMessage()
+    });
 /* Dessine le graph de fin */
     Highcharts.chart('profil', {
 

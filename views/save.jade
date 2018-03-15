@@ -8,9 +8,14 @@ block content
         .end
             img#logoEnd(src="/images/novemlab_final_transparent.png" ,class="header")
             span
-               h1#textFin Bravo {{sCtrl.joueur}} vous avez réussi les épreuves, il ne vous reste plus qu'à entrer votre e-mail pour rejoindre le NovemLab
+               h1#textFin Bravo {{sCtrl.joueur}} vous avez complété les épreuves.
 
             input(type='text', placeholder='e-mail', ng-model='sCtrl.email')
-            button.endButton(ng-click='sCtrl.save()') Rejoindre le NovemLab
+            button.endButton(ng-click='sCtrl.save()') Voir mes résultats
             h3 {{sCtrl.error}}
-
+    section.stage
+        figure.ball
+        div.novemVoice.animated.fadeIn
+            p#novemText
+            button.closeNovemVoice
+                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
