@@ -27,6 +27,6 @@ $('figure.ball').click(function(){
 });
 
 $('button.closeNovemVoice').click(function(){
-    $('.novemVoice').hide(); 	//$('div.novemVoice.animated.slideInUp').toggleClass("transparence");
+    $('.novemVoice').hide(); 	//$('div.novemVoice.animated.slideInUp').togglcdeClass("transparence");
  	//$('button.closeNovemVoice').hide();
 });
