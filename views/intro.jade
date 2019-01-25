@@ -18,9 +18,10 @@ block content
         .loader-ring-light
         .loader-ring-track
     .intro
-      img(src="/images/novemlab_final_transparent.png" ,class="header")
-      h1 Bienvenue
-      p
+      // img(src="/images/novemlab_final_transparent.png" ,class="header")
+      h1 Devenez acteur de la révolution numérique
+      h3 Quel est votre profil d'ingénieur-e des médias ?
+      p(style="font-size:16px;width:60%;margin:auto;margin-bottom:100px;") Nous formons les futurs ingénieurs et chefs de projet spécialistes du numérique/digital. Ils sont capables de répondre aux besoins croissants du marché du travail. Leur profil technique à haute valeur ajoutée est un atout garantissant des débouchés nombreux et une carrière évolutive.
       input(type='text', placeholder='Entrez votre prénom', ng-model='iCtrl.joueur.pseudo')
-      button.startButton(ng-click='iCtrl.start()') Commencer les épreuves
+      button.startButton(ng-click='iCtrl.start()') Commencer
       span {{iCtrl.error}}

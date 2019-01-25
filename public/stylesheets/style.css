@@ -385,8 +385,7 @@ html,body
 #intro, #save
 {
     z-index: 100;
-    background: url(../images/bgaccueil.png);
-    background-size:cover;
+    background: #444444; 
 }
 
 .button
@@ -602,7 +601,8 @@ body .loader_cogs__top div.top_hole
     -moz-border-radius: 240px;
     -webkit-border-radius: 240px;
     border-radius: 240px;
-    background: url("../images/novemlab_bgblue.png") no-repeat center;
+    /*background: url("../images/novemlab_bgblue.png") no-repeat center;*/
+    background:#eaeaea;
     background-size:cover;
 }
 
