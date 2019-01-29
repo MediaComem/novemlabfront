@@ -12,11 +12,15 @@ block content
                     .row   
                     .col-xs-12.col-md-4
                         .textProfil
-                            span bienvenue à vous
-                            h1 RECRUE
-                                small #2312321
-
+                            span Profil de {{nfCtrl.joueur}}
+                            h1 identifiant
+                                small   {{nfCtrl.idRecrue}}
                     .col-xs-12.col-md-8
                         #profil
             button.versNiveau Prochaine recrue
-
+    section.stage
+        figure.ball
+        div.novemVoice.animated.fadeIn
+            p#novemText
+            button.closeNovemVoice
+                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')

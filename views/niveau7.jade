@@ -5,23 +5,19 @@ append scripts
 
 block content
 
-    .main#niveau7(ng-controller="N7Controller as n7Ctrl")
+    .main#niveau7(ng-controller="N7Controller as n7Ctrl", "ng-cloak")
         .contentFullWidth
             .content
-                .container.projet3
-                    h1#mainTitle Ordre d'importance (plus haut = plus important)
-                        ul#sortable1b.connectedSortable
-                            li.ui-state-default#prop1
-                            li.ui-state-default#prop2
-                            li.ui-state-default#prop3
-                        ul#sortable2b.connectedSortable
-                            li.ui-state-highlight#prop4
-                            li.ui-state-highlight#prop5
-                            li.ui-state-highlight#prop6
-                    button.versNiveau J'ai terminé
-                div.novemVoice.animated.slideInUp
-                    p#novemText
-                    button.closeNovemVoice
-                        span.glyphicon.glyphicon-chevron-down(aria-hidden='true')
-                    section.stage
-                        figure.ball
+                .container.projet1
+                    h1#mainTitle Votre degrés de motivation (plus haut = plus grand)
+                    ul#sortable
+                        li.ui-state-default(ng-repeat="prop in n7Ctrl.etape.propositions", value="{{prop.competence}}")
+                            span.ui-icon.ui-icon-arrowthick-2-n-s
+                            | {{prop.reponse}}
+                    button.versNiveau Prochaine étape
+                section.stage
+                    figure.ball
+                    div.novemVoice.animated.fadeIn
+                        p#novemText
+                        button.closeNovemVoice
+                            span.glyphicon.glyphicon-remove-sign(aria-hidden='true')

@@ -2,12 +2,14 @@
  * Created by Romain on 14.03.2017.
  */
 
-angular.module('novemlab').controller('IntroControler', function(JoueurService, apiUrl, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('IntroControler', function(EtapeService,JoueurService, apiUrl, $scope, $state, $http, $window) {
 
     /**
      * Définition des variables
      */
     var iCtrl = this;
+    iCtrl.niveau = 0;
+    iCtrl.etape ={};
 
     /**
      * Déclarations MOJS
@@ -30,7 +32,6 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
     meteors.el.style.zIndex = 101;
 
     iCtrl.init = function(){
-
         $(".button").on("click", function(e){
             meteors
                 .tune({ x: e.pageX, y: e.pageY })
@@ -64,6 +65,15 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
                 $(".intro").fadeIn('slow');
             },3500);
 
+            setTimeout(function(){
+                EtapeService.show(iCtrl.niveau).then(function(){
+                    iCtrl.etape = EtapeService.getEtape();
+                }).then(function(){
+                    $(".stage").show();
+                    $("#novemText").html(iCtrl.etape.question);
+                    showMessage();
+                });
+            },3000);
         });
 
     };
@@ -77,7 +87,6 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
             JoueurService.createScore(res.data._id).then(function (res) {
                 $window.sessionStorage.setItem("score", JSON.stringify(res.data));
                 $window.location.href = "/welcome";
-
 
             }).catch(function () {
                 iCtrl.error = 'Could not create score';

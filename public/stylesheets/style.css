@@ -3,9 +3,15 @@
   src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
         url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
 }
-span.glyphicon.glyphicon-chevron-down{
+
+.n2-prop {
+    width:100% !important;
+    margin: 10px 0 10px 0;
+}
+span.glyphicon.glyphicon-remove-sign{
 	display: block;
-	margin: 0 auto;
+    margin: 0 auto;
+    font-size:36px;
 }
 .highcharts-tooltip tspan{
 	font-size: 1.44em !important;
@@ -25,16 +31,20 @@ font-size: 1.2em;
 	background-color: #ffffff;
 	color: #0a1832 !important;
 }
-li#algo1, li#algo2, li#algo3{
+li.reponse{
 	color: #fff;
-	font-size: 1.3em;
+	font-size: 1.8em;
 	list-style-type: none;
 	padding: 20px;
 	background: #102751;
 	cursor: pointer;
-	text-align: center;
 }
-li#algo1.active, li#algo2.active, li#algo3.active{
+
+.nivEcoute li{
+    list-style-type: upper-roman;
+}
+
+li.reponse.active{
 	color: #102751;
 	background-color: #fff;
 }
@@ -43,6 +53,9 @@ rect.highcharts-background, rect.highcharts-plot-background{
 }
 tspan{
 font-family: "Brasilian";
+}
+text{
+    font-family: "Brasilian";
 }
 svg.highcharts-root{
 	width: 100%;
@@ -151,7 +164,6 @@ background-color: transparent !important;
     transform: rotateX(90deg) translateZ(-160px);
     z-index: 1; }
 .stage {
-text-align: center;
   -webkit-perspective: 1200px;
   -moz-perspective: 1200px;
   -ms-perspective: 1200px;
@@ -167,6 +179,10 @@ text-align: center;
     -ms-animation: levitation 3s ease-in-out infinite;
     -o-animation: levitation 3s ease-in-out infinite;
     animation: levitation 3s ease-in-out infinite;
+    position:fixed;
+    bottom:50px;
+    left:100px;
+    width:80%;
 }
 
 /* Levitation of the dude */
@@ -228,18 +244,19 @@ body
     background-color: #0a1832 !important;
 }
 button.closeNovemVoice{
-text-align: center;
-border: 0px;
-border-radius: 40px;
-height: 40px;
-padding: 0px;
-width: 40px;
-	background-color: #102751;
-	color: white;
+    text-align: center;
+    border: 0px;
+    border-radius: 40px;
+    height: 40px;
+    padding: 0px;
+    width: 40px;
+    background:white;
+	color: #102751;
 	cursor: pointer;
 	display: block;
-	margin: 30px auto;
+	margin: 10px auto;
 }
+
 a
 {
     color: #00B7FF;
@@ -256,7 +273,7 @@ a
 
 .tools .col-xs-6.col-md-4 img
 {
-    max-width: 80px;
+    max-width: 52px;
 }
 
 .tools .col-xs-6.col-md-4 h1
@@ -267,14 +284,25 @@ a
     font-size:1.2em;
 }
 
+
+.n3-choice h1
+{
+    margin:0;
+    font-size:1.8em !important;
+}
+
+.tools .n3-choice{
+    height:100px !important;
+}
 .tools .col-xs-6.col-md-4
 {
     padding: 20px;
-    border: 8px solid #0a1832;
+    border: 2px solid white;
     border-radius: 15px;
     -webkit-transition: border .4s ease-in;
     transition: border .4s ease-in;
     background: #102751;
+    height:150px;
 }
 
 .tools .col-xs-6.col-md-4:hover
@@ -285,7 +313,7 @@ a
 .tools .col-xs-6.col-md-4.active
 {
     border: 8px solid #0a1832;
-    background: #ecf0f1;
+    background: #ecf0f1; 
 }
 
 .tools .col-xs-6.col-md-4.active:hover
@@ -320,17 +348,20 @@ button.versNiveau
     right: 0;
     top: 0;
     bottom: 0;
-    background: #0a1832;
+   /* background: #0a1832;*/
 }
 .main#intro
 {
     position: absolute;
+    background: url(../images/bgaccueil.jpg);
+    background-size:cover;
+    background-position: center;
 }
 
 html,body
 {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     margin: 0;
     min-height: 400px;
 }
@@ -354,6 +385,7 @@ html,body
 
 .right
 {
+    position:absolute;
     right: 0;
     border-right:0;
 }
@@ -382,10 +414,16 @@ html,body
     margin: 0 20px 0 0;
 }
 
-#intro, #save
+#intro, #save,
 {
     z-index: 100;
+<<<<<<< HEAD
     background: #444444; 
+=======
+    background: url(../images/bgaccueil.jpg);
+    background-size:cover;
+    background-position: center;
+>>>>>>> adaptations_PO2018
 }
 
 .button
@@ -670,18 +708,18 @@ body .loader_cogs__top div.top_hole
 
 .novemVoice{
     color:#002039;
-    width:50%;
+    min-width:500px;
     min-height:150px;
     position:fixed;
-    left:25%;
-    bottom:-5px;
+    bottom:40px;
     margin:auto;
     padding:2em 2em 0em 2em;
-    border-radius:10px 10px 0px 0px;
+    border-radius:20px 20px 20px 0;
     z-index: 2;
     font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
 	font-size: 1.3em;
     background: white;
+    margin: 0 100px;
 }
 
 .toolBox
@@ -847,11 +885,12 @@ pre.code code {
 @media screen and (max-width: 800px) {
     .novemVoice
     {
-        width: 80%;
         height: auto;
         position: fixed;
-        left: 10%;
+        left: 5%;
         bottom: 0px;
+        width:80%;
+        min-width:100px;
     }
 
     .toolBox
@@ -935,30 +974,50 @@ h1#mainTitle{
     height: 18px;
     border-radius: 15px;
 }
+
+.textProfil{
+    margin-bottom:20px;
+}
 canvas#myCanvas{
 	width: 100%;
 	max-width: 700px;
 	margin: 0 auto;
 	display: block;
 }
-#niveau4{
+#niveau4, #niveau5, #niveau6{
 text-align: center;
 }
+
+#niveau6 .list-group{
+    font-size:1.6em;
+    display: block;
+    margin-top: 50px;
+} 
+
+#niveau5 .list-group{
+    font-size:1.6em;
+    display: block;
+    margin-top: 50px;
+} 
 #niveau4 .list-group{
-display: block;
-margin-top: 50px;
+    font-size:1.6em;
+    display: block;
+    margin-top: 50px;
 }
 #niveau4 .list-group .active{
 background-color: #5ca5ff;
 }
 /* customisation du graph */
-g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
-}
+/*g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
+}*/
 rect.highcharts-background{
-	fill:#0a1832;
+	opacity:0;
+}
+.highcharts-point{
+    width:10px;
 }
 g.highcharts-axis-labels.highcharts-xaxis-labels text{
-	fill:#ecf0f1 !important;
+	/*fill:#ecf0f1 !important;*/
 	font-size: 18px !important;
 }
 text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.highcharts-legend-item{
@@ -1018,6 +1077,7 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
 
 .choix.selected
 {
+    
 }
 
 .reps .col-xs-4.active h1
@@ -1098,7 +1158,6 @@ display: block;
 }
 
 @media screen and (max-width: 800px) {
-
    
 }
 
@@ -1130,9 +1189,14 @@ svg.highcharts-root{
 background-color: yellow !important;
 }*/
 
+.tools .n3-choice
+{
+min-height: 100px !important;
+}
+
 .tools .col-xs-6.col-md-4
 {
-min-height: 210px;
+min-height: 150px;
 }
 svg.highcharts-root{
 

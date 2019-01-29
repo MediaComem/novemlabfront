@@ -25,3 +25,9 @@ block content
       input(type='text', placeholder='Entrez votre prénom', ng-model='iCtrl.joueur.pseudo')
       button.startButton(ng-click='iCtrl.start()') Commencer
       span {{iCtrl.error}}
+  section.stage(style="display:none")
+    figure.ball
+    div.novemVoice.animated.fadeIn
+      p#novemText
+      button.closeNovemVoice
+        span.glyphicon.glyphicon-remove-sign(aria-hidden='true')

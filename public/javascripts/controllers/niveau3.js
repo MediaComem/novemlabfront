@@ -6,7 +6,9 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.etape = {};
     n3Ctrl.niveau = "3";
     n3Ctrl.score = {};
+    n3Ctrl.choices = [];
     var nextButton = $('.versNiveau');
+    $("button.versNiveau").hide();
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
         n3Ctrl.etape = EtapeService.getEtape();
@@ -14,49 +16,52 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
         $("#novemText").html(n3Ctrl.etape.question);
         showMessage();
     });
-
-    $(".reps").hide();
-    $(".choix").hide();
-
-    setTimeout(function(){
-            $(".reps").fadeIn("slow");
-    },3000);
-    setTimeout(function(){
-            $(".choix").fadeIn("slow");
-    },3500);
     
+    var limit = 2;
+    $(document).on("click touchstart", '.tools .n3-choice', function(e){
+        e.preventDefault();
+        if($(".tools .n3-choice.active").length >= limit) {
+            if($(this).hasClass("active"))
+            {
+                $("button.versNiveau").fadeIn(2000);
+                $(this).toggleClass("active");
+            }
 
-    $("#1").on('click',function(){
-       $("#1").addClass("selected");
-       $("#2").removeClass("selected");
-       $("#3").removeClass("selected");
-       $(".versNiveau").fadeIn("slow");
-    });
+        }else{
+            $("button.versNiveau").fadeIn(2000);
+            $(this).toggleClass("active");
 
-     $("#2").on('click',function(){
-       $("#2").addClass("selected");
-       $("#1").removeClass("selected");
-       $("#3").removeClass("selected");
+            var occ = $('.active').length;
+            if (occ == 2){
+                $('button.versNiveau').show();
 
-         $(".versNiveau").fadeIn("slow");
-    });
+                // Lors de l'envoi récupère les trois outils choisis
+                $('button.versNiveau').click(function(){
+                    $( ".n3-choice.active" ).each(function( index ) {
+                        //Récupère le score de l'élément sélectionné
+                        elementScore = $(this).attr('value');
+                        n3Ctrl.choices.push(elementScore);
+                    });
 
-    $("#3").on('click',function(){
-       $("#3").addClass("selected");
-       $("#1").removeClass("selected");
-       $("#2").removeClass("selected");
-        $(".versNiveau").fadeIn("slow");
-    });
+                    for (i = 0; i < JSON.parse(n3Ctrl.choices.length); i++) {  //loop through the array
+                        $.each(JSON.parse(n3Ctrl.choices[i]), function(k,v)
+                            {
+                                if(!n3Ctrl.score.hasOwnProperty(k)){
+                                    n3Ctrl.score[k] = v;
+                                }
+                                else{
+                                    swap = parseInt(n3Ctrl.score[k]);
+                                    swap += v;
+                                    n3Ctrl.score[k] = swap;
+                                }
+                            }
+                        )
+                    }
 
-    console.log(n3Ctrl.test);
-
-    showMessage();
-
-    nextButton.on("click",function(){
-        choix = $(".choix.selected");
-        score = choix.attr('value');
-        save(score);
-    });
+                    save(n3Ctrl.score);
+                });
+            }
+        }})
 
     var save =function(score){
         JoueurService.updateScorePhase1(score).then(function(){

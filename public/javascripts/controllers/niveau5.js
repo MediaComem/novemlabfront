@@ -1,42 +1,37 @@
 angular.module('novemlab').controller('N5Controller', function(JoueurService, EtapeService, apiUrl, $scope, $state, $http, $window) {
     var n5Ctrl = this;
 
-    n5Ctrl.etape = {};
     n5Ctrl.score = {};
-    /* Sortable niveau 5 */
-
-    var liste = $( "#sortable" ).sortable();
-    liste.disableSelection();
-
-    /*insére dans la liste les réponse possible*/
     n5Ctrl.niveau = "5";
+    /* Sortable niveau 5 */
 
     EtapeService.show(n5Ctrl.niveau).then(function(){
         n5Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n5Ctrl.etape.question);
-        showMessage()
+        showMessage();
     });
 
+    $(document).ready(function () {
+        $(document).on("click", 'a.list-group-item', function(e){
+            $('.active').removeClass('active');
+            // add active class to clicked element
+            $(this).addClass('active');
+            $('.versNiveau').fadeIn("slow");
 
+        })
+    });
+    
 
-    /* Récupère les valeurs de la liste dans l'ordre (niveau 5) */
-    $('.versNiveau').click(function(){
-
-        var reverse_i =  $('.projet1 ul#sortable li').length;
-
-        $('.projet1 ul#sortable li').each(function(){
-            var choice = $(this).attr('value'); // This is your rel value
-            n5Ctrl.score[choice] = reverse_i;
-            reverse_i--;
-        });
-
-        save(n5Ctrl.score);
+    $(".versNiveau").on("click",function(){
+        choix = $("a.list-group-item.active");
+        score = choix.attr('value');
+        save(score);
     });
 
     var save =function(score){
-        JoueurService.updateScorePhase2(score).then(function(){
-            $window.location.href = "/nF/6";
+        JoueurService.updateScorePhase1(score).then(function(res){
+            $window.location.href = "/n6";
         })
 
     }
