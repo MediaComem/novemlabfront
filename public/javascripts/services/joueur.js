@@ -51,10 +51,11 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                 url: apiUrl + '/scores/',
                 data: {
                     "joueur_id":data,
+                    "management":2,
+                    "communication":2,
                     "business":2,
                     "gestion":2,
-                    "communication":2,
-                    "marketing":2,
+                    "conception":2,
                     "technique":2
                 }
             })

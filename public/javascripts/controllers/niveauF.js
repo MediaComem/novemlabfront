@@ -7,13 +7,12 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
     nfCtrl.idRecrue = makeid();
 
     var scoreTab = [];
-    scoreTab[0] = {y:nfCtrl.score.communication,color:'#E79043',fillColor:'#E79043'};   
-    scoreTab[1] = {y:nfCtrl.score.marketing,color:'#E79043',fillColor:'#E79043'};       
+    scoreTab[0] = {y:nfCtrl.score.management,color:'#E79043',fillColor:'#E79043'};   
+    scoreTab[1] = {y:nfCtrl.score.communication,color:'#E79043',fillColor:'#E79043'};       
     scoreTab[2] = {y:nfCtrl.score.business,color:'#148D82',fillColor:'#148D82'};
     scoreTab[3] = {y:nfCtrl.score.gestion,color:'#148D82',fillColor:'#148D82'};
-    scoreTab[4] = {y:nfCtrl.score.technique,color:'#8DC357',fillColor:'#8DC357'};
-
-    console.log(scoreTab);
+    scoreTab[4] = {y:nfCtrl.score.conception,color:'#8DC357',fillColor:'#8DC357'};
+    scoreTab[5] = {y:nfCtrl.score.technique,color:'#8DC357',fillColor:'#8DC357'};
 
     nfCtrl.etape = {};
  
@@ -40,8 +39,9 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
         },
 
         xAxis: {
-            categories: ['communication', 'marketing','business', 'gestion', 
-                    'technique'],
+            categories: ['Management de contenus', 'Communication & Marketing digital',
+            'Stratégie et modèles d\'affaire', 'Gestion de projet digital', 
+                    'Conception UX & Design thinking', 'Programmation web et mobile'],
             tickmarkPlacement: 'on',
             lineWidth: 0,
             labels:{

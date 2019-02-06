@@ -25,7 +25,7 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
             stroke:       ['#92b5f9', '#b7e1fc', '#c7daff','#cefef2','#b7e1fc'],
             duration:     500,
             radius:       60,
-            strokeWidth:  10,
+            strokeWidth:  5,
             isForce3d:    true
         }
     });
@@ -45,7 +45,7 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
             });
             setTimeout(function(){
                 //Button slide right
-                $(".button").animate({
+               /* $(".button").animate({
                     right: '-51%'
                 },2000)
                 //Door slide left
@@ -55,9 +55,10 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
                 //Door slide right
                 $(".right").animate({
                     right: '-51%'
-                },2000)
+                },2000) */
                 setTimeout(function(){
                     $(".button").fadeOut("fast")
+                    $(".big-title").fadeOut("fast")
                 },1000);
             },2000);
 
@@ -69,9 +70,11 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
                 EtapeService.show(iCtrl.niveau).then(function(){
                     iCtrl.etape = EtapeService.getEtape();
                 }).then(function(){
+                    setTimeout(function(){
                     $(".stage").show();
                     $("#novemText").html(iCtrl.etape.question);
-                    showMessage();
+                        showMessage();
+                    },5000);
                 });
             },3000);
         });
