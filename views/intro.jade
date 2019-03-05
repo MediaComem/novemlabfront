@@ -4,36 +4,37 @@ append scripts
   script(src='/javascripts/controllers/accueil.js')
 
 block content
-  .main#intro(ng-controller="IntroControler as iCtrl")
-    p(style="margin-top:50px;")
-      a(href="http://www.heig-vd.ch", target="blank")
-        img(src="/images/heig-etiqu.png", class="heig", style="height:80px")
-    //.left
-      .credentials
-          a(href="http://media.heig-vd.ch", target="blank")
-            img(src="/images/im.png",classe="im")
-    //.right
-    h1.centered.big-title.back
+  p(style="position:fixed;margin-top:50px;z-index:20;")
+    a(href="http://www.heig-vd.ch", target="blank")
+      img(src="/images/heig-etiqu.png", class="heig", style="height:80px")
+  .doors
+    .left
+    .credentials
+        // a(href="http://media.heig-vd.ch", target="blank")
+          img(src="/images/im.png",classe="im")
+    .right
+    // h1.centered.big-title.back
       span Devenez ACTEURS et ACTRICES de la révolution NUMÉRIQUE
-    h1.centered.big-title.front.moving
+    // h1.centered.big-title.front.moving
       span Devenez ACTEURS et ACTRICES de la révolution NUMÉRIQUE
-
 
     .button
       .loader-ring
         .loader-ring-light
         .loader-ring-track
-
+  
+  .main#intro(ng-controller="IntroControler as iCtrl") 
     .intro
-      // img(src="/images/novemlab_final_transparent.png" ,class="header")
-      // h1.emphasis Devenez ACTEUR / ACTRICE de la révolution NUMÉRIQUE
-      h3 Quel est votre profil d'ingénieur-e des médias ?
-      p(style="font-size:16px;width:60%;margin:auto;margin-bottom:100px;") Nous formons les futurs ingénieurs et chefs de projet spécialistes du numérique/digital. Ils sont capables de répondre aux besoins croissants du marché du travail. Leur profil technique à haute valeur ajoutée est un atout garantissant des débouchés nombreux et une carrière évolutive.
+      h1 Bachelor of Science in Media Engineering
+      h1.emphasis Devenez acteur de la révolution numérique
+      p Notre programme professionnalisant permet aux étudiant·e·s d'acquérir les compétences nécessaires à la maîtrise globale de produits et de services numériques.
+      p Votre profil polyvalent basé sur des connaissances pratiques vous prépare activement aux besoins du marché du travail.
+      h3 Quel est votre profil d'ingénieur·e des médias ?
       input(type='text', placeholder='Entrez votre prénom', ng-model='iCtrl.joueur.pseudo')
       button.startButton(ng-click='iCtrl.start()') Commencer
       span {{iCtrl.error}}
 
-  // section.stage(style="display:none")
+  //section.stage(style="display:none")
     figure.ball
     div.novemVoice.animated.fadeIn
       p#novemText

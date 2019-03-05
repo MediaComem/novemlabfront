@@ -10,29 +10,30 @@ angular.module('novemlab').controller('N2Controller', function(JoueurService, Et
 
     n2Ctrl.etape = {};
     n2Ctrl.niveau = "2";
+    $('button.versNiveau').hide();
 
     EtapeService.show(n2Ctrl.niveau).then(function(){
         n2Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
-        n2Ctrl.r1 = n2Ctrl.etape.propositions[0].reponse;
-        n2Ctrl.r2 = n2Ctrl.etape.propositions[1].reponse;
-        n2Ctrl.r3 = n2Ctrl.etape.propositions[2].reponse;
         $("#novemText").html(n2Ctrl.etape.question);
         showMessage();
     });
 
+    $(document).ready(function () {
+        $(document).on("click", 'a.list-group-item', function(e){
+            $('.active').removeClass('active');
+            // add active class to clicked element
+            $(this).addClass('active');
+            $('.versNiveau').fadeIn("slow");
 
-    $('.onglets').on('click', 'li', function() {
-        $('.onglets li.active').removeClass('active');
-        $(this).addClass('active');
-        $("button.versNiveau").fadeIn(2000);
+        })
     });
+    
 
     $(".versNiveau").on("click",function(){
-        choix = $("li.active");
-        n2Ctrl.score = choix.attr('value')
-        save(n2Ctrl.score)
-        console.log(n2Ctrl.score);
+        choix = $("a.list-group-item.active");
+        score = choix.attr('value');
+        save(score);
     });
 
     var save =function(score){

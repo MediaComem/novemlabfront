@@ -1,10 +1,8 @@
 angular.module('novemlab').controller('NFController', function(EtapeService, apiUrl, $scope, $state, $http, $window) {
     var nfCtrl = this;
 
-    nfCtrl.test = "coucou";
     nfCtrl.joueur = JSON.parse($window.sessionStorage.getItem("joueur"));
     nfCtrl.score = JSON.parse($window.sessionStorage.getItem("score"));
-    nfCtrl.idRecrue = makeid();
 
     var scoreTab = [];
     scoreTab[0] = {y:nfCtrl.score.management,color:'#E79043',fillColor:'#E79043'};   
@@ -25,72 +23,46 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
         $("#novemText").html(nfCtrl.etape.question);
         showMessage()
     });
-/* Dessine le graph de fin */
-    Highcharts.chart('profil', {
 
-        chart: {
-            polar: true,
-            height: 700
+    var graph = document.getElementById('profil');
+    var myChart = new Chart(graph, {
+        type: 'bar',
+        data: {
+            labels: [nfCtrl.score, "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: scoreTab,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
         },
-
-        pane: {
-            size: '80%',
-
-        },
-
-        xAxis: {
-            categories: ['Management de contenus', 'Communication & Marketing digital',
-            'Stratégie et modèles d\'affaire', 'Gestion de projet digital', 
-                    'Conception UX & Design thinking', 'Programmation web et mobile'],
-            tickmarkPlacement: 'on',
-            lineWidth: 0,
-            labels:{
-                formatter: function () {
-                    switch(this.value) {
-                        case 'business':
-                            return '<span style="color:#148D82">'+this.value+'</span>';
-                        case 'gestion':
-                            return '<span style="color:#148D82">'+this.value+'</span>';
-                        case 'communication':
-                            return '<span style="color:#E79043">'+this.value+'</span>';
-                        case 'marketing':
-                            return '<span style="color:#E79043">'+this.value+'</span>';
-                        case 'technique':
-                            return '<span style="color:#8DC357">'+this.value+'</span>';
-                        default:
-                            return '<span style="color:#fff">'+this.value+'</span>';
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
                     }
-                }
+                }]
             }
-        },
-
-        yAxis: {
-            gridLineInterpolation: 'polygon',
-            lineWidth: 0,
-            min: 0
-        },
-
-        tooltip: {
-            shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
-        },
-
-        legend: {
-            align: 'right',
-            verticalAlign: 'top',
-            layout: 'vertical',
-        },
-
-        series: [{
-            type:'area',
-            name: 'Points',
-            data: scoreTab,
-            pointPlacement: 'on',
-            color:'#fff'
-        }]
+        }
     });
-
-    function makeid() {
+    
+    /*function makeid() {
         var text = "";
         var possible = "ABDEFGHIJLMNOPQRSTVWXYZ0123456789";
     
@@ -98,7 +70,7 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     
         return text;
-    }
+    }*/
 
     $(".versNiveau").on("click",function(){
         $window.location.href = "/";

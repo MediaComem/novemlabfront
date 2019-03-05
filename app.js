@@ -15,8 +15,7 @@ var niveau7 = require('./routes/niveau7');
 var niveauF = require('./routes/niveauF');
 var save = require('./routes/save');
 var profile = require('./routes/profile');
-
-
+//var Chart = require('chart.js');
 var app = express();
 var proxy = require('express-http-proxy');
 

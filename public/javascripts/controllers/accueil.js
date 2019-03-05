@@ -45,7 +45,7 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
             });
             setTimeout(function(){
                 //Button slide right
-               /* $(".button").animate({
+                $(".button").animate({
                     right: '-51%'
                 },2000)
                 //Door slide left
@@ -55,11 +55,14 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
                 //Door slide right
                 $(".right").animate({
                     right: '-51%'
-                },2000) */
+                },2000) 
                 setTimeout(function(){
                     $(".button").fadeOut("fast")
                     $(".big-title").fadeOut("fast")
                 },1000);
+                setTimeout(function(){
+                    $(".doors").remove();
+                },2000);
             },2000);
 
             setTimeout(function(){
@@ -95,7 +98,7 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
                 iCtrl.error = 'Could not create score';
             });
         }).catch(function () {
-            iCtrl.error = 'Could not create user';
+            iCtrl.error = 'Erreur : Veuillez vérifier le champ';
         });
     };
 
