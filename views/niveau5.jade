@@ -4,17 +4,11 @@ append scripts
     script(src='/javascripts/controllers/niveau5.js')
 
 block content
-    .main#niveau5(ng-controller="N5Controller as n5Ctrl")
-            .container
-                    h1#mainTitle R.O.I
-                    .list-group
-                        a.list-group-item(href='#')(ng-repeat="prop in n5Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
-                       // a.list-group-item(href='#') {{n5Ctrl.etape.propositions[1].reponse}}
-                        a.list-group-item(href='#') {{n5Ctrl.etape.propositions[2].reponse}}
-                    button.versNiveau(style='display:none') Prochaine étape
-    section.stage
-        figure.ball
-        div.novemVoice.animated.fadeIn
-            p#novemText
-            button.closeNovemVoice
-                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
+    .main#niveau5(ng-controller="N5Controller as n5Ctrl")(ng-cloak)
+        .row.question#niveau5
+            .col.col-sm-8.center
+                p#novemText
+        .row.justify-content-center
+            .col.col-sm-8.center.list-group
+                a.list-group-item(href='#')(ng-repeat="prop in n5Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
+            button.center.versNiveau(style='display:none') Étape suivante

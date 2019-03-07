@@ -1,18 +1,46 @@
 @font-face {
-  font-family: 'Brasilian';
-  src:  url('../fonts/Brasilia-Short-II.ttf.woff') format('woff2'),
-        url('../fonts/Brasilia-Short-II.ttf.woff') format('woff');
-}
-
-@font-face {
     font-family: 'Sans Forgetica';
     src:  url('../fonts/SansForgetica-Regular.otf') format('woff2');
+}
+
+.row{
+    margin-left:0!important;
+    margin-right:0!important;
+}
+.main{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100%;
+}
+
+.div-spacer{
+    width:100%;
+    height:50px;
+}
+.question{
+    min-height:200px;
+    top:50px;
+}
+
+p.core-text{
+    font-size:1.2em;
+}
+
+.full-h{
+    height:100%;
+    margin:auto!important;
+}
+
+.center{
+    margin:auto;
 }
 
 h1.emphasis{
     font-family: 'Sans Forgetica' !important;
     color:black;
     font-size:5em;
+    margin-bottom:3rem;
 }
 
 .n2-prop {
@@ -59,9 +87,6 @@ li.reponse.active{
 }
 rect.highcharts-background, rect.highcharts-plot-background{
 	height: auto !important;
-}
-tspan{
-font-family: "Brasilian";
 }
 
 svg.highcharts-root{
@@ -271,68 +296,56 @@ a
     color: #00B7FF;
 }
 
-
+.flexFont {
+    height:8em;
+    padding:1%;
+}
 
 .tools
 {
     text-align: center;
-    margin-top:50px;
-    margin-bottom: 200px;
 }
 
-.tools .col-xs-6.col-md-4 img
+.tools .tool img
 {
     max-width: 52px;
 }
 
-.tools .col-xs-6.col-md-4 h1
+.tools .tool h1
 {
-    color: #bdc3c7;
-    font-size: 14px;
+    color: #4e4e4e;
     text-transform: uppercase;
-    font-size:1.2em;
+    font-size:1.1vw;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:10px;
 }
 
-
-.n3-choice h1
+.tools .tool
 {
-    margin:0;
-    font-size:1.8em !important;
-}
-
-.tools .n3-choice{
-    height:100px !important;
-}
-.tools .col-xs-6.col-md-4
-{
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 15px;
-    -webkit-transition: border .4s ease-in;
-    transition: border .4s ease-in;
-    background: #102751;
+    padding: 10px;
+    margin:10px;
+    -webkit-transition: border .1s ease;
+    transition: border .1s ease;
+    background: white;
     height:150px;
 }
 
-.tools .col-xs-6.col-md-4:hover
+.tools .tool:hover
 {
     cursor: pointer;
 }
 
-.tools .col-xs-6.col-md-4.active
+.tools .tool.active
 {
-    border: 8px solid #0a1832;
-    background: #ecf0f1; 
+    border: 4px solid #6d9df5;
+    background: #ffffff; 
 }
 
-.tools .col-xs-6.col-md-4.active:hover
+.tools .tool.active h1
 {
-    border: 8px solid #0a1832;
-}
-
-.tools .col-xs-6.col-md-4.active h1
-{
-    color: #102751;
+    color: #4e4e4e;
 }
 
 button.versNiveau
@@ -340,23 +353,13 @@ button.versNiveau
 	color: #fff;
 	font-size: 1.2em;
     height: 60px;
-    border-radius: 10px;
     border: 0;
     padding: 0px 15px;
     background: #2ecc71;
-    line-height: 60px;
-    display: block;
-    margin: 20px auto;
+    bottom:60px;
+    right:120px;
+    position:absolute;
 }
-
-.main
-{
-    width: 80%;
-    height: 100%;
-    margin:auto;
-   /* background: #0a1832;*/
-}
-
 
 html,body
 {
@@ -412,13 +415,14 @@ html,body
 
 #intro .credentials img{
     margin: 0 20px 0 0;
-}
+}        
 
 #intro, #save
 {
     z-index: 100;
     background-size:cover;
     background-position: center;
+    margin:auto!important;
 }
 
 .doors{
@@ -456,11 +460,10 @@ img.header
 
 .intro input, .end input
 {
-background-color: rgba(0, 0, 0, 0.61);
+    background-color: rgba(31, 19, 199, 0.315);
     font-size: 22px;
-    color: #74d0f0;
+    color: white;
 	border: 0px;
-    border-radius: 10px;
     padding: 10px;
     text-align: center;
 }
@@ -506,19 +509,17 @@ background-color: rgba(0, 0, 0, 0.61);
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
-    display: block;
     font-size: 20px;
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
     cursor: pointer;
-    margin: 60px auto 0;
     background: white;
 }
 
 .startButton:hover
 {
     color: white;
-    background: #74d0f0;
+    background: #0d0485;
 }
 
 .endButton
@@ -694,11 +695,6 @@ body .loader_cogs__top div.top_hole
 #niveau2,#niveau3
 {
     z-index: 98;
-    padding-bottom: 150px;
-}
-
-#niveau4, #niveau5, #niveau6, #niveau7{
-	padding-bottom: 150px;
 }
 
 .novemVoice{
@@ -709,9 +705,7 @@ body .loader_cogs__top div.top_hole
     bottom:40px;
     margin:auto;
     padding:2em 2em 0em 2em;
-    border-radius:20px 20px 20px 0;
     z-index: 2;
-    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
 	font-size: 1.3em;
     background: white;
     margin: 0 100px;
@@ -725,7 +719,6 @@ body .loader_cogs__top div.top_hole
     right: -10px;
     bottom: 30px;
     margin: auto;
-    border-radius: 40px 0 0 40px;
     cursor: pointer;
     z-index: 3;
     /*font: bold 17px "Courier New",Courier,monospace;*/
@@ -764,7 +757,6 @@ body .loader_cogs__top div.top_hole
 
 .choixQuestion
 {
-    font-family: "Courier New",Courier,monospace;
     width: 80%;
     position: absolute;
     left: 10%;
@@ -790,7 +782,6 @@ font-size: 32px;
     height: 95px;
     margin: 5px 5px 0!important;
     color: white;
-    border-radius: 5px 5px 0 0;
     cursor: pointer;
     opacity: .7;
     text-align:center;
@@ -829,52 +820,6 @@ font-size: 32px;
 {
     position: relative;
     height: 30px;
-}
-
-/* CSS Simple Pre Code */
-pre {
-    background: #333;
-    white-space: pre;
-    word-wrap: break-word;
-    overflow: auto;
-}
-
-pre.code {
-background: #102751;
-top: 25px;
-height: 100%;
-width: 100%;
-margin: auto;
-border-radius: 4px;
-border: 0px;
-position: relative;
-margin-bottom: 40px;
-}
-
-pre.code label {
-    font-family: sans-serif;
-    font-size: 26px;
-    color: #ffffff;
-    position: absolute;
-    left: 4px;
-    top: 15px;
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    pointer-events: none;
-}
-
-pre.code code {
-    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
-    display: block;
-    margin: 0 0 0 120px;
-    padding: 25px 16px 25px 25px;
-    border-left: 1px solid #555;
-    /*overflow-x: auto;*/
-    font-size: 18px;
-    line-height: 36px;
-    color: #ddd;
 }
 
 @media screen and (max-width: 800px) {
@@ -921,7 +866,8 @@ pre.code code {
 #novemText
 {
 	color: #102751;
-    padding: 15px;
+    font-size:1.2em;
+    text-align:justify;
 }
 
 .contentFullWidth{
@@ -934,7 +880,6 @@ pre.code code {
     padding: .5em 2em 2em 2em;
     padding-left: 1.5em;
     height: 18px;
-    border-radius: 15px;
 }
 #sortable li span { text-align: center; }
 
@@ -957,7 +902,6 @@ h1#mainTitle{
     padding: .5em 2em 2em 2em;
     padding-left: 1.5em;
     height: 18px;
-    border-radius: 15px;
 }
 .red {
     background: #102751;
@@ -966,7 +910,6 @@ h1#mainTitle{
     padding: .5em 2em 2em 2em;
     padding-left: 1.5em;
     height: 18px;
-    border-radius: 15px;
 }
 
 .textProfil{
@@ -1041,7 +984,6 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
 }
 
 .choix{
-    border-radius: 15px;
     -webkit-transition: border .4s ease-in;
     transition: border .4s ease-in;
     background: #102751;
@@ -1112,7 +1054,6 @@ display: block;
     display:none;
 	color: #fff;
     height: 75px;
-    border-radius: 10px;
     border: 0;
     padding: 25px;
     background: #2ecc71;
@@ -1174,10 +1115,15 @@ background-color: yellow !important;
 min-height: 100px !important;
 }
 
-.tools .col-xs-6.col-md-4
+.tools .tool
 {
-min-height: 150px;
+min-height: 100px;
+min-width:100px;
 }
+.tools .tool h1
+{
+    font-size:12px;
+}  
 svg.highcharts-root{
 
 	margin-top: -100px;
@@ -1204,13 +1150,21 @@ svg.highcharts-root{
 	display: block;
 	margin-top: -150px;
 }
+.tools .tool h1
+{
+    font-size:14px;
+}  
     }
 
     /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
 body{
 background-color: cyan !important;
-}        
+}      
+.tools .tool h1
+{
+    font-size:14px;
+}  
     }
      
       

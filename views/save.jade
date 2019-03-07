@@ -4,18 +4,19 @@ append scripts
     script(src='/javascripts/controllers/save.js')
 
 block content
-    .main#intro(ng-controller="SaveController as sCtrl")
-        .end
-            img#logoEnd(src="/images/novemlab_final_transparent.png" ,class="header")
-            span
-               h1#textFin Bravo {{sCtrl.joueur}} vous avez complété les épreuves.
+    .main#save(ng-controller="SaveController as sCtrl")(ng-cloak)
+        .row.question
+            .col.col-md-8.center
+                p#novemText
+        .row.justify-content-center.next
+                .col.col-sm-8(align="center")
+                    input(type='checkbox', ng-model='sCtrl.allowEmail', style="margin-right:15px;" name="allow")
+                    label(for="allow") Je veux recevoir les informations de la filière par e-mail 
+                    input(type='text', placeholder='e-mail', ng-model='sCtrl.email', style="margin-left:15px;")
+        .div-spacer
+        .row.justify-content-center.next
+                .col.col-sm-8(align="center")
+                    button.startButton(ng-click='sCtrl.save()') Voir mes résultats
+                    .alert.alert-warning(style="margin-top:15px;") {{sCtrl.error}}
 
-            input(type='text', placeholder='e-mail', ng-model='sCtrl.email')
-            button.endButton(ng-click='sCtrl.save()') Voir mes résultats
-            h3 {{sCtrl.error}}
-    section.stage
-        figure.ball
-        div.novemVoice.animated.fadeIn
-            p#novemText
-            button.closeNovemVoice
-                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
+            

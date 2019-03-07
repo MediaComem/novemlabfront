@@ -31,6 +31,8 @@ angular.module('novemlab').controller('N4Controller', function(JoueurService, Et
 
     var save =function(score){
         JoueurService.updateScorePhase1(score).then(function(res){
+            $window.sessionStorage.setItem("score", JSON.stringify(res.data));
+            console.log("Score updated !");
             $window.location.href = "/n5";
         })
 

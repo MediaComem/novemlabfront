@@ -33,6 +33,7 @@ angular.module('novemlab').controller('N2Controller', function(JoueurService, Et
     $(".versNiveau").on("click",function(){
         choix = $("a.list-group-item.active");
         score = choix.attr('value');
+    
         save(score);
     });
 

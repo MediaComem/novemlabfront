@@ -23,15 +23,15 @@ block content
         .loader-ring-light
         .loader-ring-track
   
-  .main#intro(ng-controller="IntroControler as iCtrl") 
-    .intro
+  .row.full-h#intro(ng-controller="IntroControler as iCtrl") 
+    .col-md-8.intro.center
       h1 Bachelor of Science in Media Engineering
       h1.emphasis Devenez acteur de la révolution numérique
-      p Notre programme professionnalisant permet aux étudiant·e·s d'acquérir les compétences nécessaires à la maîtrise globale de produits et de services numériques.
-      p Votre profil polyvalent basé sur des connaissances pratiques vous prépare activement aux besoins du marché du travail.
-      h3 Quel est votre profil d'ingénieur·e des médias ?
+      p.core-text Notre programme professionnalisant permet aux étudiant·e·s d'acquérir les compétences nécessaires à la maîtrise globale de produits et de services numériques.
+      p.core-text Votre profil polyvalent basé sur des connaissances pratiques vous prépare activement aux besoins du marché du travail.
+      h3(style="margin:40px 0 15px 0;") Quel est votre profil d'ingénieur·e des médias ?
       input(type='text', placeholder='Entrez votre prénom', ng-model='iCtrl.joueur.pseudo')
-      button.startButton(ng-click='iCtrl.start()') Commencer
+      button.startButton(ng-click='iCtrl.start()')(style="margin-left:20px;") Commencer
       span {{iCtrl.error}}
 
   //section.stage(style="display:none")

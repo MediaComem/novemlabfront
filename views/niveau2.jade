@@ -5,18 +5,12 @@ append scripts
 
 block content
     .main#niveau2(ng-controller='N2Controller as n2Ctrl')(ng-cloak)
-        .container(ng-cloak)
-            .row
-                .videoDiv
-                    img(src='/images/scrum.png', width='100%', height='100%', style='border:none;overflow:hidden')
-            .row
-                .list-group
-                    a.list-group-item(href='#')(ng-repeat="prop in n2Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
-            button.versNiveau(style='display:none') Étape suivante
-    section.stage
-        figure.ball
-        div.novemVoice.animated.fadeIn
-            p#novemText
-            button.closeNovemVoice
-                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
+        .row.question#niveau2
+            .col.col-sm-8.center
+                p#novemText
+        .row.justify-content-center
+            .col.col-sm-8.center.list-group
+                a.list-group-item(href='#')(ng-repeat="prop in n2Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
+            button.center.versNiveau(style='display:none') Étape suivante
+
 

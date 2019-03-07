@@ -4,17 +4,14 @@ append scripts
 	script(src='/javascripts/controllers/niveau1.js')
 
 block content
-	.main#niveau1(ng-controller="N1Controller as n1Ctrl")
-		.container.tools(ng-cloak)
-			.row
-				div.col-xs-6.col-md-4(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
-					img(ng-src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.png')
-					h1 {{prop.reponse}}
-			.row
-				button.versNiveau Étape suivante
-	section.stage
-		figure.ball
-		div.novemVoice.animated.fadeIn
-			p#novemText
-			button.closeNovemVoice
-				span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
+	.main(ng-cloak)(ng-controller="N1Controller as n1Ctrl")
+		.row.question#niveau1
+			.col.col-sm-8.center
+				p#novemText
+		.row
+			.col.col-sm-8.tools.center
+				.row.justify-content-center
+					div.col-sm-3.tool(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
+						img(ng-src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.svg')
+						h1 {{prop.reponse}}
+			button.center.versNiveau Étape suivante

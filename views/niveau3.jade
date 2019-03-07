@@ -4,16 +4,14 @@ append scripts
     script(src='/javascripts/controllers/niveau3.js')
 
 block content
-    .main#niveau3(ng-controller='N3Controller as n3Ctrl')
-        .container.tools(ng-cloak)
-            .row
-                div.col-xs-6.col-md-4.n3-choice(ng-repeat="prop in n3Ctrl.etape.propositions", value="{{prop.score}}")
-                    h1 {{prop.reponse}}
-            .row
-                button.versNiveau Prochaine étape
-    section.stage
-        figure.ball
-        div.novemVoice.animated.fadeIn
-            p#novemText
-            button.closeNovemVoice
-                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
+    .main#niveau3(ng-controller='N3Controller as n3Ctrl')(ng-cloak)
+        .row.question#niveau3
+            .col.col-sm-8.center
+                p#novemText
+        .row.justify-content-center
+            .col.col-sm-8.center.list-group
+                ul#sortable
+                    li.ui-state-default(ng-repeat="prop in n3Ctrl.etape.propositions", value="{{prop.score}}")
+                        span.ui-icon.ui-icon-arrowthick-2-n-s
+                        | {{prop.reponse}}
+            button.center.versNiveau(style='display:none') Étape suivante

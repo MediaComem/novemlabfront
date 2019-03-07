@@ -7,68 +7,57 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.niveau = "3";
     n3Ctrl.score = {};
     n3Ctrl.choices = [];
-    var nextButton = $('.versNiveau');
-    $("button.versNiveau").hide();
+    
+    var liste = $( "#sortable" ).sortable();
+    liste.disableSelection();
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
         n3Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n3Ctrl.etape.question);
         showMessage();
-    });
+    }).then(setTimeout(function(){$('button.versNiveau').fadeIn("slow");},6000));
     
-    var limit = 2;
-    $(document).on("click touchstart", '.tools .n3-choice', function(e){
-        e.preventDefault();
-        if($(".tools .n3-choice.active").length >= limit) {
-            if($(this).hasClass("active"))
-            {
-                $("button.versNiveau").fadeIn(2000);
-                $(this).toggleClass("active");
-            }
+    // Lors de l'envoi récupère les trois outils choisis
+    $('.versNiveau').click(function(){
+        var reverse_i =  3;
 
-        }else{
-            $("button.versNiveau").fadeIn(2000);
-            $(this).toggleClass("active");
-
-            var occ = $('.active').length;
-            if (occ == 2){
-                $('button.versNiveau').show();
-
-                // Lors de l'envoi récupère les trois outils choisis
-                $('button.versNiveau').click(function(){
-                    $( ".n3-choice.active" ).each(function( index ) {
-                        //Récupère le score de l'élément sélectionné
-                        elementScore = $(this).attr('value');
-                        n3Ctrl.choices.push(elementScore);
-                    });
-
-                    for (i = 0; i < JSON.parse(n3Ctrl.choices.length); i++) {  //loop through the array
-                        $.each(JSON.parse(n3Ctrl.choices[i]), function(k,v)
-                            {
-                                if(!n3Ctrl.score.hasOwnProperty(k)){
-                                    n3Ctrl.score[k] = v;
-                                }
-                                else{
-                                    swap = parseInt(n3Ctrl.score[k]);
-                                    swap += v;
-                                    n3Ctrl.score[k] = swap;
-                                }
-                            }
-                        )
+        $('.list-group ul#sortable li').each(function(){
+            var choice = JSON.parse($(this).attr('value')); // This is your rel value
+            if(reverse_i > 0){
+                for (var key in choice) {
+                    if (choice.hasOwnProperty(key)) {
+                        choice[key] *= reverse_i;
                     }
-
-                    save(n3Ctrl.score);
-                });
+                }                
+                n3Ctrl.choices[reverse_i] = choice;
             }
-        }})
+            reverse_i--;
+        });
+
+        n3Ctrl.score = sumObjectsByKey(n3Ctrl.choices[1],n3Ctrl.choices[2],n3Ctrl.choices[3])
+
+        save(n3Ctrl.score);
+    });
 
     var save =function(score){
-        JoueurService.updateScorePhase1(score).then(function(){
-           $window.location.href = "/n4";
+        JoueurService.updateScorePhase1(score).then(function(res){
+            $window.sessionStorage.setItem("score", JSON.stringify(res.data));
+            console.log("Score updated !");
+            $window.location.href = "/n4";
         })
 
     }
+
+    function sumObjectsByKey(...objs) {
+        return objs.reduce((a, b) => {
+          for (let k in b) {
+            if (b.hasOwnProperty(k))
+              a[k] = (a[k] || 0) + b[k];
+          }
+          return a;
+        }, {});
+      }
 
 });
 

@@ -19,41 +19,39 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
         showMessage();
     })
 
+
     /**
      * GENERATE FRONT
      */
     $('button.versNiveau').hide();
-    var limit = 3;
+    var limit = 2;
 
-    $(document).on("click", '.tools .col-xs-6.col-md-4', function(e){
+    $(document).on("click", '.tools .tool', function(e){
         e.preventDefault();
 
-        if($(".tools .col-xs-6.col-md-4.active").length >= limit) {
+        if($(".tools .tool.active").length >= limit) {
             if($(this).hasClass("active"))
             {
                 $(this).toggleClass("active");
-                $('button.versNiveau').hide();
+                $('button.versNiveau').fadeOut(1000);
             }
 
         }else{
             $(this).toggleClass("active");
 
             var occ = $('.active').length;
-            if (occ == 3){
-                $('button.versNiveau').show();
+            if (occ == limit){
+                $('button.versNiveau').fadeIn(1000);
 
                 // Lors de l'envoi récupère les trois outils choisis
                 $('button.versNiveau').click(function(){
-                    $( ".col-xs-6.col-md-4.active" ).each(function( index ) {
-                        console.log( index + ": " + $( this ).text() );
+                    $( ".tool.active" ).each(function( index ) {
                         //Récupère le score de l'élément sélectionné
                         elementScore = $(this).attr('value');
                         n1Ctrl.choices.push(elementScore);
-                        console.log(n1Ctrl.choices);
                     });
 
                     for (i = 0; i < JSON.parse(n1Ctrl.choices.length); i++) {  //loop through the array
-                        console.log(i);
                         $.each(JSON.parse(n1Ctrl.choices[i]), function(k,v)
                             {
                                 if(!n1Ctrl.score.hasOwnProperty(k)){
@@ -62,14 +60,12 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
                                 else{
                                     swap = parseInt(n1Ctrl.score[k]);
                                     swap += v;
-                                    console.log(swap);
                                     n1Ctrl.score[k] = swap;
                                 }
                             }
                         )
                         //total += n1Ctrl.choices[i].communication;  //Do the math!
                     }
-
                     save(n1Ctrl.score);
                 });
             }
@@ -77,8 +73,11 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
 
 
     var save =function(score){
-        JoueurService.updateScorePhase1(score).then(function(){
+        JoueurService.updateScorePhase1(score).then(function(res){
+            $window.sessionStorage.setItem("score", JSON.stringify(res.data));
             $window.location.href = "/n2";
+        }).catch(function() {
+            n1Ctrl.error = 'Could not edit score';
         })
 
     }
