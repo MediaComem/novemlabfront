@@ -12,22 +12,35 @@ angular.module('novemlab').controller('N5Controller', function(JoueurService, Et
         showMessage();
     });
 
-    $(document).ready(function () {
-        $(document).on("click", 'a.list-group-item', function(e){
-            $('.active').removeClass('active');
-            // add active class to clicked element
-            $(this).addClass('active');
-            $('.versNiveau').fadeIn("slow");
+    var limit = 1;
 
-        })
-    });
-    
+    $(document).on("click", '.tools .job', function(e){
+        e.preventDefault();
 
-    $(".versNiveau").on("click",function(){
-        choix = $("a.list-group-item.active");
-        score = choix.attr('value');
-        save(score);
-    });
+        if($(".tools .job.active").length >= limit) {
+            if($(this).hasClass("active"))
+            {
+                $(this).toggleClass("active");
+                $('button.versNiveau').fadeOut(200);
+            }
+
+        }else{
+            $(this).toggleClass("active");
+
+            var occ = $('.active').length;
+            if (occ == limit){
+                $('button.versNiveau').fadeIn(200);
+
+                // Lors de l'envoi récupère les deux outils choisis
+                $('button.versNiveau').click(function(){
+                    $( ".job.active" ).each(function( index ) {
+                        //Récupère le score de l'élément sélectionné
+                        n5Ctrl.score = $(this).attr('value');
+                    });
+                    save(n5Ctrl.score);
+                });
+            }
+        }})
 
     var save =function(score){
         JoueurService.updateScorePhase1(score).then(function(res){

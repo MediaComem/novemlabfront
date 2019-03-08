@@ -8,7 +8,10 @@ block content
         .row.question#niveau5
             .col.col-sm-8.center
                 p#novemText
-        .row.justify-content-center
-            .col.col-sm-8.center.list-group
-                a.list-group-item(href='#')(ng-repeat="prop in n5Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
+        .row
+            .col.col-sm-10.tools.center
+                .row.justify-content-center
+                    div.col-sm-4.job(ng-repeat="prop in n5Ctrl.etape.propositions", value="{{prop.score}}")
+                        h1 {{prop.reponse.titre}}
+                        p{{prop.reponse.description}}
             button.center.versNiveau(style='display:none') Étape suivante

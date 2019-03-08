@@ -43,7 +43,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
             if (occ == limit){
                 $('button.versNiveau').fadeIn(1000);
 
-                // Lors de l'envoi récupère les trois outils choisis
+                // Lors de l'envoi récupère les deux outils choisis
                 $('button.versNiveau').click(function(){
                     $( ".tool.active" ).each(function( index ) {
                         //Récupère le score de l'élément sélectionné

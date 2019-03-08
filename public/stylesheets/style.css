@@ -3,6 +3,10 @@
     src:  url('../fonts/SansForgetica-Regular.otf') format('woff2');
 }
 
+a {
+    color:#5953e2;
+}
+
 .row{
     margin-left:0!important;
     margin-right:0!important;
@@ -20,7 +24,7 @@
 }
 .question{
     min-height:200px;
-    top:50px;
+    top:100px;
 }
 
 p.core-text{
@@ -293,7 +297,7 @@ button.closeNovemVoice{
 
 a
 {
-    color: #00B7FF;
+    color: #5953e2;
 }
 
 .flexFont {
@@ -320,6 +324,36 @@ a
     left:0;
     right:0;
     bottom:10px;
+}
+
+.job h1{
+    position: relative;
+    font-size: 1.2vw;
+    display: block;
+    height: 50px;
+    padding: 10px;
+    background-color: #5953e2;
+    color: white;
+    width: 70%;
+    margin: 10px auto 20px auto;
+}
+
+.job{
+    padding: 10px;
+    margin:10px;
+    -webkit-transition: border .1s ease;
+    transition: border .1s ease;
+    background: white;
+    height:200px;
+}
+
+.job:hover{
+    cursor:pointer;
+}
+
+.job.active{
+    border: 4px solid #6d9df5;
+    background: #ffffff; 
 }
 
 .tools .tool
@@ -355,7 +389,7 @@ button.versNiveau
     height: 60px;
     border: 0;
     padding: 0px 15px;
-    background: #2ecc71;
+    background: #5953e2;
     bottom:60px;
     right:120px;
     position:absolute;
@@ -458,11 +492,15 @@ img.header
     margin-bottom: 40px;
 }
 
+.list-group-item.active {
+    background-color:#5953e2 !important;
+}
+
 .intro input, .end input
 {
-    background-color: rgba(31, 19, 199, 0.315);
+    background-color: white;
+    color:#5953e2;
     font-size: 22px;
-    color: white;
 	border: 0px;
     padding: 10px;
     text-align: center;
@@ -504,7 +542,7 @@ img.header
 
 .startButton
 {
-    color: black;
+    color: white;
 	border:0px;
     padding: 16px 32px;
     text-align: center;
@@ -513,13 +551,13 @@ img.header
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
     cursor: pointer;
-    background: white;
+    background: #5953e2;
 }
 
 .startButton:hover
 {
     color: white;
-    background: #0d0485;
+    background: #5953e2;
 }
 
 .endButton
@@ -541,7 +579,7 @@ img.header
 .endButton:hover
 {
     color: white;
-    background: #74d0f0;
+    background: #5953e2;
 }
 
 .end{
@@ -874,8 +912,8 @@ font-size: 32px;
     width:100%;
     height:100%;
 }
-#sortable, #sortable1, #sortable2, #sortable1b, #sortable2b  { color:#fff; list-style-type: none; margin: 0 auto; padding: 0; width: 60%; cursor: move;}
-#sortable li {background: #5ca5ff;
+#sortable, #sortable1, #sortable2, #sortable1b, #sortable2b  { color:#fff; list-style-type:none; margin: 0 auto; padding: 0; width: 60%; cursor: move;}
+#sortable li {background: #5953e2;
     margin: 0 5px 5px 5px;
     padding: .5em 2em 2em 2em;
     padding-left: 1.5em;
@@ -939,7 +977,7 @@ text-align: center;
     margin-top: 50px;
 }
 #niveau4 .list-group .active{
-background-color: #5ca5ff;
+background-color: #5953e2;
 }
 /* customisation du graph */
 /*g.highcharts-series-group path{fill: rgba(72, 120, 207, 0.298039);
@@ -1158,9 +1196,7 @@ svg.highcharts-root{
 
     /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
-body{
-background-color: cyan !important;
-}      
+
 .tools .tool h1
 {
     font-size:14px;
