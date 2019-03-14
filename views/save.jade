@@ -4,19 +4,22 @@ append scripts
     script(src='/javascripts/controllers/save.js')
 
 block content
-    .main#save(ng-controller="SaveController as sCtrl")(ng-cloak)
-        .row.question
-            .col.col-md-8.center
-                p#novemText
-        .row.justify-content-center.next
-                .col.col-sm-8(align="center")
-                    input(type='checkbox', ng-model='sCtrl.allowEmail', style="margin-right:15px;" name="allow")
-                    label(for="allow") Je veux recevoir les informations de la filière par e-mail 
-                    input(type='text', placeholder='e-mail', ng-model='sCtrl.email', style="margin-left:15px;")
-        .div-spacer
-        .row.justify-content-center.next
-                .col.col-sm-8(align="center")
-                    button.startButton(ng-click='sCtrl.save()') Voir mes résultats
-                    .alert.alert-warning(style="margin-top:15px;") {{sCtrl.error}}
-
-            
+    .row.align-self-center.center.flex-w-80p(ng-controller="SaveController as sCtrl")(ng-cloak)
+        .col.col-sm-12
+            .row.question
+                .col.col-md-8.center
+                    p#novemText
+            .row.justify-content-center.next
+                    .col.col-sm-8(align="center")
+                        input.end(type='email', placeholder='e-mail', ng-model='sCtrl.email' style="width:300px")
+                        .alert.alert-warning(style="margin-top:15px;") {{sCtrl.error}}
+                        .btn-group.btn-group-vertical(data-toggle="buttons")
+                            label.btn(for="allow")
+                                input(type='checkbox', ng-model='sCtrl.allowEmail', style="margin-right:15px;" id="allow" name="allow")
+                                i.fa.fa-square-o.fa-2x
+                                i.fa.fa-check-square-o.fa-2x
+                                span(style="position:relative;left:20px;top:-5px") Je veux recevoir les informations de la filière par e-mail 
+            .div-spacer
+            .row.justify-content-center.next
+                    .col.col-sm-8(align="center")
+                        button.startButton(ng-click='sCtrl.save()') Voir mes résultats

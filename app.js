@@ -13,6 +13,7 @@ var niveau5 = require('./routes/niveau5');
 var niveau6 = require('./routes/niveau6');
 var niveau7 = require('./routes/niveau7');
 var niveauF = require('./routes/niveauF');
+var end = require('./routes/end');
 var save = require('./routes/save');
 var profile = require('./routes/profile');
 //var Chart = require('chart.js');
@@ -42,6 +43,7 @@ app.use('/n7', niveau7);
 app.use('/nF', niveauF);
 app.use('/save', save);
 app.use('/profile', profile);
+app.use('/end', end);
 app.use('/api-proxy', proxy(process.env.PROXY_URL || 'localhost:3000'));
 
 

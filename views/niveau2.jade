@@ -4,13 +4,14 @@ append scripts
     script(src='/javascripts/controllers/niveau2.js')
 
 block content
-    .main#niveau2(ng-controller='N2Controller as n2Ctrl')(ng-cloak)
-        .row.question#niveau2
-            .col.col-sm-8.center
-                p#novemText
-        .row.justify-content-center
-            .col.col-sm-8.center.list-group
-                a.list-group-item(href='#')(ng-repeat="prop in n2Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
-            button.center.versNiveau(style='display:none') Étape suivante
+    .row.align-self-center.center.flex-w-80p(ng-controller='N2Controller as n2Ctrl')(ng-cloak)
+        .col.col-sm-12
+            .row.question
+                .col.col-sm-8.center
+                    p#novemText
+            .row
+                .col.col-sm-8.center.list-group
+                    a.list-group-item(href='#')(ng-repeat="prop in n2Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
+    button.center.versNiveau(style='display:none') Étape suivante
 
 

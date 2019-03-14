@@ -1,67 +1,111 @@
 angular.module('novemlab').controller('NFController', function(EtapeService, apiUrl, $scope, $state, $http, $window) {
     var nfCtrl = this;
-
+    var step = 1;
+    var totSteps = 3;
+    var chart;
     nfCtrl.joueur = JSON.parse($window.sessionStorage.getItem("joueur"));
     nfCtrl.score = JSON.parse($window.sessionStorage.getItem("score"));
-
+    nfCtrl.titre = "Profil de " + nfCtrl.joueur;
     var scoreTab = [];
-    scoreTab[0] = {y:nfCtrl.score.management,color:'#E79043',fillColor:'#E79043'};   
-    scoreTab[1] = {y:nfCtrl.score.communication,color:'#E79043',fillColor:'#E79043'};       
-    scoreTab[2] = {y:nfCtrl.score.business,color:'#148D82',fillColor:'#148D82'};
-    scoreTab[3] = {y:nfCtrl.score.gestion,color:'#148D82',fillColor:'#148D82'};
-    scoreTab[4] = {y:nfCtrl.score.conception,color:'#8DC357',fillColor:'#8DC357'};
-    scoreTab[5] = {y:nfCtrl.score.technique,color:'#8DC357',fillColor:'#8DC357'};
+    scoreTab[0] = nfCtrl.score.management;   
+    scoreTab[1] = nfCtrl.score.communication;       
+    scoreTab[2] = nfCtrl.score.business;
+    scoreTab[3] = nfCtrl.score.gestion;
+    scoreTab[4] = nfCtrl.score.conception;
+    scoreTab[5] = nfCtrl.score.technique;
 
     nfCtrl.etape = {};
  
     /*insére dans la liste les réponse possible*/
     nfCtrl.niveau = "9";
 
+    var dataSetIM =
+    {label : 'Profil IM',
+    data: [22,22,22,22,22,22],
+    borderWidth: 1,
+    backgroundColor:'rgba(0,0,255,0.6)',
+    pointBackgroundColor:'rgba(0,0,255,1)',
+    pointRadius:2};
+
     EtapeService.show(nfCtrl.niveau).then(function(){
         nfCtrl.etape = EtapeService.getEtape();
     }).then(function(){ 
-        $("#novemText").html(nfCtrl.etape.question);
-        showMessage()
+        setTimeout(function(){
+            $('.end-step1').fadeIn("slow");
+            setTimeout(function(){
+                chart = drawChart();
+                setTimeout(function(){
+                    $('.end-step2').fadeIn("slow");
+                    setTimeout(function(){
+                        $('.versNiveau').fadeIn("slow");
+                    },2500)
+                },2500)
+            },1000)
+
+        },1000)
     });
 
     var graph = document.getElementById('profil');
-    var myChart = new Chart(graph, {
-        type: 'bar',
-        data: {
-            labels: [nfCtrl.score, "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: scoreTab,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
+    var drawChart = function() {
+        var myChart = new Chart(graph, {
+            type: 'radar',
+            data: {
+                labels: ["Management de contenus", "Communication & Marketing digital", "Stratégie et Modèles d'affaire", "Gestion de projet numérique", "Conception UX & Design Thinking", "Programmation web et mobile"],
+                datasets: [{
+                    label: 'Votre profil',
+                    data: scoreTab,
+                    borderWidth: 1,
+                    backgroundColor:'rgba(255,255,255,0.6)',
+                    pointBackgroundColor:'rgba(255,255,255,1)',
+                    pointRadius:2
+                    }]
+            },
+            options: {
+                startAngle: 30,
+                elements:{
+                    line: {
+                        tension:0,
+
                     }
-                }]
+                },
+                legend:{
+                    labels:{
+                        fontSize:24,
+                        fontColor: 'white'
+                    },
+                },
+                scale: {
+                    angleLines:{
+                        color:"white"
+                    },
+                    beginAtZero:true,
+                    ticks: {
+                        min:0,
+                        max:20,
+                        display:false,
+                        stepSize:10,
+                        fontColor:"white"
+                    },
+                    gridLines:{
+                        color:"white"
+                    },
+                    pointLabels: {
+                        fontColor:"white",
+                        fontSize: 16		
+                    },
+                    yAxes: [{
+                    }],
+                    xAxes: [{
+                    }]
+                },
+                animation:{
+                    duration:1000,
+                    easing:'easeInQuart'
+                }
             }
-        }
-    });
-    
+        });
+        return myChart;
+    }
     /*function makeid() {
         var text = "";
         var possible = "ABDEFGHIJLMNOPQRSTVWXYZ0123456789";
@@ -73,7 +117,67 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
     }*/
 
     $(".versNiveau").on("click",function(){
-        $window.location.href = "/";
+        if(step <= totSteps){
+            switch(step){
+                case 1:
+                    $('.versNiveau').hide();
+                    $('.end-step1').fadeOut("fast");
+                    $('.end-step2').fadeOut("fast");
+                    $('#endTitle').text("Profil de l'ingénieur·e des médias");
+                    setTimeout(function(){
+                        $('.end-step3').fadeIn("slow");
+                    },1000);
+                    //chart.data.datasets.splice(0);
+                    chart.options.scale.ticks.max = 40;
+                    chart.data.datasets.push(dataSetIM);
+                    chart.update();
+                    setTimeout(function(){
+                        $('.versNiveau').fadeIn("slow");
+                    },2500)
+                    step++;
+                    break;
+                case 2:
+                    $('.versNiveau').hide();
+                    $('#endTitle').text("Perspectives professionnelles");
+                    $('.end-step3').fadeOut("fast");
+                    chart.data.datasets.splice(0,1);
+                    dataSetIM.label = "Évolutions";
+                    chart.update();
+                    var dataLoop = window.setInterval(randomizeData, 2000);
+                    setTimeout(function(){
+                        $('.end-step4').fadeIn("slow");
+                    },1000);
+                    setTimeout(function(){
+                        $('.versNiveau').fadeIn("slow");
+                    },2500)
+                    step++;
+                    break;
+                case 3:
+                    $('.versNiveau').hide();
+                    window.clearInterval(dataLoop);
+                    $('#profil').hide();
+                    $('.end-step4').hide();
+                    $('.formSup').fadeIn("slow");
+                    $('.end-step5').fadeIn("slow");
+                    $('.versNiveau').html("Fin");
+                    setTimeout(function(){
+                        $('.versNiveau').fadeIn("slow");
+                    },2500)
+                    step++;
+                    break;
+                default:
+                    break;
+            }
+        }else{
+            $window.location.href = "/end";
+        }
     });
+
+
+    function randomizeData() {
+        let newData = dataSetIM.data.map(x => Math.floor(Math.random() * (38-18)+18));
+        dataSetIM.data = newData
+        chart.update();
+      };
 
 });

@@ -8,7 +8,7 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.score = {};
     n3Ctrl.choices = [];
     
-    var liste = $( "#sortable" ).sortable();
+    var liste = $( "#sortable" ).sortable();    
     liste.disableSelection();
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
