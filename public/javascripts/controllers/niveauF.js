@@ -37,7 +37,7 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
                 setTimeout(function(){
                     $('.end-step2').fadeIn("slow");
                     setTimeout(function(){
-                        saveScreen(step,$window);
+                        // saveScreen(step,$window);
                         $('.versNiveau').fadeIn("slow");
                     },2500)
                 },2500)
@@ -135,7 +135,7 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
                     chart.update();
                     setTimeout(function(){
                         $('.versNiveau').fadeIn("slow");
-                        saveScreen(step,$window);
+                        // saveScreen(step,$window);
                     },2500)
                     step++;
                     break;
@@ -152,7 +152,7 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
                     },1000);
                     setTimeout(function(){
                         $('.versNiveau').fadeIn("slow");
-                        saveScreen(step,$window);
+                        // saveScreen(step,$window);
                     },2500)
                     step++;
                     break;
@@ -168,7 +168,7 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
                     $('.versNiveau').html("Fin");
                     setTimeout(function(){
                         $('.versNiveau').fadeIn("slow");
-                        saveScreen(step,$window);
+                        // saveScreen(step,$window);
                     },2500)
                     step++;
                     break;

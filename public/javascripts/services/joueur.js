@@ -74,7 +74,6 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
 
         modify : function(data) {
             var idJoueur = JSON.parse($window.sessionStorage.getItem("joueurId"));
-
             return $http({
               method: 'PATCH',
               url: apiUrl+'/joueurs/'+ idJoueur,
