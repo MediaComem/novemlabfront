@@ -22,9 +22,11 @@ ul.tab-jobs li{
 label{
     color:white;
 }
+
 #ng-view{
     height:100%;
 }
+
 #save{
     color:white!important;
 }
@@ -352,7 +354,7 @@ a
 
 .job h1{
     position: relative;
-    font-size: 1.1em;
+    font-size: 1em;
     display: block;
     height: 50px;
     padding: 10px;
