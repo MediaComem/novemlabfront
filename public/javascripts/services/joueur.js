@@ -51,12 +51,12 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
                 url: apiUrl + '/scores/',
                 data: {
                     "joueur_id":data,
-                    "communication":0,
-                    "multimedia":0,
-                    "coding":0,
-                    "marketing":0,
-                    "management":0,
-                    "business":0
+                    "management":2,
+                    "communication":2,
+                    "business":2,
+                    "gestion":2,
+                    "conception":2,
+                    "technique":2
                 }
             })
         },
@@ -74,7 +74,6 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
 
         modify : function(data) {
             var idJoueur = JSON.parse($window.sessionStorage.getItem("joueurId"));
-
             return $http({
               method: 'PATCH',
               url: apiUrl+'/joueurs/'+ idJoueur,
@@ -84,7 +83,6 @@ angular.module('novemlab').service('JoueurService', function(apiUrl, $state, $ht
 
         updateScorePhase1 : function(data){
             var idScore = JSON.parse($window.sessionStorage.getItem("score"))._id;
-
             return $http({
               method: 'PATCH',
               url: apiUrl+'/scores/phase1/'+ idScore,

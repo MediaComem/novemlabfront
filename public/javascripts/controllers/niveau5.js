@@ -1,42 +1,52 @@
 angular.module('novemlab').controller('N5Controller', function(JoueurService, EtapeService, apiUrl, $scope, $state, $http, $window) {
     var n5Ctrl = this;
 
-    n5Ctrl.etape = {};
     n5Ctrl.score = {};
-    /* Sortable niveau 5 */
-
-    var liste = $( "#sortable" ).sortable();
-    liste.disableSelection();
-
-    /*insére dans la liste les réponse possible*/
     n5Ctrl.niveau = "5";
+    /* Sortable niveau 5 */
 
     EtapeService.show(n5Ctrl.niveau).then(function(){
         n5Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n5Ctrl.etape.question);
-        showMessage()
+        showMessage();
     });
 
+    var limit = 1;
 
+    $(document).on("click", '.tools .job', function(e){
+        e.preventDefault();
 
-    /* Récupère les valeurs de la liste dans l'ordre (niveau 5) */
-    $('.versNiveau').click(function(){
+        if($(".tools .job.active").length >= limit) {
+            if($(this).hasClass("active"))
+            {
+                $(this).toggleClass("active");
+                $('button.versNiveau').fadeOut(200);
+            }
 
-        var reverse_i =  $('.projet1 ul#sortable li').length;
+        }else{
+            $(this).toggleClass("active");
 
-        $('.projet1 ul#sortable li').each(function(){
-            var choice = $(this).attr('value'); // This is your rel value
-            n5Ctrl.score[choice] = reverse_i;
-            reverse_i--;
-        });
+            var occ = $('.active').length;
+            if (occ == limit){
+                $('button.versNiveau').fadeIn(200);
 
-        save(n5Ctrl.score);
-    });
+                // Lors de l'envoi récupère les deux outils choisis
+                $('button.versNiveau').click(function(){
+                    $( ".job.active" ).each(function( index ) {
+                        //Récupère le score de l'élément sélectionné
+                        n5Ctrl.score = $(this).attr('value');
+                    });
+                    save(n5Ctrl.score);
+                });
+            }
+        }})
 
     var save =function(score){
-        JoueurService.updateScorePhase2(score).then(function(){
-            $window.location.href = "/nF/6";
+        JoueurService.updateScorePhase1(score).then(function(res){
+            $window.sessionStorage.setItem("score", JSON.stringify(res.data));
+            console.log("Score updated !");
+            $window.location.href = "/n7";
         })
 
     }

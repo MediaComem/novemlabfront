@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon -e js,jade,css ./bin/www"
   },
   "dependencies": {
     "angular": "^1.6.4",
     "angular-ui-router": "^0.4.2",
     "body-parser": "~1.16.0",
+    "chart.js": "^2.7.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
     "express": "~4.14.1",

@@ -4,20 +4,15 @@ append scripts
     script(src='/javascripts/controllers/niveau5.js')
 
 block content
-
-    .main#niveau5(ng-controller="N5Controller as n5Ctrl")
-        .contentFullWidth
-            .content
-                .container.projet1
-                    h1#mainTitle Ordre d'importance (plus haut = plus important)
-                    ul#sortable
-                        li.ui-state-default(ng-repeat="prop in n5Ctrl.etape.propositions", value="{{prop.competence}}")
-                            span.ui-icon.ui-icon-arrowthick-2-n-s
-                            | {{prop.reponse}}
-                    button.versNiveau Prochaine étape
-                div.novemVoice.animated.slideInUp
+    .row.align-self-center.center.flex-w-80p(ng-controller="N5Controller as n5Ctrl")(ng-cloak)
+        .col.col-sm-12
+            .row.question
+                .col.col-sm-8.center
                     p#novemText
-                    button.closeNovemVoice
-                        span.glyphicon.glyphicon-chevron-down(aria-hidden='true')
-                    section.stage
-                        figure.ball
+            .row
+                .col.col-sm-12.tools.center
+                    .row.justify-content-center
+                        div.col-sm-4.job(ng-repeat="prop in n5Ctrl.etape.propositions", value="{{prop.score}}")
+                            h1 {{prop.reponse.titre}}
+                            p{{prop.reponse.description}}
+    button.center.versNiveau(style='display:none') Étape suivante

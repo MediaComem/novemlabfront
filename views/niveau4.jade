@@ -4,19 +4,12 @@ append scripts
     script(src='/javascripts/controllers/niveau4.js')
 
 block content
-    .main#niveau4(ng-controller="N4Controller as n4Ctrl")
-            .container
-                    h1#mainTitle A quoi correspond cette fonction ?
-                    canvas#myCanvas(width='578', height='300')
-                    .list-group
-
-                        a.list-group-item(href='#')(ng-repeat="prop in n4Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
-                       // a.list-group-item(href='#') {{n4Ctrl.etape.propositions[1].reponse}}
-                        a.list-group-item(href='#') {{n4Ctrl.etape.propositions[2].reponse}}
-                    button.versNiveau(style='display:none') Prochaine étape
-    div.novemVoice.animated.slideInUp
-        p#novemText
-        button.closeNovemVoice
-            span.glyphicon.glyphicon-chevron-down(aria-hidden='true')
-        section.stage
-            figure.ball
+    .row.align-self-center.center.flex-w-80p(ng-controller="N4Controller as n4Ctrl")(ng-cloak)
+        .col.col-sm-12
+            .row.question
+                .col.col-sm-8.center
+                    p#novemText
+            .row.justify-content-center
+                .col.col-sm-8.center.list-group
+                    a.list-group-item(href='#')(ng-repeat="prop in n4Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
+    button.center.versNiveau(style='display:none') Étape suivante

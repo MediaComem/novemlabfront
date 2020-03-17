@@ -2,12 +2,14 @@
  * Created by Romain on 14.03.2017.
  */
 
-angular.module('novemlab').controller('IntroControler', function(JoueurService, apiUrl, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('IntroControler', function(EtapeService,JoueurService, apiUrl, $scope, $state, $http, $window) {
 
     /**
      * Définition des variables
      */
     var iCtrl = this;
+    iCtrl.niveau = 0;
+    iCtrl.etape ={};
 
     /**
      * Déclarations MOJS
@@ -23,14 +25,13 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
             stroke:       ['#92b5f9', '#b7e1fc', '#c7daff','#cefef2','#b7e1fc'],
             duration:     500,
             radius:       60,
-            strokeWidth:  10,
+            strokeWidth:  5,
             isForce3d:    true
         }
     });
     meteors.el.style.zIndex = 101;
 
     iCtrl.init = function(){
-
         $(".button").on("click", function(e){
             meteors
                 .tune({ x: e.pageX, y: e.pageY })
@@ -54,16 +55,31 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
                 //Door slide right
                 $(".right").animate({
                     right: '-51%'
-                },2000)
+                },2000) 
                 setTimeout(function(){
                     $(".button").fadeOut("fast")
+                    $(".big-title").fadeOut("fast")
                 },1000);
+                setTimeout(function(){
+                    $(".doors").remove();
+                },2000);
             },2000);
 
             setTimeout(function(){
                 $(".intro").fadeIn('slow');
             },3500);
 
+            setTimeout(function(){
+                EtapeService.show(iCtrl.niveau).then(function(){
+                    iCtrl.etape = EtapeService.getEtape();
+                }).then(function(){
+                    setTimeout(function(){
+                    $(".stage").show();
+                    $("#novemText").html(iCtrl.etape.question);
+                        showMessage();
+                    },5000);
+                });
+            },3000);
         });
 
     };
@@ -78,12 +94,11 @@ angular.module('novemlab').controller('IntroControler', function(JoueurService, 
                 $window.sessionStorage.setItem("score", JSON.stringify(res.data));
                 $window.location.href = "/welcome";
 
-
             }).catch(function () {
                 iCtrl.error = 'Could not create score';
             });
         }).catch(function () {
-            iCtrl.error = 'Could not create user';
+            iCtrl.error = 'Erreur : Veuillez vérifier le champ';
         });
     };
 

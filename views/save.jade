@@ -4,13 +4,22 @@ append scripts
     script(src='/javascripts/controllers/save.js')
 
 block content
-    .main#intro(ng-controller="SaveController as sCtrl")
-        .end
-            img#logoEnd(src="/images/novemlab_final_transparent.png" ,class="header")
-            span
-               h1#textFin Bravo {{sCtrl.joueur}} vous avez réussi les épreuves, il ne vous reste plus qu'à entrer votre e-mail pour rejoindre le NovemLab
-
-            input(type='text', placeholder='e-mail', ng-model='sCtrl.email')
-            button.endButton(ng-click='sCtrl.save()') Rejoindre le NovemLab
-            h3 {{sCtrl.error}}
-
+    .row.align-self-center.center.flex-w-80p(ng-controller="SaveController as sCtrl")(ng-cloak)
+        .col.col-sm-12
+            .row.question
+                .col.col-md-8.center
+                    p#novemText
+            .row.justify-content-center.next
+                    .col.col-sm-8(align="center")
+                        input.end(type='email', placeholder='e-mail', ng-model='sCtrl.email' style="width:300px")
+                        .alert.alert-warning(style="margin-top:15px;") {{sCtrl.error}}
+                        .btn-group.btn-group-vertical(data-toggle="buttons")
+                            label.btn(for="allow")
+                                input(type='checkbox', ng-model='sCtrl.allowEmail', style="margin-right:15px;" id="allow" name="allow")
+                                i.fa.fa-square-o.fa-2x
+                                i.fa.fa-check-square-o.fa-2x
+                                span(style="position:relative;left:20px;top:-5px") Je veux recevoir les informations de la filière par e-mail 
+            .div-spacer
+            .row.justify-content-center.next
+                    .col.col-sm-8(align="center")
+                        button.startButton(ng-click='sCtrl.save()') Voir mes résultats

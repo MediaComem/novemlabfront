@@ -4,19 +4,68 @@ append scripts
     script(src='/javascripts/controllers/niveauF.js')
 
 block content
-
-    .main#niveau9(ng-controller="NFController as nfCtrl")
-        .contentFullWidth
-            .content
-                .container
-                    .row   
-                    .col-xs-12.col-md-4
-                        .textProfil
-                            span bienvenue à vous
-                            h1 RECRUE
-                                small #2312321
-
-                    .col-xs-12.col-md-8
-                        #profil
-            button.versNiveau Prochaine recrue
-
+    .row.center.flex-w-80p#save(ng-controller="NFController as nfCtrl")(ng-cloak)
+        .col.col-sm-4.center(style="margin-top:200px;")
+            h2#endTitle {{nfCtrl.titre}}
+            span.end-step1(style="display:none")
+                p Voici votre profil d'ingénieur·e des médias !
+            span.end-step2(style="display:none")
+                p L'ingénierie des médias regroupe 6 axes de compétences
+                ul.tab
+                    li Conception UX et Design thinking
+                    li Programmation web et mobile
+                    li Management de contenus
+                    li Communication et marketing digital
+                    li Stratégie et modèles d'affaire
+                    li Gestion de projet numérique
+                p Ce graphique est une estimation de votre affinité pour chaque compétence de la formation. 
+            span.end-step3(style="display:none")
+                p Après trois années de Bachelor, vous aurez acquis le savoir nécessaire afin de posséder des compétences transversales dans tous ces domaines. 
+                p Ces compétences donnent à l’ingénieur·e en média la capacité de compréhension globale des produits et services digitaux.
+                p Armé·e de ce Bachelor, vous êtes prêt·e à relever les défis de la révolution digitale. Vous n’êtes plus un·e consommateur passif mais un·e acteur capable de concevoir des produits et des services numériques. Vous savez observer finement des utilisateurs pour leur proposer des solutions adaptées et ergonomiques. Vous en programmez le fonctionnement. Vous menez des projets méthodiquement en prenant en compte les aspects marketing, techniques et de conception. 
+                p Durant le cursus, vous aurez également acquis les compétences nécessaires à développer votre culture digitale et vos «soft skill», tels que le travail en équipe, la communication interpersonnelle et la méthodologie de recherche.
+            span.end-step4(style="display:none")
+                p Suite à votre formation, vous pourrez vous spécialiser dans un ou plusieurs de vos domaines de compétences, pour déboucher sur une fonction spécialisée. 
+                p Votre capacité de compréhension globale et d’adaptation vous permettra de vous spécialiser en fonction du contexte, que ce soit en agence, en entreprise ou comme indépendant.
+                p Aujourd'hui, nos diplomé·e·s en Ingénierie des médias sont par exemple : 
+                ul.tab-jobs
+                    li Chef·fe de projet digital
+                    li Community manager
+                    li Gestionnaire IT
+                    li Front-end Developer
+                    li Fondateur·trice de start-up
+                    li Head of Digital Marketing
+                    li E-Commerce Web Designer
+                    li Consultant·e digital
+                    li IT Operational Engineer
+                    li Développeur·euse web et mobile
+                    li Digital Marketing Manager
+                    li Lead strategist
+                    li Responsable Communication
+                    li Digital Operations Manager
+                    li UX/UI Designer
+                    li Event Coordinator
+            span.end-step5(style="display:none")
+                p Le titre de Bachelor of Science en Ingénierie des médias est également un tremplin pour accéder à une formation supérieure.
+        .col.col-sm-8.align-elements-center(style="margin:auto;")
+            canvas#profil
+            .profil-sup(style="display:none;position:absolute;left:0;right:0;bottom:-100px;")
+                    .col-sm-6.center(style="text-align:center")
+                        h3 +
+                        h3 Soft Skills
+                        h3 Culture digitale
+            .formSup(style="display:none")
+                .row
+                    .col-sm-6
+                        h3 MSc HES-SO Innokick
+                        p Integrated Innovation for Products and Business Development
+                    .col-sm-6
+                        h3 MSc BA / HES-SO
+                        p Management des systèmes d’information
+                    .col-sm-6
+                        h3 MMSE / HES-SO
+                        p Master Technologies de l’information et communication
+                    .col-sm-6
+                        h3 Master of Arts
+                        p In Media Design, HEAD Genève
+    button.center.versNiveau(style='display:none' data-html2canvas-ignore="true") Suite
