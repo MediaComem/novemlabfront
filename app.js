@@ -1,24 +1,24 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var index = require('./routes/index');
-var niveau1 = require('./routes/niveau1');
-var niveau2 = require('./routes/niveau2');
-var niveau3 = require('./routes/niveau3');
-var niveau4 = require('./routes/niveau4');
-var niveau5 = require('./routes/niveau5');
-var niveau6 = require('./routes/niveau6');
-var niveau7 = require('./routes/niveau7');
-var niveauF = require('./routes/niveauF');
-var end = require('./routes/end');
-var save = require('./routes/save');
-var profile = require('./routes/profile');
-//var Chart = require('chart.js');
-var app = express();
-var proxy = require('express-http-proxy');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const index = require('./routes/index');
+const niveau1 = require('./routes/niveau1');
+const niveau2 = require('./routes/niveau2');
+const niveau3 = require('./routes/niveau3');
+const niveau4 = require('./routes/niveau4');
+const niveau5 = require('./routes/niveau5');
+const niveau6 = require('./routes/niveau6');
+const niveau7 = require('./routes/niveau7');
+const niveauF = require('./routes/niveauF');
+const end = require('./routes/end');
+const save = require('./routes/save');
+const profile = require('./routes/profile');
+const { configureApiProxy, getLocals } = require('./utils');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,12 +44,12 @@ app.use('/nF', niveauF);
 app.use('/save', save);
 app.use('/profile', profile);
 app.use('/end', end);
-app.use('/api-proxy', proxy(process.env.PROXY_URL || 'localhost:3000'));
 
+configureApiProxy(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    const err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
@@ -62,7 +62,7 @@ app.use(function(err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.render('error', getLocals());
 });
 
 module.exports = app;

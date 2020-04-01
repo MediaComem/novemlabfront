@@ -3,7 +3,7 @@ angular.module('novemlab', [
     'ui.router'
 ]);
 
-
 angular.module('novemlab')
-    .constant('apiUrl', '/api-proxy')
+    // Retrieve the API URL from the DOM.
+    .constant('apiUrl', $('meta[name="apiUrl"]').attr('content') || '/api')
 ;
