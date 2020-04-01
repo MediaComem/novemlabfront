@@ -29,7 +29,7 @@ exports.configureApiProxy = function(app) {
   // Set up the proxy.
   app.use(apiUrl, proxy(apiProxyUrlBase.toString(), {
     // Keep the configured path.
-    proxyReqPathResolver: req => `${apiBasePath}/${req.url}`
+    proxyReqPathResolver: req => `${apiBasePath.replace(/\/$/, '')}/${req.url.replace(/^\//, '')}`
   }));
 
   debug(`Proxying ${apiUrl} to ${apiProxyUrlBase.toString()} with API base path ${apiBasePath}`);
