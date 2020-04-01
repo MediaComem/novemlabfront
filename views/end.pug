@@ -4,11 +4,10 @@ append scripts
   script(src='/javascripts/controllers/end.js')
 
 block content
-  #background-intro
-  .row.align-self-center#intro(ng-controller="EndController as eCtrl") 
+  .row.align-self-center#intro(ng-controller="EndController as eCtrl")
     .col-md-8.center
       h1 Bachelor of Science in Media Engineering
       h1.emphasis Merci pour votre participation !
-      p.core-text Découvrez en plus sur l’Ingénierie des médias dans la suite de notre stand. 
+      p.core-text Découvrez en plus sur l’Ingénierie des médias dans la suite de notre stand.
       p.core-text N’hésitez pas à solliciter nos étudiants et anciens étudiants présents pour répondre à toutes vos questions
       button.startButton(ng-click='eCtrl.reload()') Retour à l'accueil

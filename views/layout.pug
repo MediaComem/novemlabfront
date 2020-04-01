@@ -16,10 +16,9 @@ html(ng-app="novemlab")
     script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
     script(src="https://cdn.rawgit.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
-    script(src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js")
 
 body
-  div.background-main.d-flex#ng-view(ng-view)
+  div.d-flex#ng-view(ng-view)
     block content
 
   block scripts
