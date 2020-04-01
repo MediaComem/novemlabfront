@@ -188,11 +188,11 @@ background-color: transparent !important;
   position: relative;
   background: url(../images/novem.png) no-repeat;
   background-size: 100%;
-  
+
 }
 .ball:hover{
 	cursor: pointer;
-  
+
 }
 .ball:before {
   content: "";
@@ -308,7 +308,7 @@ body
 
 button.closeNovemVoice{
     text-align: center;
-    border: 0px;    
+    border: 0px;
     border-radius: 40px;
     height: 40px;
     padding: 0px;
@@ -380,7 +380,7 @@ a
 
 .job.active{
     border: 4px solid #6d9df5;
-    background: #ffffff; 
+    background: #ffffff;
 }
 
 .tools .tool
@@ -402,7 +402,7 @@ a
 .tools .tool.active
 {
     border: 4px solid #6d9df5;
-    background: #ffffff; 
+    background: #ffffff;
 }
 
 .tools .tool.active h1
@@ -478,7 +478,7 @@ html,body
 
 #intro .credentials img{
     margin: 0 20px 0 0;
-}        
+}
 
 #background-intro
 {
@@ -527,7 +527,6 @@ html,body
 .intro
 {
     color: white;
-    display: none;
 }
 
 img.header
@@ -542,7 +541,7 @@ img.header
     color:white!important;
 }
 
-.intro input, input.end 
+.intro input, input.end
 {
     background-color: white;
     color:#5953e2;
@@ -1007,7 +1006,7 @@ text-align: center;
 
 .list-group{
     display: block;
-} 
+}
 
 .list-group .active{
 background-color: #5953e2;
@@ -1150,7 +1149,7 @@ display: block;
 }
 
 @media screen and (max-width: 800px) {
-   
+
 }
 
 /*==========  Non-Mobile First Method  ==========*/
@@ -1194,7 +1193,7 @@ min-width:100px;
 .tools .tool h1
 {
     font-size:12px;
-}  
+}
 svg.highcharts-root{
 
 	margin-top: -100px;
@@ -1210,7 +1209,7 @@ height: 80px;
 
    }
 
-    /* Extra Small Devices, Phones */ 
+    /* Extra Small Devices, Phones */
     @media only screen and (max-width : 480px) {
 /*body{
 background-color: red !important;
@@ -1224,19 +1223,19 @@ svg.highcharts-root{
 .tools .tool h1
 {
     font-size:14px;
-}  
+}
     }
 
-    /* Custom, iPhone Retina */ 
+    /* Custom, iPhone Retina */
     @media only screen and (max-width : 320px) {
 
 .tools .tool h1
 {
     font-size:14px;
-}  
+}
     }
-     
-      
+
+
 .big-title {
 font-family: 'Sans Forgetica', sans-serif;
 font-size: 6vw;
@@ -1262,7 +1261,7 @@ animation: animLeft 5s ease-in infinite;
 @keyframes animLeft {
 0% {
     transform: translate(0%, 0%)
-} 
+}
 50% {
     transform: translate(0.8%, 0.8%)
 }
@@ -1290,11 +1289,11 @@ animation: animLeft 5s ease-in infinite;
   label:hover input[type="checkbox"] ~ i.fa {
   color: #d5d3f7;
   }
-  
+
   div[data-toggle="buttons"] label.active{
       color: #d5d3f7;
   }
-  
+
   div[data-toggle="buttons"] label {
   display: inline-block;
   padding: 6px 12px;
@@ -1306,7 +1305,7 @@ animation: animLeft 5s ease-in infinite;
   vertical-align: top;
   cursor: pointer;
   background-color: none;
-  border: 0px solid 
+  border: 0px solid
   #c8c8c8;
   border-radius: 3px;
   color: #c8c8c8;
@@ -1316,15 +1315,14 @@ animation: animLeft 5s ease-in infinite;
   -o-user-select: none;
   user-select: none;
   }
-  
+
   div[data-toggle="buttons"] label:hover {
   color: #d5d3f7;
   }
-  
+
   div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
   -webkit-box-shadow: none;
   box-shadow: none;
   }
-  
-  
-  
+
+

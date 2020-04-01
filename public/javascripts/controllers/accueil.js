@@ -33,43 +33,6 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
 
     iCtrl.init = function(){
         $(".button").on("click", function(e){
-            meteors
-                .tune({ x: e.pageX, y: e.pageY })
-                .setSpeed(2)
-                .replay();
-
-            $(".button").rotate({
-                angle: 0,
-                animateTo:360,
-                duration:2000
-            });
-            setTimeout(function(){
-                //Button slide right
-                $(".button").animate({
-                    right: '-51%'
-                },2000)
-                //Door slide left
-                $(".left").animate({
-                    left: '-51%'
-                },2000)
-                //Door slide right
-                $(".right").animate({
-                    right: '-51%'
-                },2000) 
-                setTimeout(function(){
-                    $(".button").fadeOut("fast")
-                    $(".big-title").fadeOut("fast")
-                },1000);
-                setTimeout(function(){
-                    $(".doors").remove();
-                },2000);
-            },2000);
-
-            setTimeout(function(){
-                $(".intro").fadeIn('slow');
-            },3500);
-
-            setTimeout(function(){
                 EtapeService.show(iCtrl.niveau).then(function(){
                     iCtrl.etape = EtapeService.getEtape();
                 }).then(function(){
@@ -79,7 +42,6 @@ angular.module('novemlab').controller('IntroControler', function(EtapeService,Jo
                         showMessage();
                     },5000);
                 });
-            },3000);
         });
 
     };

@@ -8,23 +8,8 @@ block content
   p(style="position:fixed;margin-top:50px;z-index:99;")
     a(href="http://www.heig-vd.ch", target="blank")
       img(src="/images/heig-etiqu.png", class="heig", style="height:80px")
-  .doors
-    .left
-    .credentials
-        // a(href="http://media.heig-vd.ch", target="blank")
-          img(src="/images/im.png",classe="im")
-    .right
-    // h1.centered.big-title.back
-      span Devenez ACTEURS et ACTRICES de la révolution NUMÉRIQUE
-    // h1.centered.big-title.front.moving
-      span Devenez ACTEURS et ACTRICES de la révolution NUMÉRIQUE
 
-    .button
-      .loader-ring
-        .loader-ring-light
-        .loader-ring-track
-  
-  .row.align-self-center#intro(ng-controller="IntroControler as iCtrl") 
+  .row.align-self-center#intro(ng-controller="IntroControler as iCtrl")
     .col-md-8.intro.center
       h1 Bachelor of Science in Media Engineering
       h1.emphasis Devenez acteur de la révolution numérique
@@ -34,10 +19,3 @@ block content
       input(type='text', placeholder='Entrez votre prénom', ng-model='iCtrl.joueur.pseudo')
       button.startButton(ng-click='iCtrl.start()') Commencer
       span {{iCtrl.error}}
-
-  //section.stage(style="display:none")
-    figure.ball
-    div.novemVoice.animated.fadeIn
-      p#novemText
-      button.closeNovemVoice
-        span.glyphicon.glyphicon-remove-sign(aria-hidden='true')

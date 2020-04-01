@@ -7,15 +7,15 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
     nfCtrl.score = JSON.parse($window.sessionStorage.getItem("score"));
     nfCtrl.titre = "Profil de " + nfCtrl.joueur;
     var scoreTab = [];
-    scoreTab[0] = nfCtrl.score.management;   
-    scoreTab[1] = nfCtrl.score.communication;       
+    scoreTab[0] = nfCtrl.score.management;
+    scoreTab[1] = nfCtrl.score.communication;
     scoreTab[2] = nfCtrl.score.business;
     scoreTab[3] = nfCtrl.score.gestion;
     scoreTab[4] = nfCtrl.score.conception;
     scoreTab[5] = nfCtrl.score.technique;
 
     nfCtrl.etape = {};
- 
+
     /*insére dans la liste les réponse possible*/
     nfCtrl.niveau = "9";
 
@@ -29,21 +29,6 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
 
     EtapeService.show(nfCtrl.niveau).then(function(){
         nfCtrl.etape = EtapeService.getEtape();
-    }).then(function(){ 
-        setTimeout(function(){
-            $('.end-step1').fadeIn("slow");
-            setTimeout(function(){
-                chart = drawChart();
-                setTimeout(function(){
-                    $('.end-step2').fadeIn("slow");
-                    setTimeout(function(){
-                        // saveScreen(step,$window);
-                        $('.versNiveau').fadeIn("slow");
-                    },2500)
-                },2500)
-            },1000)
-
-        },1000)
     });
 
     var graph = document.getElementById('profil');
@@ -92,7 +77,7 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
                     },
                     pointLabels: {
                         fontColor:"white",
-                        fontSize: 16		
+                        fontSize: 16
                     },
                     yAxes: [{
                     }],
@@ -110,10 +95,10 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
     /*function makeid() {
         var text = "";
         var possible = "ABDEFGHIJLMNOPQRSTVWXYZ0123456789";
-    
+
         for (var i = 0; i < 5; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
-    
+
         return text;
     }*/
 

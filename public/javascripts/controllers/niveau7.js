@@ -17,8 +17,7 @@ angular.module('novemlab').controller('N7Controller', function(EtapeService, Jou
         n7Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n7Ctrl.etape.question);
-        showMessage()
-    }).then(setTimeout(function(){$('button.versNiveau').fadeIn("slow");},6000));
+    }).then(setTimeout(function(){$('button.versNiveau').fadeIn("slow");},1000));
 
 
 
@@ -28,13 +27,14 @@ angular.module('novemlab').controller('N7Controller', function(EtapeService, Jou
         var reverse_i =  3;
 
         $('.list-group ul#sortable li').each(function(){
+            console.log($(this).attr('value'));
             var choice = JSON.parse($(this).attr('value')); // This is your rel value
             if(reverse_i > 0){
                 for (var key in choice) {
                     if (choice.hasOwnProperty(key)) {
                         choice[key] *= reverse_i;
                     }
-                }                
+                }
                 n7Ctrl.choices[reverse_i] = choice;
             }
             reverse_i--;
@@ -63,5 +63,5 @@ angular.module('novemlab').controller('N7Controller', function(EtapeService, Jou
           return a;
         }, {});
       }
-  
+
 });

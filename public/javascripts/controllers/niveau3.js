@@ -7,8 +7,8 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.niveau = "3";
     n3Ctrl.score = {};
     n3Ctrl.choices = [];
-    
-    var liste = $( "#sortable" ).sortable();    
+
+    var liste = $( "#sortable" ).sortable();
     liste.disableSelection();
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
@@ -16,8 +16,8 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     }).then(function(){
         $("#novemText").html(n3Ctrl.etape.question);
         showMessage();
-    }).then(setTimeout(function(){$('button.versNiveau').fadeIn("slow");},6000));
-    
+    }).then(setTimeout(function(){$('button.versNiveau').fadeIn("slow");},1000));
+
     // Lors de l'envoi récupère les trois outils choisis
     $('.versNiveau').click(function(){
         var reverse_i =  3;
@@ -29,7 +29,7 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
                     if (choice.hasOwnProperty(key)) {
                         choice[key] *= reverse_i;
                     }
-                }                
+                }
                 n3Ctrl.choices[reverse_i] = choice;
             }
             reverse_i--;

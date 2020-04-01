@@ -16,8 +16,7 @@ function novemCall(message, nodeDom) {
 
 function showMessage(){
     var message = $("#novemText").html();
-    /*$("#novemText").empty();*/
-    novemCall(message, $('#novemText'));
+    // novemCall(message, $('#novemText'));
 }
 
 $('figure.ball').click(function(){
