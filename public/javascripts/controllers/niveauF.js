@@ -29,9 +29,13 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
 
     EtapeService.show(nfCtrl.niveau).then(function(){
         nfCtrl.etape = EtapeService.getEtape();
+        chart = drawChart();
     });
 
     var graph = document.getElementById('profil');
+    console.log('graph', graph)
+
+
     var drawChart = function() {
         var myChart = new Chart(graph, {
             type: 'radar',
@@ -92,18 +96,10 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
         });
         return myChart;
     }
-    /*function makeid() {
-        var text = "";
-        var possible = "ABDEFGHIJLMNOPQRSTVWXYZ0123456789";
-
-        for (var i = 0; i < 5; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-        return text;
-    }*/
 
     $(".versNiveau").on("click",function(){
         if(step <= totSteps){
+            console.log('step', step)
             switch(step){
                 case 1:
                     $('.versNiveau').hide();
@@ -146,7 +142,7 @@ angular.module('novemlab').controller('NFController', function(EtapeService, api
                     $('.profil-sup').hide();
                     $('#endTitle').text("Perspectives académiques");
                     window.clearInterval(dataLoop);
-                    $('#profil').hide();
+                    // $('#profil').hide();
                     $('.end-step4').hide();
                     $('.formSup').fadeIn("slow");
                     $('.end-step5').fadeIn("slow");

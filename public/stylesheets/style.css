@@ -14,16 +14,8 @@ ul.tab-jobs li{
     padding-left:30px;
 }
 
-label{
-    color:white;
-}
-
 #ng-view{
     height:100%;
-}
-
-#save{
-    color:white!important;
 }
 
 .formSup .row{
@@ -59,7 +51,6 @@ label{
 }
 .question{
     min-height:160px;
-    color:white!important;
 }
 
 p.core-text{
@@ -354,7 +345,6 @@ a
     height: 50px;
     padding: 10px;
     background-color: #5953e2;
-    color: white;
     width: 70%;
     margin: 10px auto 20px auto;
 }
@@ -464,7 +454,6 @@ img.header
 
 .list-group-item.active {
     background-color:#5953e2 !important;
-    color:white!important;
 }
 
 .intro input, input.end
@@ -515,7 +504,6 @@ img.header
 
 .startButton
 {
-    color: white;
 	border:0px;
     padding: 16px 32px;
     text-align: center;
@@ -531,7 +519,6 @@ img.header
 
 .startButton:hover
 {
-    color: white;
     background: #5953e2;
 }
 
@@ -553,13 +540,11 @@ img.header
 
 .endButton:hover
 {
-    color: white;
     background: #5953e2;
 }
 
 .end{
     text-align:center;
-    color:white;
 }
 
 
@@ -734,7 +719,6 @@ body .loader_cogs__top div.top_hole
     height: 50px;
     margin: -10px 0 0 0;
     padding:8px 0 0 8px;
-    color:white;
 }
 .grille
 {
@@ -784,7 +768,6 @@ font-size: 32px;
     float: left;
     height: 95px;
     margin: 5px 5px 0!important;
-    color: white;
     cursor: pointer;
     opacity: .7;
     text-align:center;
@@ -811,7 +794,6 @@ font-size: 32px;
 
 #novemText
 {
-	color: white;
     font-size:1.2em;
     text-align:left;
 }
@@ -937,7 +919,6 @@ text.highcharts-title, g.highcharts-contextbutton, text.highcharts-credits, g.hi
 }
 
 .valider:hover{
-    color:white;
     background-color: darkblue;
 }
 
