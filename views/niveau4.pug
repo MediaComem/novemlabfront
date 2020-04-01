@@ -1,0 +1,15 @@
+extends layout
+
+append scripts
+    script(src='/javascripts/controllers/niveau4.js')
+
+block content
+    .row.align-self-center.center.flex-w-80p(ng-controller="N4Controller as n4Ctrl")(ng-cloak)
+        .col.col-sm-12
+            .row.question
+                .col.col-sm-8.center
+                    p#novemText
+            .row.justify-content-center
+                .col.col-sm-8.center.list-group
+                    a.list-group-item(href='#')(ng-repeat="prop in n4Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
+    button.center.versNiveau(style='display:none') Étape suivante

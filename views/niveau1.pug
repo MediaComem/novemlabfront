@@ -1,0 +1,18 @@
+extends layout
+
+append scripts
+	script(src='/javascripts/controllers/niveau1.js')
+
+block content
+	.row.align-self-center.center(ng-controller="N1Controller as n1Ctrl")(style="min-width:640px;")
+		.col.col-sm-12
+			.row.question
+				.col.col-sm-8.center
+					p#novemText
+			.row
+				.col.col-sm-8.tools.center
+					.row.justify-content-center
+						div.col-sm-3.tool(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
+							img(ng-src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.svg')
+							h1 {{prop.reponse}}
+	button.center.versNiveau Étape suivante
