@@ -39,3 +39,7 @@ jspm_packages
 .idea
 
 .DS_Store
+
+# Local environment files
+/.env*
+!/.env.sample

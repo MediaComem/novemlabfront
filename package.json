@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon -e js,jade,css ./bin/www"
+    "dev": "nodemon -e js,jade,css ./bin/www",
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "angular": "^1.7.9",
@@ -19,5 +19,8 @@
     "nodemon": "^2.0.2",
     "pug": "^2.0.4",
     "serve-favicon": "~2.5.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }
