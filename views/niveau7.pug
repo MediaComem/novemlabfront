@@ -12,11 +12,11 @@ block content
             .row.justify-content-center
                 .col.col-sm-8.center.list-group
                     .row.justify-content-center
-                        img(style="max-width:52px;margin-bottom:10px;opacity:0.6;")(ng-src='/images/happy_face.svg')
+                        img(ng-src='/images/happy_face.svg')
                     ul#sortable
                         li.ui-state-default(ng-repeat="prop in n7Ctrl.etape.propositions", value="{{prop.score}}")
                             span.ui-icon.ui-icon-arrowthick-2-n-s
                             | {{prop.reponse}}
                     .row.justify-content-center
-                        img(style="max-width:52px;margin-top:10px;opacity:0.6;")(ng-src='/images/sad_face.svg')
+                        img(ng-src='/images/sad_face.svg')
     button.center.versNiveau(style='display:none') Étape suivante

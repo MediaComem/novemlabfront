@@ -5,6 +5,9 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const index = require('./routes/index');
+
+const sassMiddleware = require('node-sass-middleware');
+
 const niveau1 = require('./routes/niveau1');
 const niveau2 = require('./routes/niveau2');
 const niveau3 = require('./routes/niveau3');
@@ -30,6 +33,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+/* SCSS */
+app.use(sassMiddleware({
+    /* Options */
+    src: path.join(__dirname, 'src/stylesheets'),
+    dest: path.join(__dirname, 'public'),
+    debug: true,
+    outputStyle: 'compressed'
+}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);

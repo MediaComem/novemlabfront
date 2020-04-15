@@ -11,14 +11,14 @@ block content
                     p#novemText
             .row.justify-content-center.next
                     .col.col-sm-8(align="center")
-                        input.end(type='email', placeholder='e-mail', ng-model='sCtrl.email' style="width:300px")
-                        .alert.alert-warning(style="margin-top:15px;") {{sCtrl.error}}
+                        input.end(type='email', placeholder='e-mail', ng-model='sCtrl.email')
+                        .alert.alert-warning {{sCtrl.error}}
                         .btn-group.btn-group-vertical(data-toggle="buttons")
                             label.btn(for="allow")
-                                input(type='checkbox', ng-model='sCtrl.allowEmail', style="margin-right:15px;" id="allow" name="allow")
+                                input(type='checkbox' ng-model='sCtrl.allowEmail' id="allow" name="allow")
                                 i.fa.fa-square-o.fa-2x
                                 i.fa.fa-check-square-o.fa-2x
-                                span(style="position:relative;left:20px;top:-5px") Je veux recevoir les informations de la filière par e-mail 
+                                span Je veux recevoir les informations de la filière par e-mail
             .div-spacer
             .row.justify-content-center.next
                     .col.col-sm-8(align="center")

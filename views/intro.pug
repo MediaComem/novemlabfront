@@ -4,9 +4,9 @@ append scripts
   script(src='/javascripts/controllers/accueil.js')
 
 block content
-  p(style="position:fixed;margin-top:50px;z-index:99;")
+  p
     a(href="http://www.heig-vd.ch", target="blank")
-      img(src="/images/heig-etiqu.png", class="heig", style="height:80px")
+      img.heig(src="/images/heig-etiqu.png")
 
   .row.align-self-center#intro(ng-controller="IntroControler as iCtrl")
     .col-md-8.intro.center
@@ -14,7 +14,7 @@ block content
       h1.emphasis Devenez acteur de la révolution numérique
       p.core-text Notre programme professionnalisant permet aux étudiant·e·s d'acquérir les compétences nécessaires à la maîtrise globale de produits et de services numériques.
       p.core-text Votre profil polyvalent basé sur des connaissances pratiques vous prépare activement aux besoins du marché du travail.
-      h3(style="margin:40px auto 15px auto;text-align:center;") Quel est votre profil d'ingénieur·e des médias ?
+      h3 Quel est votre profil d'ingénieur·e des médias ?
       input(type='text', placeholder='Entrez votre prénom', ng-model='iCtrl.joueur.pseudo')
       button.startButton(ng-click='iCtrl.start()') Commencer
       span {{iCtrl.error}}

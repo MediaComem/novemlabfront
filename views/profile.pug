@@ -5,7 +5,7 @@ append scripts
 
 block content
     .row.center.flex-w-80p#save(ng-controller="NFController as nfCtrl")(ng-cloak)
-        .col.col-sm-4.center(style="margin-top:200px;")
+        .col.col-sm-4.center
             h2#endTitle {{nfCtrl.titre}}
             span.end-step1
                 p Voici votre profil d'ingénieur·e des médias !
@@ -47,10 +47,10 @@ block content
                     li Event Coordinator
             span.end-step5
                 p Le titre de Bachelor of Science en Ingénierie des médias est également un tremplin pour accéder à une formation supérieure.
-        .col.col-sm-8.align-elements-center(style="margin:auto;")
+        .col.col-sm-8.align-elements-center
             canvas#profil
-            .profil-sup(style="position:absolute;left:0;right:0;bottom:-100px;")
-                    .col-sm-6.center(style="text-align:center")
+            .profil-sup
+                    .col-sm-6.center
                         h3 +
                         h3 Soft Skills
                         h3 Culture digitale
