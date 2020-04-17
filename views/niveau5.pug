@@ -1,18 +1,27 @@
 extends layout
 
+prepend head
+    link(rel='stylesheet', href='/style/libs/glide.core.min.css')
+
 append scripts
+    script(src='/javascripts/libs/glide.min.js')
     script(src='/javascripts/controllers/niveau5.js')
 
 block content
-    .row.align-self-center.center.flex-w-80p(ng-controller="N5Controller as n5Ctrl")(ng-cloak)
-        .col.col-sm-12
-            .row.question
-                .col.col-sm-8.center
-                    p#novemText
-            .row
-                .col.col-sm-12.tools.center
-                    .row.justify-content-center
-                        div.col-sm-4.job(ng-repeat="prop in n5Ctrl.etape.propositions", value="{{prop.score}}")
-                            h1 {{prop.reponse.titre}}
+    div(ng-controller="N5Controller as n5Ctrl")
+        .mainWrapper
+            h1 Postulation
+            p#novemText
+        .niveau5_glide.glide
+            .glide__track(data-glide-el='track')
+                ul.glide__slides
+                    li.glide__slide(ng-repeat="prop in n5Ctrl.etape.propositions" value="{{prop.score}}" )
+                        article
+                            h2 {{prop.reponse.titre}}
                             p {{prop.reponse.description}}
-    button.center.versNiveau(style='display:none') Étape suivante
+            .glide__bullets(data-glide-el='controls[nav]')
+                button.glide__bullet(data-glide-dir='={{index}}' ng-repeat="(index,prop) in n5Ctrl.etape.propositions" ng-init="initGlider($last)")
+        .mainWrapper
+            button.versNiveau Postuler pour
+                br
+                |  cette offre

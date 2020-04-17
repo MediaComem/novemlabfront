@@ -4,21 +4,13 @@ append scripts
     script(src='/javascripts/controllers/niveau6.js')
 
 block content
-
-    .main#niveau6(ng-controller="N6Controller as n6Ctrl", "ng-cloak")
-        .container
-            .row
-                .videoDiv
-                    img(src='/images/scrum.png', width='100%', height='100%', style='border:none;overflow:hidden')
-            .row
-                .list-group
-                    a.list-group-item(href='#')(ng-repeat="prop in n6Ctrl.etape.propositions", value="{{prop.score}}") {{prop.reponse}}
-                    // a.list-group-item(href='#') {{n6Ctrl.etape.propositions[1].reponse}}
-                    a.list-group-item(href='#') {{n6Ctrl.etape.propositions[2].reponse}}
-            button.versNiveau(style='display:none') Prochaine étape
-    section.stage
-        figure.ball
-        div.novemVoice.animated.fadeIn
-            p#novemText
-            button.closeNovemVoice
-                span.glyphicon.glyphicon-remove-sign(aria-hidden='true')
+    .mainWrapper(ng-controller='N6Controller as n6Ctrl')
+        h1 Entreprenariat
+        #novemText
+        .sortable(aria-label="Trier les activités de la meilleur à la moins bonne")
+            .sortable__scale
+                img(src="/images/Icon_Plus.svg" alt="Plus")
+                img(src="/images/Icon_Moins.svg" alt="Moins")
+            ul.sortable__list
+                li.sortable__item(ng-repeat="prop in n6Ctrl.etape.propositions" value="{{prop.score}}") {{prop.reponse}}
+        button.versNiveau Suivant

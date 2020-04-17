@@ -13,63 +13,60 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
      */
     EtapeService.show(n1Ctrl.niveau).then(function(){
         n1Ctrl.etape = EtapeService.getEtape();
-    }).then(function(){
-        console.log(n1Ctrl.etape.question);
+    }).then(() =>{
         $("#novemText").html(n1Ctrl.etape.question);
-        showMessage();
     })
 
 
     /**
      * GENERATE FRONT
      */
-    $('button.versNiveau').hide();
     var limit = 2;
 
-    $(document).on("click", '.tools .tool', function(e){
+    $(document).on("click", '.cards__item', function(e){
         e.preventDefault();
 
-        if($(".tools .tool.active").length >= limit) {
-            if($(this).hasClass("active"))
-            {
+        if ($('.cards__item.active').length>= limit) {
+            if($(this).hasClass("active")){
                 $(this).toggleClass("active");
-                $('button.versNiveau').fadeOut(1000);
+                document.querySelector('button.versNiveau').setAttribute("disabled", "");
             }
-
         }else{
             $(this).toggleClass("active");
+        }
 
-            var occ = $('.active').length;
-            if (occ == limit){
-                $('button.versNiveau').fadeIn(1000);
+        if ($('.cards__item.active').length === limit) {
+            document.querySelector('button.versNiveau').removeAttribute("disabled");
+        }
 
-                // Lors de l'envoi récupère les deux outils choisis
-                $('button.versNiveau').click(function(){
-                    $( ".tool.active" ).each(function( index ) {
-                        //Récupère le score de l'élément sélectionné
-                        elementScore = $(this).attr('value');
-                        n1Ctrl.choices.push(elementScore);
-                    });
+    })
 
-                    for (i = 0; i < JSON.parse(n1Ctrl.choices.length); i++) {  //loop through the array
-                        $.each(JSON.parse(n1Ctrl.choices[i]), function(k,v)
-                            {
-                                if(!n1Ctrl.score.hasOwnProperty(k)){
-                                    n1Ctrl.score[k] = v;
-                                }
-                                else{
-                                    swap = parseInt(n1Ctrl.score[k]);
-                                    swap += v;
-                                    n1Ctrl.score[k] = swap;
-                                }
-                            }
-                        )
-                        //total += n1Ctrl.choices[i].communication;  //Do the math!
-                    }
-                    save(n1Ctrl.score);
-                });
+
+    // Lors de l'envoi récupère les deux outils choisis
+    $('button.versNiveau').click(function () {
+        $(".cards__item.active").each(function () {
+            //Récupère le score de l'élément sélectionné
+            elementScore = $(this).attr('value');
+            n1Ctrl.choices.push(elementScore);
+        });
+
+
+        for (i = 0; i < n1Ctrl.choices.length; i++) {  //loop through the array
+            $.each(JSON.parse(n1Ctrl.choices[i]), function (k, v) {
+                if (!n1Ctrl.score.hasOwnProperty(k)) {
+                    n1Ctrl.score[k] = v;
+                }
+                else {
+                    swap = parseInt(n1Ctrl.score[k]);
+                    swap += v;
+                    n1Ctrl.score[k] = swap;
+                }
             }
-        }})
+            )
+            //total += n1Ctrl.choices[i].communication;  //Do the math!
+        }
+        save(n1Ctrl.score);
+    });
 
 
     var save =function(score){

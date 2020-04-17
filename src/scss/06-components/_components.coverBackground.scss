@@ -1,0 +1,106 @@
+:root {
+    --banner-url: url("/images/banner/IM_Banner.jpg");
+}
+
+.coverBackground {
+    background-image: linear-gradient(to right, rgba(237, 29, 42, .95), rgba(237, 29, 42, .95)), var(--banner-url);
+    background-size: cover, cover;
+    background-position: 100% 100%, 50% 50%;
+    background-blend-mode: multiply;
+}
+
+// IE 11, EDGE <= 18
+@supports not (background-blend-mode: multiply) {
+    .coverBackground {
+        background-image: linear-gradient(to right, rgba(255, 0, 16, 0.64), rgb(223, 8, 21)), var(--banner-url);
+    }
+}
+
+/* Clearly not perfect optimisation
+    - it's hard top optimise sizing for cover background image
+    - it doesn't not matter to much, because the image is not really visible (hidden with color on top of it)
+*/
+
+/* Original */
+
+@media screen and (max-width: 1400px) and (max-height: 931px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_c_scalew_1310.jpg");
+    }
+}
+
+@media screen and (max-width: 1310px) and (max-height: 871px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_c_scalew_1310.jpg");
+    }
+}
+
+@media screen and (max-width: 1058px) and (max-height: 704px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_c_scalew_1058.jpg");
+    }
+}
+
+@media screen and (max-width: 809px) and (max-height: 538px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_c_scalew_809.jpg");
+    }
+}
+
+@media screen and (max-width: 480px) and (max-height: 319px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_c_scalew_480.jpg");
+    }
+}
+
+/* Landscape 16:9 */
+
+@media screen and (max-width: 720px) and (max-height: 405px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_16_9c_fillg_auto__c_scalew_720.jpg");
+    }
+}
+
+@media screen and (max-width: 596px) and (max-height: 335px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_16_9c_fillg_auto__c_scalew_596.jpg");
+    }
+}
+
+@media screen and (max-width: 538px) and (max-height: 302px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_16_9c_fillg_auto__c_scalew_694.jpg");
+    }
+}
+
+@media screen and (max-width: 694px) and (max-height: 390px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_16_9c_fillg_auto__c_scalew_694.jpg");
+    }
+}
+
+/* Portrait 9:16 */
+
+@media screen and (max-width: 767px) and (max-height: 1365px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_9_16c_fillg_auto__c_scalew_767.jpg");
+    }
+}
+
+@media screen and (max-width: 636px) and (max-height: 1132px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_9_16c_fillg_auto__c_scalew_636.jpg");
+    }
+}
+
+@media screen and (max-width: 450px) and (max-height: 801px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_9_16c_fillg_auto__c_scalew_450.jpg");
+    }
+}
+
+@media screen and (max-width: 200px) and (max-height: 356px) {
+    :root {
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_ar_9_16c_fillg_auto__c_scalew_200.jpg");
+    }
+}

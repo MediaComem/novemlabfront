@@ -22,7 +22,7 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stat
         		etapeServ.error = 'Could not find etape';
         	});
         },
-        // rend une étape par son id 
+        // rend une étape par son id
         show : function(id){
             return $http({
                 method: 'GET',
@@ -54,29 +54,6 @@ angular.module('novemlab').service('EtapeService', function(apiUrl, $http, $stat
                 etapeServ.error = 'Could not delete etape';
             });
         }
-
-       /* joueurCtrl.updateScorePhase1 = function(){
-            $http({
-              method: 'PATCH',
-              url: apiUrl+'/scores/phase1/'+ $stateParams.joueurId,
-              data: joueurCtrl.score,
-            }).then(function(res) {
-                joueurCtrl.score = res.data;
-            }).catch(function() {
-              joueurCtrl.error = 'Could not edit score';
-            });
-        },
-        joueurCtrl.updateScorePhase2 = function(){
-            $http({
-              method: 'PATCH',
-              url: apiUrl+'/scores/phase2/'+ $stateParams.joueurId,
-              data: joueurCtrl.score,
-            }).then(function(res) {
-                joueurCtrl.score = res.data;
-            }).catch(function() {
-              joueurCtrl.error = 'Could not edit score';
-            });
-        }*/
     };
 
     return service;

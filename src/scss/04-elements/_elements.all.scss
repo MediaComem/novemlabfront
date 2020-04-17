@@ -1,0 +1,103 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body>main>*:first-child {
+  margin-top: 3rem;
+}
+
+@media only screen and (max-height: 600px) {
+  body>main>*:first-child {
+    margin-top: 2rem;
+  }
+}
+
+body>main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 $main-padding-right 0 $main-padding-left;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .mainWrapper {
+    align-self: center;
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  line-height: 94.3%;
+  letter-spacing: -0.03em;
+}
+
+p {
+  line-height: 140%;
+}
+
+h1 {
+  color: var(--main-burgundy);
+  font-weight: 700;
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+
+  >strong {
+    color: var(--heig-red);
+    font-weight: 700;
+  }
+}
+
+h3 {
+  color: var(--heig-red);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+p+p {
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+
+button {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}

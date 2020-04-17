@@ -8,21 +8,20 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.score = {};
     n3Ctrl.choices = [];
 
-    var liste = $( "#sortable" ).sortable();
+    var liste = $( ".sortable__list" ).sortable();
     liste.disableSelection();
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
         n3Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n3Ctrl.etape.question);
-        showMessage();
-    }).then(setTimeout(function(){$('button.versNiveau').fadeIn("slow");},1000));
+    })
 
     // Lors de l'envoi récupère les trois outils choisis
     $('.versNiveau').click(function(){
         var reverse_i =  3;
 
-        $('.list-group ul#sortable li').each(function(){
+        $('.sortable__item').each(function(){
             var choice = JSON.parse($(this).attr('value')); // This is your rel value
             if(reverse_i > 0){
                 for (var key in choice) {

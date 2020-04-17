@@ -1,0 +1,39 @@
+// ITCSS structure
+// Original post by Harry Roberts https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+
+// 01. Settings
+@import '01-settings/settings.colors';
+@import '01-settings/settings.spacing';
+@import '01-settings/settings.typography';
+
+// 02. Tools
+@import '02-tools/tools.hidden';
+
+// 03. Generic
+@import '03-generic/generic.normalize';
+@import '03-generic/generic.selection';
+
+// 04. Elements
+@import '04-elements/elements.all';
+@import '04-elements/elements.body';
+@import '04-elements/elements.html';
+@import '04-elements/elements.links';
+
+// 05. Object
+@import '05-objects/objects.cover';
+@import '05-objects/objects.niveau1';
+@import '05-objects/objects.niveau2';
+@import '05-objects/objects.niveau3';
+@import '05-objects/objects.niveau4';
+
+// 06. Components
+@import '06-components/components.buttonVersNiveau';
+@import '06-components/components.cards';
+@import '06-components/components.coverBackground';
+@import '06-components/components.listbox';
+@import '06-components/components.slider';
+@import '06-components/components.sortable';
+
+// 99. Utilities
+@import '99-utilities/utilities.text';
+@import '99-utilities/utilities.visibility';

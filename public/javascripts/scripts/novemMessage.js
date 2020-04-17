@@ -20,12 +20,9 @@ function showMessage(){
 }
 
 $('figure.ball').click(function(){
- 	$('.novemVoice').fadeToggle( "fast", "linear" );;
-    //$('div.novemVoice.animated.fadeIn').toggleClass("transparence");
- 	//$('.novemVoice').show();
+ 	$('.novemVoice').fadeToggle( "fast", "linear" );
 });
 
 $('button.closeNovemVoice').click(function(){
-    $('.novemVoice').hide(); 	//$('div.novemVoice.animated.slideInUp').togglcdeClass("transparence");
- 	//$('button.closeNovemVoice').hide();
+    $('.novemVoice').hide();
 });

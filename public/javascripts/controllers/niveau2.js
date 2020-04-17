@@ -1,39 +1,33 @@
-angular.module('novemlab').controller('N2Controller', function(JoueurService, EtapeService, NovemService, apiUrl, $scope, $state, $http, $window) {
+angular.module('novemlab').controller('N2Controller', function(JoueurService, EtapeService, apiUrl, $scope, $state, $http, $window) {
     var n2Ctrl = this;
 
     n2Ctrl.score ={};
 
-    var r1;
-    var r2;
-    var r3;
-
-
     n2Ctrl.etape = {};
     n2Ctrl.niveau = "2";
-    $('button.versNiveau').hide();
 
     EtapeService.show(n2Ctrl.niveau).then(function(){
         n2Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n2Ctrl.etape.question);
-        showMessage();
     });
 
     $(document).ready(function () {
-        $(document).on("click", 'a.list-group-item', function(e){
+        $(document).on("click", '.listbox__item', function(e){
             $('.active').removeClass('active');
             // add active class to clicked element
             $(this).addClass('active');
-            $('.versNiveau').fadeIn("slow");
-
+            $('.listbox').attr("aria-activedescendant", "listbox__item_" + $(this).attr('id'));
+            $('.listbox__item').addClass('faded');
+            document.querySelector('button.versNiveau').removeAttribute("disabled");
         })
     });
-    
+
 
     $(".versNiveau").on("click",function(){
-        choix = $("a.list-group-item.active");
+        choix = $(".listbox__item.active");
         score = choix.attr('value');
-    
+
         save(score);
     });
 
@@ -46,9 +40,6 @@ angular.module('novemlab').controller('N2Controller', function(JoueurService, Et
                 n2Ctrl.error = 'Could not edit score';
             })
     }
-
-
-
 
 });
 

@@ -3,27 +3,33 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -e js,pug,scss,css ./bin/www",
-    "start": "node ./bin/www"
+    "dev": "npm run build:css && concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\"",
+    "start": "npm run build:css && node ./bin/www",
+    "watch:js": "nodemon -e js,pug ./bin/www",
+    "serve": "browser-sync start --proxy \"localhost:8080\" --files \"public/**/*.min.css\" \"public/javascripts\" \"public/images\" \"views/**/*.pug\" -w",
+    "prebuild:css": "node-sass --include-path scss src/scss/index.scss    public/style/index.css",
+    "build:css": "npm run prebuild:css && postcss --use autoprefixer -b \"last 2 versions\" < public/style/index.css | postcss --no-map --use cssnano > public/style/index.min.css",
+    "watch:css": "onchange \"src/scss/**/*.scss\" -- npm run build:css"
   },
   "dependencies": {
-    "angular": "^1.7.9",
-    "angular-ui-router": "^1.0.25",
+    "autoprefixer": "^9.7.6",
     "body-parser": "~1.19.0",
-    "chart.js": "^2.9.3",
+    "concurrently": "^5.1.0",
     "cookie-parser": "~1.4.5",
+    "cssnano": "^4.1.10",
     "debug": "~4.1.1",
     "express": "~4.17.1",
     "express-http-proxy": "^1.6.0",
     "morgan": "~1.10.0",
     "node-sass": "^4.13.1",
-    "node-sass-middleware": "^0.11.0",
     "nodemon": "^2.0.2",
-    "normalize": "^0.3.1",
-    "pug": "^2.0.4",
-    "serve-favicon": "~2.5.0"
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0",
+    "pug": "^2.0.4"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "browser-sync": "^2.26.7",
+    "dotenv": "^8.2.0",
+    "onchange": "^6.1.0"
   }
 }

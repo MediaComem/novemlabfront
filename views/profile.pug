@@ -2,9 +2,11 @@ extends layout
 
 append scripts
     script(src='/javascripts/controllers/niveauF.js')
+    script(src='/javascripts/libs/Chart.min.js')
+    script(src='/javascripts/libs/html2canvas.min.js')
 
 block content
-    .row.center.flex-w-80p#save(ng-controller="NFController as nfCtrl")(ng-cloak)
+    .row.center.flex-w-80p#save(ng-controller="NFController as nfCtrl")
         .col.col-sm-4.center
             h2#endTitle {{nfCtrl.titre}}
             span.end-step1

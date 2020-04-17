@@ -1,0 +1,63 @@
+/* ==========================================================================
+   #TYPOGRAPHY-VARIABLES
+   ========================================================================== */
+
+/* (Fluid) Typography */
+
+:root {
+  font-size: 100%;
+}
+
+@media screen and (min-height: 500px) {
+  :root {
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-height: 600px) {
+  :root {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    font-size: 24px;
+  }
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Inter-Regular.woff2?v=3.12") format("woff2"),
+    url("/fonts/Inter-Regular.woff?v=3.12") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Inter-SemiBold.woff2?v=3.12") format("woff2"),
+    url("/fonts/Inter-SemiBold.woff?v=3.12") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Inter-Bold.woff2?v=3.12") format("woff2"),
+    url("/fonts/Inter-Bold.woff?v=3.12") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/Inter-ExtraBold.woff2?v=3.12") format("woff2"),
+    url("/fonts/Inter-ExtraBold.woff?v=3.12") format("woff");
+}

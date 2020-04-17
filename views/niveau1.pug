@@ -4,15 +4,12 @@ append scripts
 	script(src='/javascripts/controllers/niveau1.js')
 
 block content
-	.row.align-self-center.center(ng-controller="N1Controller as n1Ctrl")
-		.col.col-sm-12
-			.row.question
-				.col.col-sm-8.center
-					p#novemText
-			.row
-				.col.col-sm-8.tools.center
-					.row.justify-content-center
-						div.col-sm-3.tool(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
-							img(ng-src='/images/outils/{{prop.reponse|lowercase|removeAccent}}.svg')
-							h1 {{prop.reponse}}
-	button.center.versNiveau Étape suivante
+	.mainWrapper(ng-controller="N1Controller as n1Ctrl")
+		h1 Premier jour de travail …
+		p#novemText
+		.cards
+			button.cards__item(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
+				figure
+					img(ng-src=`${apiUrl}{{prop.image_rel_url}}`)
+					figcaption {{prop.reponse}}
+		button.versNiveau(disabled) Suivant

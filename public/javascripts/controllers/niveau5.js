@@ -9,44 +9,36 @@ angular.module('novemlab').controller('N5Controller', function(JoueurService, Et
         n5Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n5Ctrl.etape.question);
-        showMessage();
+
     });
 
-    var limit = 1;
+    /* Workaround */
+    $scope.initGlider = function($last){
+        if ($last) {
+            new Glide('.niveau5_glide', {
+                breakpoints: {
+                    798: {
+                        perView: 1
+                    },
+                    5000: {
+                        perView: 3,
+                        focusAt: 'center'
+                    }
+                }
+            }).mount();
+        }
+    }
 
-    $(document).on("click", '.tools .job', function(e){
-        e.preventDefault();
-
-        if($(".tools .job.active").length >= limit) {
-            if($(this).hasClass("active"))
-            {
-                $(this).toggleClass("active");
-                $('button.versNiveau').fadeOut(200);
-            }
-
-        }else{
-            $(this).toggleClass("active");
-
-            var occ = $('.active').length;
-            if (occ == limit){
-                $('button.versNiveau').fadeIn(200);
-
-                // Lors de l'envoi récupère les deux outils choisis
-                $('button.versNiveau').click(function(){
-                    $( ".job.active" ).each(function( index ) {
-                        //Récupère le score de l'élément sélectionné
-                        n5Ctrl.score = $(this).attr('value');
-                    });
-                    save(n5Ctrl.score);
-                });
-            }
-        }})
+    $('button.versNiveau').click(function () {
+        n5Ctrl.score = $('.glide__slide--active').attr('value');
+        save(n5Ctrl.score);
+    });
 
     var save =function(score){
         JoueurService.updateScorePhase1(score).then(function(res){
             $window.sessionStorage.setItem("score", JSON.stringify(res.data));
             console.log("Score updated !");
-            $window.location.href = "/n7";
+            $window.location.href = "/n6";
         })
 
     }

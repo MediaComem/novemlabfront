@@ -1,0 +1,17 @@
+extends layout
+
+append scripts
+  script(src='/javascripts/controllers/niveau0_cover.js')
+
+block content
+  img.logoHeigvd(src="/images/Logo_HEIG-VD_Etiquette_RVB_Rouge.svg" alt="Logo HEIG-VD: Haute Ecole d'Ingénierie et de Gestion du Canton de Vaud")
+  .mainWrapper#intro(ng-controller="IntroControler as iCtrl")
+    h1 Découvrez votre profil…
+    p En quelques minutes, vous pourrez découvrir votre profil. Ce jeu n’est certes pas une science exacte  mais il vous permettra déjà de vous situer dans le monde numérique.
+    p Mais avant de commencer, il nous faudrait votre prénom …
+    form(autocomplete="off")
+      p
+        label(for="prenom") Votre prénom
+        input(type='text' id="prenom" name="prenom" ng-model='iCtrl.joueur.pseudo')
+      button(ng-click='iCtrl.start()') Go !
+    span {{iCtrl.error}}

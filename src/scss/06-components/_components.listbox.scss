@@ -1,0 +1,44 @@
+.listbox {
+    padding: 0;
+    margin-top: 2rem;
+    list-style-type: none;
+}
+
+.listbox__item {
+    border-top: 2px solid var(--heig-red);
+    width: 100%;
+    color: var(--heig-red);
+    font-weight: 700;
+    text-align: left;
+    padding: 1rem $main-padding-left;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &.active {
+        background-color: var(--heig-red);
+        color: #fff;
+    }
+
+    &.faded:not(.active) {
+        opacity: 0.5;
+    }
+}
+
+.listbox__item:last-child {
+    border-bottom: 2px solid var(--heig-red);
+}
+
+@media only screen and (min-width: 768px) {
+    .listbox {
+        max-width: 800px;
+        margin: auto;
+        font-size: .8rem;
+        margin-top: 2rem;
+    }
+
+    .listbox__item {
+        border-right: 2px solid var(--heig-red);
+        border-left: 2px solid var(--heig-red);
+        padding: .8rem ($main-padding-left - 5vw);
+    }
+}

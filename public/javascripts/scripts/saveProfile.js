@@ -6,12 +6,7 @@ function saveScreen(i,store){
         a.download = 'profile'+i+'.png';
 
         store.sessionStorage.setItem("joueur.profile"+i, a.href);
-
-        /*document.body.appendChild(a);
-        a.click();
-
-        document.body.removeChild(a);*/
-    });            
+    });
 }
 
 
@@ -22,9 +17,9 @@ function downloadImage(i,store){
         a.href = store.sessionStorage.getItem("joueur.profile"+(i-1));
         a.download = 'profile'+(i-1)+'.png';
 
-        document.body.appendChild(a); 
+        document.body.appendChild(a);
         a.click();
 
         document.body.removeChild(a);
-    });            
+    });
 }

@@ -1,0 +1,32 @@
+.versNiveau {
+    align-self: flex-end;
+    color: #640C00;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: max-content;
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 3rem;
+    text-align:left;
+
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    .versNiveau {
+        font-size: .8rem;
+
+        br{
+            display:none;
+        }
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .versNiveau {
+        margin-top: 1rem;
+    }
+}

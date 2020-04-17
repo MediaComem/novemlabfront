@@ -9,23 +9,24 @@ angular.module('novemlab').controller('N4Controller', function(JoueurService, Et
         n4Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n4Ctrl.etape.question);
-        showMessage();
     });
 
     $(document).ready(function () {
-        $(document).on("click", 'a.list-group-item', function(e){
+        $(document).on("click", '.listbox__item', function (e) {
             $('.active').removeClass('active');
             // add active class to clicked element
             $(this).addClass('active');
-            $('.versNiveau').fadeIn("slow");
-
+            $('.listbox').attr("aria-activedescendant", "listbox__item_" + $(this).attr('id'));
+            $('.listbox__item').addClass('faded');
+            document.querySelector('button.versNiveau').removeAttribute("disabled");
         })
     });
-    
+
 
     $(".versNiveau").on("click",function(){
-        choix = $("a.list-group-item.active");
+        choix = $(".listbox__item.active");
         score = choix.attr('value');
+
         save(score);
     });
 

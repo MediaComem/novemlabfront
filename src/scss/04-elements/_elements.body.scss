@@ -1,0 +1,11 @@
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+}
