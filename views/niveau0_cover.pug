@@ -13,5 +13,5 @@ block content
       p
         label(for="prenom") Votre prénom
         input(type='text' id="prenom" name="prenom" ng-model='iCtrl.joueur.pseudo')
-      button(ng-click='iCtrl.start()') Go !
+      button.btn(ng-click='iCtrl.start()') Go !
     span {{iCtrl.error}}

@@ -1,0 +1,13 @@
+.schemaProfile {
+    margin: 0 auto;
+    margin-top: 1rem;
+
+    svg {
+        width: 80vw;
+        max-width: 600px;
+    }
+
+    text[role=button]{
+        cursor:pointer;
+    }
+}

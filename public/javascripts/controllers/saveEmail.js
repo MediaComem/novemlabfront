@@ -13,7 +13,7 @@ angular.module('novemlab').controller('SaveController', function(JoueurService, 
                 newsletter: sCtrl.newsletter === undefined ? false : true
             }
             JoueurService.modify(sCtrl.update).then(function(){
-                // $window.location.href = "/profile";
+                $window.location.href = "/profile";
             }).catch(function(){
                 sCtrl.error = "E-mail invalide ou joueur introuvable";
             })

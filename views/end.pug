@@ -4,10 +4,11 @@ append scripts
   script(src='/javascripts/controllers/end.js')
 
 block content
-  .row.align-self-center#intro(ng-controller="EndController as eCtrl")
-    .col-md-8.center
-      h1 Bachelor of Science in Media Engineering
-      h1.emphasis Merci pour votre participation !
-      p.core-text Découvrez en plus sur l’Ingénierie des médias dans la suite de notre stand.
-      p.core-text N’hésitez pas à solliciter nos étudiants et anciens étudiants présents pour répondre à toutes vos questions
-      button.startButton(ng-click='eCtrl.reload()') Retour à l'accueil
+  .mainWrapper.u-mt-auto(ng-controller="EndController as eCtrl")
+      h1 Merci pour votre participation&nbsp;!
+      p Maintenant que vous connaissez vos compétences et donc votre profil, la formation
+        strong  ingénierie des médias
+        |  de la HEIG-VD pourra vous aider à vous perfectionner !
+      p La formation pourra vous épauler lors du développement de vos connaissances dans chaque domaine,
+        strong  n’hésitez plus&nbsp;!
+      a.btn.u-align-end.u-mt-6.u-mb-2(href="https://im.heig-vd.ch/#competences") Retour au site

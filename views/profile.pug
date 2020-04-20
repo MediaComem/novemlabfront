@@ -2,72 +2,59 @@ extends layout
 
 append scripts
     script(src='/javascripts/controllers/profile.js')
-    script(src='/javascripts/libs/Chart.min.js')
-    script(src='/javascripts/libs/html2canvas.min.js')
+    script(src='/javascripts/libs/alpine.min.js')
+    script(src='/javascripts/libs/alpine-ie11.min.js')
 
 block content
-    .row.center.flex-w-80p#save(ng-controller="NFController as nfCtrl")
-        .col.col-sm-4.center
-            h2#endTitle {{nfCtrl.titre}}
-            span.end-step1
-                p Voici votre profil d'ingénieur·e des médias !
-            span.end-step2
-                p L'ingénierie des médias regroupe 6 axes de compétences
-                ul.tab
-                    li Conception UX et Design thinking
-                    li Programmation web et mobile
-                    li Management de contenus
-                    li Communication et marketing digital
-                    li Stratégie et modèles d'affaire
-                    li Gestion de projet numérique
-                p Ce graphique est une estimation de votre affinité pour chaque compétence de la formation.
-            span.end-step3
-                p Après trois années de Bachelor, vous aurez acquis le savoir nécessaire afin de posséder des compétences transversales dans tous ces domaines.
-                p Ces compétences donnent à l’ingénieur·e en média la capacité de compréhension globale des produits et services digitaux.
-                p Armé·e de ce Bachelor, vous êtes prêt·e à relever les défis de la révolution digitale. Vous n’êtes plus un·e consommateur passif mais un·e acteur capable de concevoir des produits et des services numériques. Vous savez observer finement des utilisateurs pour leur proposer des solutions adaptées et ergonomiques. Vous en programmez le fonctionnement. Vous menez des projets méthodiquement en prenant en compte les aspects marketing, techniques et de conception.
-                p Durant le cursus, vous aurez également acquis les compétences nécessaires à développer votre culture digitale et vos «soft skill», tels que le travail en équipe, la communication interpersonnelle et la méthodologie de recherche.
-            span.end-step4
-                p Suite à votre formation, vous pourrez vous spécialiser dans un ou plusieurs de vos domaines de compétences, pour déboucher sur une fonction spécialisée.
-                p Votre capacité de compréhension globale et d’adaptation vous permettra de vous spécialiser en fonction du contexte, que ce soit en agence, en entreprise ou comme indépendant.
-                p Aujourd'hui, nos diplomé·e·s en Ingénierie des médias sont par exemple :
-                ul.tab-jobs
-                    li Chef·fe de projet digital
-                    li Community manager
-                    li Gestionnaire IT
-                    li Front-end Developer
-                    li Fondateur·trice de start-up
-                    li Head of Digital Marketing
-                    li E-Commerce Web Designer
-                    li Consultant·e digital
-                    li IT Operational Engineer
-                    li Développeur·euse web et mobile
-                    li Digital Marketing Manager
-                    li Lead strategist
-                    li Responsable Communication
-                    li Digital Operations Manager
-                    li UX/UI Designer
-                    li Event Coordinator
-            span.end-step5
-                p Le titre de Bachelor of Science en Ingénierie des médias est également un tremplin pour accéder à une formation supérieure.
-        .col.col-sm-8.align-elements-center
-            canvas#profil
-            .profil-sup
-                    .col-sm-6.center
-                        h3 +
-                        h3 Soft Skills
-                        h3 Culture digitale
-            .formSup
-                .row
-                    .col-sm-6
-                        h3 MSc HES-SO Innokick
-                        p Integrated Innovation for Products and Business Development
-                    .col-sm-6
-                        h3 MSc BA / HES-SO
-                        p Management des systèmes d’information
-                    .col-sm-6
-                        h3 MMSE / HES-SO
-                        p Master Technologies de l’information et communication
-                    .col-sm-6
-                        h3 Master of Arts
-                        p In Media Design, HEAD Genève
-    button.center.versNiveau(data-html2canvas-ignore="true") Suite
+    .mainWrapper(ng-controller="NFController as nfCtrl")
+        h1 {{nfCtrl.joueurName}}
+        p.u-mt-1
+            span Voici votre profil&nbsp;!
+        p Ce graphique est une estimation de vos affinités pour chaque compétence de la formation.
+
+    .schemaProfile(x-data="{ openStruct: false, openMark: false, openProg: false, openCont: false, openBusi: false, openInt: false }")
+        include ../src/images/IngenierieMedias_Schema_Competences.svg
+
+        .modal(role="dialog" aria-modal="true" x-show="openStruct" :class="{ 'visible': openStruct }")
+            button.close(@click="openStruct = false")
+                img(src="/images/Icon_Close.svg" loading="lazy" alt="" role="presentation")
+            .mainWrapper
+                h2 Structurer et planifier des projets numériques
+                p Savoir organiser, planifier et budgétiser un projet numérique sont des compétences essentielles dans le monde digital.
+                p Durant la formation, vous serez amené·e à gérer des projets en équipe et ce, pour de vrais clients. Centrée sur des projets pratiques et une approche agile, la formation vous aidera à développer tes capacités opérationnelles et à vous confronter au monde professionel.
+        .modal(role="dialog" aria-modal="true" x-show="openMark" :class="{ 'visible': openMark }")
+            button.close(@click="openMark = false")
+                img(src="/images/Icon_Close.svg" loading="lazy" alt="" role="presentation")
+            .mainWrapper
+                h2 Marketing et communication digitale
+                p De la publicité aux réseaux sociaux, des newsletters au marketing automatisé, de la communication classique à l’e-commerce, vous comprendrez les stratégies des marques pour attirer, convertir et fidéliser les clients connectés.
+        .modal(role="dialog" aria-modal="true" x-show="openProg" :class="{ 'visible': openProg }")
+            button.close(@click="openProg = false")
+                img(src="/images/Icon_Close.svg" loading="lazy" alt="" role="presentation")
+            .mainWrapper
+                h2 Programmer pour le web
+                p De l’enregistrement du nom de domaine au lancement du site, en passant par le contenu et l’ergonomie, vous découvrirez l’ensemble des étapes, des activités et des outils à utiliser pour développer un site internet, un site e-commerce ou une application mobile.
+        .modal(role="dialog" aria-modal="true" x-show="openCont" :class="{ 'visible': openCont }")
+            button.close(@click="openCont = false")
+                img(src="/images/Icon_Close.svg" loading="lazy" alt="" role="presentation")
+            .mainWrapper
+                h2 Créer des contenus
+                p En tant que consommateur·trice, nous amassons une forte quantité de contenus par minute. Que ce soit sur les réseaux sociaux, sur un site internet ou sur une application, les publications varient entre elles.
+                p Articles, vidéos, photos, animations, podcasts sont des moyens d’expression que vous pratiquerez pendant la formation et développerez durant les projets concrets auprès de clients.
+        .modal(role="dialog" aria-modal="true" x-show="openBusi" :class="{ 'visible': openBusi }")
+            button.close(@click="openBusi = false")
+                img(src="/images/Icon_Close.svg" loading="lazy" alt="" role="presentation")
+            .mainWrapper
+                h2 Imaginer et élaborer un business model
+                p Définir le business model d’une entreprise est un prérequis indispensable à son lancement. C’est pourquoi, la formation d’ingénierie des médias vous permettra de mettre en place tous les éléments afin que vous puissez gérer ou créer votre propre start-up.
+                p Après la formation, certain·e·s de nos ancien·ne·s étudiant·e·s ont pu lancer leur entreprise grâce à leurs compétences acquises durant la formation.
+        .modal(role="dialog" aria-modal="true" x-show="openInt" :class="{ 'visible': openInt }")
+            button.close(@click="openInt = false")
+                img(src="/images/Icon_Close.svg" loading="lazy" alt="" role="presentation")
+            .mainWrapper
+                h2 Concevoir des interfaces
+                p Rien de pire que d’aller sur un site internet et de ne pas trouver directement l’information que nous cherchons, de cliquer sur des liens inexistants ou de ne pas réussir à commander un article car le panier est introuvable.
+                p Grâce aux cours sur la conception des interfaces ainsi que sur l’ergonomie d’un site internet, vous apprendrez à disposer les éléments et à réfléchir à la place de l’utilisateur.
+    .mainWrapper
+        a.versNiveau(href="/end") Suivant
+

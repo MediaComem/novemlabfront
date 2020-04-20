@@ -45,10 +45,6 @@ p {
   letter-spacing: -0.03em;
 }
 
-p {
-  line-height: 140%;
-}
-
 h1 {
   color: var(--main-burgundy);
   font-weight: 700;
@@ -68,8 +64,13 @@ h3 {
 }
 
 p {
+  line-height: 140%;
   font-weight: 500;
   font-size: 1.05rem;
+
+  span {
+    color: var(--heig-red);
+  }
 }
 
 p+p {
@@ -96,6 +97,14 @@ button {
   border: 0;
   background: 0;
   cursor: pointer;
+}
+
+.btn {
+  background: #fff;
+  color: var(--heig-red);
+  padding: 10px 15px;
+  font-size: 1rem;
+  text-decoration:none;
 }
 
 img {
