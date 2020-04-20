@@ -1,0 +1,19 @@
+extends layout
+
+append scripts
+    script(src='/javascripts/controllers/saveEmail.js')
+
+block content
+    .mainWrapper(ng-controller="SaveController as sCtrl")
+        h1 Presque terminé…
+        p Avant de découvrir votre profil, il nous faudrait votre adresse mail afin que nous puissions vous l’envoyer.
+        p De plus, si vous êtes intéressé·e, vous pourrez également vous inscrire à la newsletter de l’Ingénierie des médias en cochant la case.
+        form()
+            p
+                label(for="email") Votre Email
+                input(id="email" name="email" type='email' ng-model='sCtrl.email')
+            .checkboxWrapper
+                input(type='checkbox' ng-model='sCtrl.newsletter' id="newsletter" name="newsletter")
+                label(for="newsletter") Je souhaite recevoir des informations par e-mail
+            span {{iCtrl.error}}
+            button.u-align-end.u-mt-2(ng-click='sCtrl.save()') Voir mon profil

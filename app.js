@@ -6,15 +6,11 @@ const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
 
-const niveau1 = require('./routes/niveau1');
-const niveau2 = require('./routes/niveau2');
-const niveau3 = require('./routes/niveau3');
-const niveau4 = require('./routes/niveau4');
-const niveau5 = require('./routes/niveau5');
-const niveau6 = require('./routes/niveau6');
-const niveauF = require('./routes/niveauF');
+const niveau = require('./routes/niveau');
+
+const saveEmail = require('./routes/saveEmail');
 const end = require('./routes/end');
-const save = require('./routes/save');
+
 const profile = require('./routes/profile');
 const { configureApiProxy, getLocals } = require('./utils');
 
@@ -34,14 +30,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/n1', niveau1);
-app.use('/n2', niveau2);
-app.use('/n3', niveau3);
-app.use('/n4', niveau4);
-app.use('/n5', niveau5);
-app.use('/n6', niveau6);
-app.use('/nF', niveauF);
-app.use('/save', save);
+app.use('/n', niveau);
+app.use('/save', saveEmail);
 app.use('/profile', profile);
 app.use('/end', end);
 

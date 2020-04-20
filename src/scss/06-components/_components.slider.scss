@@ -29,18 +29,24 @@
 
 .glide__bullet {
     background-color: rgba(var(--heig-red-rgb), 0.3);
-    width: 2px;
-    height: 2px;
+    width: 8px;
+    height: 8px;
     padding: 0;
     border-radius: 50%;
-    border: 3px solid transparent;
+    border: 7px solid transparent;
     transition: all .3s ease-in-out;
     cursor: pointer;
     line-height: 0;
-    margin: 0 .75rem;
+    margin: 0;
+    box-sizing: content-box;
+    background-clip: content-box;
 
     &:focus {
         outline: none;
+    }
+
+    &:hover {
+        background-color: var(--heig-red);
     }
 }
 
@@ -55,12 +61,7 @@
 .glide__bullet[class*="active"] {
     position: relative;
     background-color: var(--heig-red);
-    box-shadow: 0 0 0 8px #fff, 0 0 0 10px var(--heig-red);
-}
-
-.glide__bullet:hover {
-    border: 3px solid var(--heig-red);
-    background-color: var(--heig-red);
+    box-shadow: 0 0 0 0px #fff, 0 0 0 2px var(--heig-red);
 }
 
 @media only screen and (min-width: 768px) {

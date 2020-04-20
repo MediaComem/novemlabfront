@@ -72,7 +72,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
     var save =function(score){
         JoueurService.updateScorePhase1(score).then(function(res){
             $window.sessionStorage.setItem("score", JSON.stringify(res.data));
-            $window.location.href = "/n2";
+            $window.location.href = "/n/2";
         }).catch(function() {
             n1Ctrl.error = 'Could not edit score';
         })

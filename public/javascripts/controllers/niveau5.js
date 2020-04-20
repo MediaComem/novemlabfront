@@ -38,7 +38,7 @@ angular.module('novemlab').controller('N5Controller', function(JoueurService, Et
         JoueurService.updateScorePhase1(score).then(function(res){
             $window.sessionStorage.setItem("score", JSON.stringify(res.data));
             console.log("Score updated !");
-            $window.location.href = "/n6";
+            $window.location.href = "/n/6";
         })
 
     }

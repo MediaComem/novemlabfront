@@ -5,12 +5,12 @@
 }
 
 body>main>*:first-child {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 @media only screen and (max-height: 600px) {
   body>main>*:first-child {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 }
 
