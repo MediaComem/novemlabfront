@@ -7,7 +7,7 @@
     "start": "npm run build:css npm run compress:images && && node ./bin/www",
     "watch:js": "nodemon -e js,pug ./bin/www",
     "serve": "browser-sync start --proxy \"localhost:8080\" --files \"public/**/*.min.css\" \"public/javascripts\" \"public/images\" \"views/**/*.pug\" -w",
-    "compress:images": "svgo -r -f src/images -o public/images/",
+    "compress:images": "svgo -r -f src/images -o public/images/ --disable=removeUnknownsAndDefaults",
     "watch:images": "onchange \"src/images/**/*.svg\" -- npm run compress:images",
     "prebuild:css": "node-sass --include-path scss src/scss/index.scss  public/style/index.css",
     "build:css": "npm run prebuild:css && postcss --use autoprefixer -b \"last 2 versions\" < public/style/index.css | postcss --no-map --use cssnano > public/style/index.min.css",

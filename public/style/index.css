@@ -841,6 +841,9 @@ body > main.niveau6 > *:first-child {
     color: var(--heig-red); }
     .modal .close img {
       margin-right: 2rem; }
+  @media only screen and (min-width: 768px) {
+    .modal .close {
+      margin-bottom: 0; } }
 
 .schemaProfile {
   margin: 0 auto;
