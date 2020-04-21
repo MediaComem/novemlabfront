@@ -63,20 +63,19 @@ angular.module('novemlab').controller('NFController', function(apiUrl, $scope, $
         polygon.setAttribute("fill", "rgba(var(--heig-red-rgb), .8)");
 
         document.querySelector(".schemaProfile__spider_background").appendChild(polygon);
+    }
 
-        /* Unwrap text label on desktop */
-        var schemaProfile = document.querySelector(".schemaProfile svg");
-        window.addEventListener('resize', setViewbox);
-        setViewbox();
+    /* Unwrap text label on desktop */
+    var schemaProfile = document.querySelector(".schemaProfile svg");
+    window.addEventListener('resize', setViewbox);
+    setViewbox();
 
-        function setViewbox() {
-            if (window.innerWidth > 768){
-                schemaProfile.setAttribute("viewBox", "-130 0 600 298");
-            } else{
-                schemaProfile.setAttribute("viewBox", "0 0 350 298");
-            }
+    function setViewbox() {
+        if (window.innerWidth > 768) {
+            schemaProfile.setAttribute("viewBox", "-130 0 600 298");
+        } else {
+            schemaProfile.setAttribute("viewBox", "0 0 350 298");
         }
-
     }
 
 
