@@ -8,13 +8,15 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.score = {};
     n3Ctrl.choices = [];
 
-    var liste = $( ".sortable__list" ).sortable();
-    liste.disableSelection();
+    new Sortable(document.querySelector('.sortable__list'), {
+        animation: 150
+    });
 
     EtapeService.show(n3Ctrl.niveau).then(function(){
         n3Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n3Ctrl.etape.question);
+        $(".sortable").css('visibility', 'visible');
     })
 
     // Lors de l'envoi récupère les trois outils choisis

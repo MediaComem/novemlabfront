@@ -1,3 +1,12 @@
+.btn {
+    background: #fff;
+    color: var(--heig-red);
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-size: .8rem;
+}
+
 .versNiveau {
     align-self: flex-end;
     color: #640C00;
@@ -7,7 +16,7 @@
     text-decoration: underline;
     padding: 0;
     margin-top: 3rem;
-    text-align:left;
+    text-align: left;
 
     &[disabled] {
         opacity: 0.5;
@@ -19,8 +28,8 @@
     .versNiveau {
         font-size: .8rem;
 
-        br{
-            display:none;
+        br {
+            display: none;
         }
     }
 }

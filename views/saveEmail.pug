@@ -12,7 +12,7 @@ block content
             p
                 label(for="email") Votre Email
                 input(id="email" name="email" type='email' ng-model='sCtrl.email')
-            .checkboxWrapper
+            p.checkboxWrapper
                 input(type='checkbox' ng-model='sCtrl.newsletter' id="newsletter" name="newsletter")
                 label(for="newsletter") Je souhaite recevoir des informations par e-mail
             span {{iCtrl.error}}

@@ -25,8 +25,8 @@ form {
         box-sizing: border-box;
     }
 
-    button{
-        width:max-content;
+    button {
+        width: max-content;
     }
 
 }
@@ -45,6 +45,16 @@ form {
         label {
             width: 20%;
             margin: 0;
+        }
+
+        .radioWrapper,
+        .checkboxWrapper {
+            margin-left: 20%;
+        }
+
+        .radioWrapper label,
+        .checkboxWrapper label {
+            width: auto;
         }
 
         input[type=text] {

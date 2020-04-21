@@ -43,3 +43,7 @@ jspm_packages
 # Local environment files
 /.env*
 !/.env.sample
+
+/public/images/*
+!/public/images/banner
+!/public/images/favicon

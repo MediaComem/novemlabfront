@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 35px 1fr;
     margin-top: 1rem;
+    visibility:hidden; //Hide sortable during loading
 }
 
 .sortable__scale {

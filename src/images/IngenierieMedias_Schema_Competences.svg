@@ -1,24 +1,79 @@
-<svg width="350" height="298" viewBox="0 0 350 298" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M233.491 49H134.491L85 136.009L134.491 223H233.491L283 136.009L233.491 49Z" fill="#FFD7D5"/>
-<path d="M205 181.102L206.136 180.437L210.874 177.664L212.01 176.999" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M156.938 95.2266L158.074 94.5616L162.811 91.7886L163.948 91.1236" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M210.793 97.4531L209.692 96.7315L205.1 93.7224L203.999 93.0008" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M234 140V139.028V134.972V134" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M162.875 181.07L161.774 180.349L157.183 177.34L156.081 176.618" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M136 140L136 139.028L136 134.972L136 134" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M83 137H115.739L252.261 137L285 137" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M133 225L149.774 195.966L218.213 76.0344L235 47" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M134.109 47.9375L235 225" stroke="#E30A18" stroke-width="1.5" stroke-linecap="round"/>
-<circle cx="134" cy="48" r="9" fill="white" stroke="#E30A18" stroke-width="2"/>
-<circle cx="235" cy="48" r="9" fill="white" stroke="#E30A18" stroke-width="2"/>
-<circle cx="285" cy="137" r="9" fill="white" stroke="#E30A18" stroke-width="2"/>
-<circle cx="85" cy="137" r="9" fill="white" stroke="#E30A18" stroke-width="2"/>
-<circle cx="133" cy="223" r="9" fill="white" stroke="#E30A18" stroke-width="2"/>
-<circle cx="234" cy="223" r="9" fill="white" stroke="#E30A18" stroke-width="2"/>
-<text fill="#E2051C" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="14.5" font-weight="600" letter-spacing="-0.03em" role="button" @click="openInt = true"><tspan x="0" y="161.273">Concevoir &#10;</tspan><tspan x="0" y="175.273">des interfaces </tspan></text>
-<text fill="#E2051C" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="14.5" font-weight="600" letter-spacing="-0.03em" role="button" @click="openProg = true"><tspan x="47" y="12.2727">Programmer&#10;</tspan><tspan x="47" y="26.2727">pour le web</tspan></text>
-<text fill="#E2051C" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="14.5" font-weight="600" letter-spacing="-0.03em" role="button" @click="openBusi = true"><tspan x="213" y="262.273">Imaginer et &#xe9;laborer&#10;</tspan><tspan x="213" y="276.273">un business model</tspan></text>
-<text fill="#E2051C" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="14.5" font-weight="600" letter-spacing="-0.03em" role="button" @click="openCont = true"><tspan x="283" y="165.273">Cr&#xe9;er des &#10;</tspan><tspan x="283" y="179.273">contenus</tspan></text>
-<text fill="#E2051C" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="14.5" font-weight="600" letter-spacing="-0.03em" role="button" @click="openStruct = true"><tspan x="9" y="262.273">Structurer et planifier&#x2028;</tspan><tspan x="9" y="276.273">des projets num&#xe9;riques</tspan></text>
-<text fill="#E2051C" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="14.5" font-weight="600" letter-spacing="-0.03em" role="button" @click="openMark = true"><tspan x="195" y="12.2727">Marketing et&#10;</tspan><tspan x="195" y="26.2727">communication digitale</tspan></text>
+<svg viewBox="0 0 350 298" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:x-on="https://github.com/alpinejs/alpine">
+<style>
+text{
+    white-space: pre;
+    font-family: "Inter", sans-serif;
+    font-size:14.5px;
+    font-weight:600;
+    letter-spacing:-0.03em;
+    fill: #E2051C;
+}
+.text--desktop {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .text--mobile {
+        display: none;
+    }
+
+    .text--desktop {
+        display: initial;
+    }
+}
+circle{
+    fill:#fff;
+    stroke:#E30A18;
+    stroke-width:2;
+}
+path:not(.spider_background){
+    stroke:#E30A18;
+    stroke-width:1.5;
+    stroke-linecap:round
+}
+</style>
+<g class="schemaProfile__spider">
+    <g class="schemaProfile__spider_background">
+        <path class="spider_background" d="M233.491 49H134.491L85 136.009L134.491 223H233.491L283 136.009L233.491 49Z" fill="#FFD7D5"/>
+        <path d="M205 181.102L206.136 180.437L210.874 177.664L212.01 176.999" />
+        <path d="M156.938 95.2266L158.074 94.5616L162.811 91.7886L163.948 91.1236" />
+        <path d="M210.793 97.4531L209.692 96.7315L205.1 93.7224L203.999 93.0008" />
+        <path d="M234 140V139.028V134.972V134" />
+        <path d="M162.875 181.07L161.774 180.349L157.183 177.34L156.081 176.618" />
+        <path d="M136 140L136 139.028L136 134.972L136 134" />
+        <path class="scale__horizontal" d="M83 137H115.739L252.261 137L285 137" />
+        <path class="scale__diagonalpos" d="M133 225L149.774 195.966L218.213 76.0344L235 47" />
+        <path class="scale__diagonalneg" d="M134.109 47.9375L235 225" />
+    </g>
+    <circle cx="134" cy="48" r="9" />
+    <circle cx="235" cy="48" r="9" />
+    <circle cx="285" cy="137" r="9" />
+    <circle cx="85" cy="137" r="9" />
+    <circle cx="133" cy="223" r="9" />
+    <circle cx="234" cy="223" r="9" />
+</g>
+<text xml:space="preserve" role="button" x-on:click="openInt = true">
+    <tspan class="text--mobile" x="0" y="161.273">Concevoir </tspan><tspan class="text--mobile" x="0" y="175.273">des interfaces </tspan>
+    <tspan class="text--desktop" x="-110" y="141">Concevoir des interfaces </tspan>
+</text>
+<text xml:space="preserve" role="button" x-on:click="openProg = true">
+    <tspan class="text--mobile" x="47" y="12.2727">Programmer </tspan><tspan class="text--mobile" x="47" y="26.2727">pour le web</tspan>
+    <tspan class="text--desktop" x="-35" y="12.2727">Programmer pour le web</tspan>
+</text>
+<text xml:space="preserve" role="button" x-on:click="openBusi = true">
+    <tspan class="text--mobile" x="213" y="262.273">Imaginer et élaborer </tspan><tspan class="text--mobile" x="213" y="276.273">un business model</tspan>
+    <tspan class="text--desktop" x="260" y="262.273">Imaginer et élaborer </tspan><tspan class="text--desktop" x="260" y="276.273">un business model</tspan>
+</text>
+<text xml:space="preserve" role="button" x-on:click="openCont = true">
+    <tspan class="text--mobile" x="283" y="165.273">Créer des </tspan><tspan class="text--mobile" x="283" y="179.273">contenus</tspan>
+    <tspan class="text--desktop" x="310" y="141">Créer des contenus</tspan>
+</text>
+<text xml:space="preserve" role="button" x-on:click="openStruct = true">
+    <tspan class="text--mobile" x="9" y="262.273">Structurer et planifier</tspan><tspan class="text--mobile" x="9" y="276.273">des projets numériques</tspan>
+    <tspan class="text--desktop" x="-40" y="262.273">Structurer et planifier</tspan><tspan class="text--desktop" x="-40" y="276.273">des projets numériques</tspan>
+</text>
+<text xml:space="preserve" role="button" x-on:click="openMark = true">
+    <tspan class="text--mobile" x="195" y="12.2727">Marketing et</tspan><tspan class="text--mobile" x="195" y="26.2727">communication digitale</tspan>
+    <tspan class="text--desktop" x="260" y="12.2727">Marketing et</tspan><tspan class="text--desktop" x="260" y="26.2727">communication digitale</tspan>
+</text>
 </svg>

@@ -16,6 +16,7 @@ angular.module('novemlab').controller('N5Controller', function(JoueurService, Et
     $scope.initGlider = function($last){
         if ($last) {
             new Glide('.niveau5_glide', {
+                startAt: Math.floor(Math.random() * 4),// returns a random integer from 0 to 3
                 breakpoints: {
                     798: {
                         perView: 1

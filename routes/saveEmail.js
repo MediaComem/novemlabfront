@@ -5,7 +5,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.route('/').get(function(req, res) {
-    res.status(200).render('saveEmail', getLocals({ contentClass: 'inverted' }));
+    res.status(200).render('saveEmail', getLocals({ localBackground: 'inverted' }));
 });
 
 module.exports = router;

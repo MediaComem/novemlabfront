@@ -13,7 +13,7 @@ block content
         p Ce graphique est une estimation de vos affinités pour chaque compétence de la formation.
 
     .schemaProfile(x-data="{ openStruct: false, openMark: false, openProg: false, openCont: false, openBusi: false, openInt: false }")
-        include ../src/images/IngenierieMedias_Schema_Competences.svg
+        include ../public/images/IngenierieMedias_Schema_Competences.svg
 
         .modal(role="dialog" aria-modal="true" x-show="openStruct" :class="{ 'visible': openStruct }")
             button.close(@click="openStruct = false")
@@ -55,6 +55,6 @@ block content
                 h2 Concevoir des interfaces
                 p Rien de pire que d’aller sur un site internet et de ne pas trouver directement l’information que nous cherchons, de cliquer sur des liens inexistants ou de ne pas réussir à commander un article car le panier est introuvable.
                 p Grâce aux cours sur la conception des interfaces ainsi que sur l’ergonomie d’un site internet, vous apprendrez à disposer les éléments et à réfléchir à la place de l’utilisateur.
-    .mainWrapper
+    .mainWrapper.u-align-end
         a.versNiveau(href="/end") Suivant
 

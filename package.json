@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm run build:css && concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\"",
-    "start": "npm run build:css && node ./bin/www",
+    "dev": "npm run build:css && npm run compress:images && concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\"",
+    "start": "npm run build:css npm run compress:images && && node ./bin/www",
     "watch:js": "nodemon -e js,pug ./bin/www",
     "serve": "browser-sync start --proxy \"localhost:8080\" --files \"public/**/*.min.css\" \"public/javascripts\" \"public/images\" \"views/**/*.pug\" -w",
-    "prebuild:css": "node-sass --include-path scss src/scss/index.scss    public/style/index.css",
+    "compress:images": "svgo -r -f src/images -o public/images/",
+    "watch:images": "onchange \"src/images/**/*.svg\" -- npm run compress:images",
+    "prebuild:css": "node-sass --include-path scss src/scss/index.scss  public/style/index.css",
     "build:css": "npm run prebuild:css && postcss --use autoprefixer -b \"last 2 versions\" < public/style/index.css | postcss --no-map --use cssnano > public/style/index.min.css",
     "watch:css": "onchange \"src/scss/**/*.scss\" -- npm run build:css"
   },
@@ -30,6 +32,7 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "dotenv": "^8.2.0",
-    "onchange": "^6.1.0"
+    "onchange": "^6.1.0",
+    "svgo": "^1.3.2"
   }
 }

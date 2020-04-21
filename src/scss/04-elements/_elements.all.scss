@@ -31,7 +31,7 @@ body>main {
 
   .mainWrapper {
     align-self: center;
-    max-width: 800px;
+    width: 800px;
     margin: auto;
   }
 }
@@ -97,14 +97,6 @@ button {
   border: 0;
   background: 0;
   cursor: pointer;
-}
-
-.btn {
-  background: #fff;
-  color: var(--heig-red);
-  padding: 10px 15px;
-  font-size: 1rem;
-  text-decoration:none;
 }
 
 img {

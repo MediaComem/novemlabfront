@@ -8,8 +8,8 @@ block content
 		h1 Premier jour de travail …
 		p#novemText
 		.cards
-			button.cards__item(ng-repeat="prop in n1Ctrl.etape.propositions", value="{{prop.score}}")
+			button.cards__item(ng-repeat="prop in random(n1Ctrl.etape.propositions)", value="{{prop.score}}")
 				figure
-					img(ng-src=`${apiUrl}{{prop.image_rel_url}}`)
+					img(ng-src=`/images/tools/{{prop.filename}}.svg`)
 					figcaption {{prop.reponse}}
 		button.versNiveau(disabled) Suivant
