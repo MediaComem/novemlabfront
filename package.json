@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run build:css && npm run compress:images && concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\"",
-    "start": "npm run build:css npm run compress:images && && node ./bin/www",
+    "start": "npm run build:css && npm run compress:images && node ./bin/www",
     "watch:js": "nodemon -e js,pug ./bin/www",
     "serve": "browser-sync start --proxy \"localhost:8080\" --files \"public/**/*.min.css\" \"public/javascripts\" \"public/images\" \"views/**/*.pug\" -w",
     "compress:images": "svgo -r -f src/images -o public/images/ --disable=removeUnknownsAndDefaults",
