@@ -72,9 +72,9 @@ angular.module('novemlab').controller('NFController', function(apiUrl, $scope, $
 
     function setViewbox() {
         if (window.innerWidth > 768) {
-            schemaProfile.setAttribute("viewBox", "-130 0 600 298");
+            schemaProfile.setAttribute("viewBox", "-130 0 630 298");
         } else {
-            schemaProfile.setAttribute("viewBox", "0 0 350 298");
+            schemaProfile.setAttribute("viewBox", "0 0 370 298");
         }
     }
 
