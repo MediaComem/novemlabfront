@@ -15,6 +15,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
         n1Ctrl.etape = EtapeService.getEtape();
     }).then(() =>{
         $("#novemText").html(n1Ctrl.etape.question);
+        n1Ctrl.etape.propositionsRandomised = randomize(n1Ctrl.etape.propositions);
     })
 
 
@@ -79,7 +80,7 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
 
     }
 
-    $scope.random = function (array) {
+    function randomize(array) {
         return array.sort(function () {
             return .5 - Math.random();
         });
