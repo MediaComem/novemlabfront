@@ -531,14 +531,14 @@ input[type="radio"] {
 .radioWrapper label:after,
 .checkboxWrapper label:after {
   position: absolute;
-  top: 14px;
-  left: 10px;
+  top: 50%;
+  left: 50%;
   display: flex;
   content: ' ';
   height: 12px;
   width: 12px;
   background: blue;
-  transform: scale(0); }
+  transform: scale(0) scale(0.8) translate(30%, -50%); }
 
 .checkboxWrapper label:after {
   height: 5px;
@@ -547,15 +547,15 @@ input[type="radio"] {
   border-bottom: solid 4px #fff;
   border-left: solid 4px #fff;
   background: none;
-  transform: rotate(-45deg) scale(0);
+  transform: rotate(-45deg) scale(0) translate(30%, -50%);
   transform-origin: center center; }
 
 .radioWrapper input[type="radio"]:checked + label:after {
-  transform: scale(1); }
+  transform: scale(1) translate(30%, -50%); }
 
 .checkboxWrapper input[type="checkbox"]:checked + label:after {
   opacity: 1;
-  transform: rotate(-45deg) scale(0.8); }
+  transform: rotate(-45deg) scale(0.8) translate(30%, -50%); }
 
 form {
   margin-top: 1rem;
