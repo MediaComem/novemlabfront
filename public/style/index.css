@@ -437,14 +437,15 @@ h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem; }
 
-p,
-li {
+p {
   line-height: 140%;
   font-weight: 500;
-  font-size: 1.05rem; }
-  p span,
-  li span {
+  font-size: 1rem; }
+  p span {
     color: var(--heig-red); }
+
+li {
+  font-size: 1rem; }
 
 p + p {
   margin-top: 0; }

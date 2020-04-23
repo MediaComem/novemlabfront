@@ -69,15 +69,18 @@ h3 {
   margin-bottom: 1rem;
 }
 
-p,
-li {
+p{
   line-height: 140%;
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: 1rem;
 
   span {
     color: var(--heig-red);
   }
+}
+
+li{
+  font-size: 1rem;
 }
 
 p+p {
