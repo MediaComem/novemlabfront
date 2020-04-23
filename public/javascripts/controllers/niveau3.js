@@ -9,7 +9,8 @@ angular.module('novemlab').controller('N3Controller', function(JoueurService, Et
     n3Ctrl.choices = [];
 
     new Sortable(document.querySelector('.sortable__list'), {
-        animation: 150
+        animation: 150,
+        ghostClass: 'sortable__item--ghost'
     });
 
     EtapeService.show(n3Ctrl.niveau).then(function(){

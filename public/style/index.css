@@ -431,11 +431,13 @@ h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem; }
 
-p, li {
+p,
+li {
   line-height: 140%;
   font-weight: 500;
   font-size: 1.05rem; }
-  p span, li span {
+  p span,
+  li span {
     color: var(--heig-red); }
 
 p + p {
@@ -446,12 +448,16 @@ p + p {
     font-size: 2.4rem; }
   h3 {
     font-size: 1.5rem; }
-  p, li {
+  p,
+  li {
     font-size: 0.8rem; } }
 
 button {
   border: 0;
   background: 0;
+  cursor: pointer; }
+
+[role=button] {
   cursor: pointer; }
 
 img {
@@ -853,8 +859,6 @@ a {
   .schemaProfile > svg {
     width: 80vw;
     max-width: 700px; }
-  .schemaProfile text[role=button] {
-    cursor: pointer; }
 
 .glide,
 .glide__slides,
@@ -956,13 +960,12 @@ a {
   .sortable__item:first-child {
     margin-top: 0; }
 
+.sortable__item--ghost {
+  opacity: 0.3; }
+
 @media only screen and (max-height: 600px) {
   .sortable__item {
     padding: 0.75rem 1.25rem; } }
-
-@media only screen and (min-width: 768px) {
-  .sortable__item {
-    padding: 0.8rem 7vw; } }
 
 .u-align-end {
   align-self: flex-end; }

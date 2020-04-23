@@ -69,7 +69,8 @@ h3 {
   margin-bottom: 1rem;
 }
 
-p, li {
+p,
+li {
   line-height: 140%;
   font-weight: 500;
   font-size: 1.05rem;
@@ -93,15 +94,19 @@ p+p {
     font-size: 1.5rem;
   }
 
-  p,li {
+  p,
+  li {
     font-size: 0.8rem;
   }
 }
 
-
 button {
   border: 0;
   background: 0;
+  cursor: pointer;
+}
+
+[role=button] {
   cursor: pointer;
 }
 

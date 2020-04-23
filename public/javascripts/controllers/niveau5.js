@@ -9,13 +9,12 @@ angular.module('novemlab').controller('N5Controller', function(JoueurService, Et
         n5Ctrl.etape = EtapeService.getEtape();
     }).then(function(){
         $("#novemText").html(n5Ctrl.etape.question);
-
     });
 
     /* Workaround */
     $scope.initGlider = function($last){
         if ($last) {
-            new Glide('.niveau5_glide', {
+            const _instance = new Glide('.niveau5_glide', {
                 startAt: Math.floor(Math.random() * 4),// returns a random integer from 0 to 3
                 breakpoints: {
                     798: {
@@ -27,6 +26,15 @@ angular.module('novemlab').controller('N5Controller', function(JoueurService, Et
                     }
                 }
             }).mount();
+
+            let glideClickedIdx = 0;
+
+            $('.glide__slide').attr('role', 'button');
+
+            $('.glide__slide').on('click', function () {
+                glideClickedIdx = $(this).index();
+                _instance.go(`=${glideClickedIdx}`);
+            });
         }
     }
 
