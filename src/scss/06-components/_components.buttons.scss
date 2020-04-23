@@ -15,7 +15,9 @@
     width: max-content;
     text-decoration: underline;
     padding: 0;
-    margin-top: 3rem;
+    margin-top: auto;
+    margin-top:2rem;
+    margin-bottom:1rem;
     text-align: left;
 
     &[disabled] {

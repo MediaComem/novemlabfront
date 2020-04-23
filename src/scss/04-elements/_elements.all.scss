@@ -5,12 +5,18 @@
 }
 
 body>main>*:first-child {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
 }
 
 @media only screen and (max-height: 600px) {
   body>main>*:first-child {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
+  }
+}
+
+@media only screen and (max-height: 800px) and (min-width:768px) {
+  body>main>*:first-child {
+    margin-top: auto;
   }
 }
 
@@ -101,4 +107,12 @@ button {
 
 img {
   max-width: 100%;
+}
+
+
+@media only screen and (min-width: 768px) {
+  li {
+    padding: .8rem ($main-padding-left - 5vw);
+    font-size: .8rem;
+  }
 }
