@@ -21,6 +21,7 @@ angular.module('novemlab').controller('N5Controller', function(JoueurService, Et
                         perView: 1
                     },
                     5000: {
+                        dragThreshold: false,
                         perView: 3,
                         focusAt: 'center'
                     }
