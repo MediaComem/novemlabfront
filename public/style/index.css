@@ -368,6 +368,12 @@ template {
 * {
   -webkit-tap-highlight-color: rgba(var(--heig-red-rgb), 0.3); }
 
+.inverted ::selection {
+  background: rgba(255, 255, 255, 0.4); }
+
+.inverted * {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.4); }
+
 .inverted {
   color: #FFF;
   background-color: var(--heig-red); }
@@ -407,7 +413,7 @@ body > main {
   .mainWrapper {
     align-self: center;
     max-width: 800px;
-    margin: auto; } }
+    margin: 0 auto; } }
 
 h1,
 h2,

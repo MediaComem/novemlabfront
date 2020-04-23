@@ -5,11 +5,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
-
 const niveau = require('./routes/niveau');
-
 const saveEmail = require('./routes/saveEmail');
-const end = require('./routes/end');
 
 const profile = require('./routes/profile');
 const { configureApiProxy, getLocals } = require('./utils');
@@ -33,7 +30,6 @@ app.use('/', index);
 app.use('/n', niveau);
 app.use('/save', saveEmail);
 app.use('/profile', profile);
-app.use('/end', end);
 
 configureApiProxy(app);
 
