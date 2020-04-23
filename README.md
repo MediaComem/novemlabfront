@@ -42,6 +42,10 @@ npm run dev
 
 Visit http://localhost:8080 (if you are using the default port).
 
+## Note
+
+Missing feature: error check. For example, no message are send to the client if they try to start not with the first step.
+
 ## Production
 
 Run the application in production mode:

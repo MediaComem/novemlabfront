@@ -2,7 +2,7 @@
     --banner-url: url("/images/banner/IM_Banner.jpg");
 }
 
-.coverBackground {
+.backgroundCover {
     background-image: linear-gradient(to right, rgba(237, 29, 42, .95), rgba(237, 29, 42, .95)), var(--banner-url);
     background-size: cover, cover;
     background-position: 100% 100%, 50% 50%;
@@ -11,7 +11,7 @@
 
 // IE 11, EDGE <= 18
 @supports not (background-blend-mode: multiply) {
-    .coverBackground {
+    .backgroundCover {
         background-image: linear-gradient(to right, rgba(255, 0, 16, 0.64), rgb(223, 8, 21)), var(--banner-url);
     }
 }
@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 1400px) and (max-height: 931px) {
     :root {
-        --banner-url: url("/images/banner/IM_Banner_zv9vjb_c_scalew_1310.jpg");
+        --banner-url: url("/images/banner/IM_Banner_zv9vjb_c_scalew_1400.jpg");
     }
 }
 

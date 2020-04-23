@@ -1,0 +1,76 @@
+/* Clearly not perfect optimisation
+    - it's hard top optimise sizing for cover background image
+    - it doesn't not matter to much, because the image is not really visible (hidden with color on top of it)
+*/
+
+:root {
+    --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_1400.jpg");
+}
+
+.backgroundObjectsFlying {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), var(--objectsflying-url);
+    background-repeat: repeat, no-repeat;
+    background-position: 100% 100%,-100% 0%;
+}
+
+@media only screen and (min-width: 768px) {
+    .backgroundObjectsFlying {
+        background-position: 100% 100%,-300% 50%;
+    }
+}
+
+/* Original */
+
+@media screen and (max-width: 1400px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_1400.jpg");
+    }
+}
+
+@media screen and (max-width: 1393px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_1393.jpg");
+    }
+}
+
+@media screen and (max-width: 1269px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_1269.jpg");
+    }
+}
+
+@media screen and (max-width: 1132px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_1132.jpg");
+    }
+}
+
+@media screen and (max-width: 993px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_993.jpg");
+    }
+}
+
+@media screen and (max-width: 843px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_843.jpg");
+    }
+}
+
+@media screen and (max-width: 673px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_673.jpg");
+    }
+}
+
+@media screen and (max-width: 469px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_469.jpg");
+    }
+}
+
+@media screen and (max-width: 200px) {
+    :root {
+        --objectsflying-url: url("/images/ObjectsFlying/Objects_flying_xc50oc_c_scalew_200.jpg");
+    }
+}

@@ -1,0 +1,88 @@
+/* Clearly not perfect optimisation
+    - it's hard top optimise sizing for cover background image
+    - it doesn't not matter to much, because the image is not really visible (hidden with color on top of it)
+*/
+
+:root {
+    --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_1400.jpg");
+}
+
+.backgroundObjectsFlying2 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), var(--ObjectsFlying2-url);
+    background-repeat: repeat, no-repeat;
+    background-position: 100% 100%,100% 150%;
+}
+
+@media only screen and (min-width: 768px) {
+    .backgroundObjectsFlying2 {
+        background-position: 100% 100%,100% -100%;
+    }
+}
+
+/* Original */
+
+@media screen and (max-width: 1400px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_1400.jpg");
+    }
+}
+
+@media screen and (max-width: 1398px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_1398.jpg");
+    }
+}
+
+@media screen and (max-width: 1313px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_1313.jpg");
+    }
+}
+
+@media screen and (max-width: 1209px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_1209.jpg");
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_1090.jpg");
+    }
+}
+
+@media screen and (max-width: 979px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_979.jpg");
+    }
+}
+
+@media screen and (max-width: 863px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_863.jpg");
+    }
+}
+
+@media screen and (max-width: 727px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_727.jpg");
+    }
+}
+
+@media screen and (max-width: 588px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_588.jpg");
+    }
+}
+
+@media screen and (max-width: 418px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_418.jpg");
+    }
+}
+
+@media screen and (max-width: 200px) {
+    :root {
+        --ObjectsFlying2-url: url("/images/ObjectsFlying2/Objects_flying2_fz5v83_c_scalew_200.jpg");
+    }
+}

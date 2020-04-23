@@ -1,0 +1,64 @@
+/* Clearly not perfect optimisation
+    - it's hard top optimise sizing for cover background image
+    - it doesn't not matter to much, because the image is not really visible (hidden with color on top of it)
+*/
+
+:root {
+    --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_1400.jpg");
+}
+
+.backgroundLaptopFlying {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), var(--laptopflying-url);
+    background-repeat: repeat, no-repeat;
+    background-position: 100% 100%, 150% 150%;
+}
+
+@media only screen and (min-width: 768px) {
+    .backgroundLaptopFlying {
+        background-position: 100% 100%,300% 0%;
+    }
+}
+
+/* Original */
+
+@media screen and (max-width: 1400px) {
+    :root {
+        --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_1400.jpg");
+    }
+}
+
+@media screen and (max-width: 1298px) {
+    :root {
+        --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_1298.jpg");
+    }
+}
+
+@media screen and (max-width: 1139px) {
+    :root {
+        --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_1139.jpg");
+    }
+}
+
+@media screen and (max-width: 954px) {
+    :root {
+        --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_954.jpg");
+    }
+}
+
+@media screen and (max-width: 765px) {
+    :root {
+        --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_765.jpg");
+    }
+}
+
+@media screen and (max-width: 536px) {
+    :root {
+        --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_536.jpg");
+    }
+}
+
+@media screen and (max-width: 200px) {
+    :root {
+        --laptopflying-url: url("/images/LaptopFlying/Laptop_flying_sgzol9_c_scalew_200.jpg");
+    }
+}

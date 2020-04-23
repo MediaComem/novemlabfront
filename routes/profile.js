@@ -5,7 +5,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.route('/').get(function(req, res) {
-    res.status(200).render('profile', getLocals({ contentClass: 'profile' }));
+    res.status(200).render('profile', getLocals({ localBackground: "backgroundObjectsFlying2", contentClass: 'profile' }));
 });
 
 module.exports = router;
