@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 35px 1fr;
     margin-top: 1rem;
-    visibility:hidden; //Hide sortable during loading
+    visibility: hidden; //Hide sortable during loading
 }
 
 .sortable__scale {
@@ -43,5 +43,11 @@
 @media only screen and (max-height: 600px) {
     .sortable__item {
         padding: 0.75rem 1.25rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .sortable__item {
+        padding: .8rem ($main-padding-left - 5vw);
     }
 }

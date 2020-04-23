@@ -431,11 +431,11 @@ h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem; }
 
-p {
+p, li {
   line-height: 140%;
   font-weight: 500;
   font-size: 1.05rem; }
-  p span {
+  p span, li span {
     color: var(--heig-red); }
 
 p + p {
@@ -446,7 +446,7 @@ p + p {
     font-size: 2.4rem; }
   h3 {
     font-size: 1.5rem; }
-  p {
+  p, li {
     font-size: 0.8rem; } }
 
 button {
@@ -456,11 +456,6 @@ button {
 
 img {
   max-width: 100%; }
-
-@media only screen and (min-width: 768px) {
-  li {
-    padding: 0.8rem 7vw;
-    font-size: .8rem; } }
 
 body {
   font-family: "Inter", system-ui, sans-serif;
@@ -806,7 +801,8 @@ a {
     margin-top: 2rem; }
   .listbox__item {
     border-right: 2px solid var(--heig-red);
-    border-left: 2px solid var(--heig-red); } }
+    border-left: 2px solid var(--heig-red);
+    padding: 0.8rem 7vw; } }
 
 .modal {
   position: fixed;
@@ -963,6 +959,10 @@ a {
 @media only screen and (max-height: 600px) {
   .sortable__item {
     padding: 0.75rem 1.25rem; } }
+
+@media only screen and (min-width: 768px) {
+  .sortable__item {
+    padding: 0.8rem 7vw; } }
 
 .u-align-end {
   align-self: flex-end; }

@@ -38,5 +38,6 @@
     .listbox__item {
         border-right: 2px solid var(--heig-red);
         border-left: 2px solid var(--heig-red);
+        padding: .8rem ($main-padding-left - 5vw);
     }
 }
