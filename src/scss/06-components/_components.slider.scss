@@ -64,6 +64,18 @@
     box-shadow: 0 0 0 0px #fff, 0 0 0 2px var(--heig-red);
 }
 
+.glide__slide article {
+    opacity: 0.5;
+}
+
+.glide__slide--active {
+    article {
+        background: var(--heig-red);
+        color: #fff;
+        opacity: 1;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .glide {
         width: 800px;
@@ -78,16 +90,12 @@
         padding: 0;
     }
 
-    .glide__slide article {
-        opacity: 0.5;
-    }
-
-    .glide__slide--active {
+    .glide__slide--active,
+    .glide__slide:hover {
         background: var(--heig-red);
-
         article {
+            background:transparent;
             color: #fff;
-
             opacity: 1;
         }
     }

@@ -1,10 +1,19 @@
 .btn {
-    background: #fff;
+    background:rgba(255,255,255,.98);
     color: var(--heig-red);
     padding: 10px 15px;
     font-size: 1rem;
     text-decoration: none;
     font-size: .8rem;
+    border:2px solid transparent;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.05);
+
+    &:hover{
+        border-color: var(--heig-red);
+        box-shadow:none;
+        background:#fff;
+    }
 }
 
 .versNiveau {
@@ -22,6 +31,11 @@
 
     &[disabled] {
         opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &:hover{
+        text-decoration:none;
     }
 }
 

@@ -27,13 +27,18 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
     $(document).on("click", '.cards__item', function(e){
         e.preventDefault();
 
-        if ($('.cards__item.active').length>= limit) {
+        if ($('.cards__item.active').length === limit) {
+            // Switch off active element
             if($(this).hasClass("active")){
                 $(this).toggleClass("active");
                 document.querySelector('button.versNiveau').setAttribute("disabled", "");
+            } else{ // Replace last element with new one
+                $('.cards__item.last').toggleClass("active").removeClass("last");
+                $(this).toggleClass("active").toggleClass("last");
             }
         }else{
-            $(this).toggleClass("active");
+            $('.cards__item.last').removeClass("last");
+            $(this).toggleClass("active").toggleClass("last");
         }
 
         if ($('.cards__item.active').length === limit) {
@@ -41,7 +46,6 @@ angular.module('novemlab').controller('N1Controller', function(EtapeService, $wi
         }
 
     })
-
 
     // Lors de l'envoi récupère les deux outils choisis
     $('button.versNiveau').click(function () {

@@ -10,6 +10,7 @@
 .cards__item {
     border: 2px solid var(--heig-red);
 
+    &:hover,
     &.active {
         background-color: var(--heig-red);
 
