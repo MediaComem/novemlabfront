@@ -642,6 +642,7 @@ a {
   --banner-url: url("/images/banner/IM_Banner.jpg"); }
 
 .backgroundCover {
+  background-color: #fff;
   background-image: linear-gradient(to right, rgba(237, 29, 42, 0.95), rgba(237, 29, 42, 0.95)), var(--banner-url);
   background-size: cover, cover;
   background-position: 100% 100%, 50% 50%;
