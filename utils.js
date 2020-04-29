@@ -4,7 +4,7 @@ const proxy = require('express-http-proxy');
 const { apiUrl, apiProxyUrl } = require('./config');
 
 exports.getfullHost = function (req) {
-  return req.protocol + '://' + req.get('host');
+  return 'https://' + req.get('host');
 }// Surely a better way to do that
 
 /**
