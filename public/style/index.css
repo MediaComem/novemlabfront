@@ -388,7 +388,7 @@ template {
   box-sizing: inherit; }
 
 body > main > *:first-child {
-  margin-top: 3.5rem; }
+  margin-top: 3rem; }
 
 @media only screen and (max-height: 600px) {
   body > main > *:first-child {

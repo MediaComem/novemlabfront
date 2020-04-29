@@ -17,7 +17,7 @@ router.route('/:id').get(function(req, res) {
     if(niveauNum === 3 || niveauNum === 6){
         localBackground = "backgroundObjectsFlying2";
     }
-    res.status(200).render('niveau' + req.params.id, getLocals({ localBackground, contentClass: 'niveau' + req.params.id }), function(err, result){
+    res.status(200).render('niveau' + req.params.id, getLocals({ localBackground, contentClass: 'niveau' + req.params.id, fullHost: req.protocol + '://' + req.get('host') }), function(err, result){
         if (err) {
             res.redirect('/404'); // File doesn't exist
         } else {

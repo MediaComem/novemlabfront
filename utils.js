@@ -3,6 +3,10 @@ const proxy = require('express-http-proxy');
 
 const { apiUrl, apiProxyUrl } = require('./config');
 
+exports.getfullHost = function (req) {
+  return req.protocol + '://' + req.get('host');
+}// Surely a better way to do that
+
 /**
  * Optionally adds a proxy to the Novem API to the application. This is done
  * only if a proxy URL is explicitly configured.
